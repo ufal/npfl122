@@ -8,6 +8,7 @@ class MultiArmedBandits():
             self._bandits.append(np.random.normal(0., 1.))
         self._done = True
         self._episode_length = episode_length
+        print("Initialized {}-armed bandit, maximum average reward is {}".format(bandits, np.max(self._bandits)))
 
     def reset(self):
         self._done = False
@@ -30,7 +31,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--bandits", default=10, type=int, help="Number of bandits.")
-    parser.add_argument("--episodes", default=2000, type=int, help="Training episodes.")
+    parser.add_argument("--episodes", default=1000, type=int, help="Training episodes.")
     parser.add_argument("--episode_length", default=1000, type=int, help="Number of trials per episode.")
 
     parser.add_argument("--mode", default="greedy", type=str, help="Mode to use -- greedy, usb and gradient.")
