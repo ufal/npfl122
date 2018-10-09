@@ -13,6 +13,7 @@ class MultiArmedBandits():
     def reset(self):
         self._done = False
         self._trials = 0
+        return None
 
     def step(self, action):
         if self._done:
@@ -20,7 +21,7 @@ class MultiArmedBandits():
         self._trials += 1
         self._done = self._trials == self._episode_length
         reward = np.random.normal(self._bandits[action], 1.)
-        return (), reward, self._done, {}
+        return None, reward, self._done, {}
 
 
 if __name__ == "__main__":
