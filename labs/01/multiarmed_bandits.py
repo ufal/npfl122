@@ -8,7 +8,7 @@ class MultiArmedBandits():
             self._bandits.append(np.random.normal(0., 1.))
         self._done = True
         self._episode_length = episode_length
-        print("Initialized {}-armed bandit, maximum average reward is {}".format(bandits, np.max(self._bandits)))
+        #print("Initialized {}-armed bandit, maximum average reward is {}".format(bandits, np.max(self._bandits)))
 
     def reset(self):
         self._done = False
@@ -35,22 +35,22 @@ if __name__ == "__main__":
     parser.add_argument("--episodes", default=1000, type=int, help="Training episodes.")
     parser.add_argument("--episode_length", default=1000, type=int, help="Number of trials per episode.")
 
-    parser.add_argument("--mode", default="greedy", type=str, help="Mode to use -- greedy, usb and gradient.")
+    parser.add_argument("--mode", default="greedy", type=str, help="Mode to use -- greedy, ucb and gradient.")
     parser.add_argument("--alpha", default=0, type=float, help="Learning rate to use (if applicable).")
-    parser.add_argument("--c", default=1., type=float, help="Confidence level in UCB.")
+    parser.add_argument("--c", default=1., type=float, help="Confidence level in ucb.")
     parser.add_argument("--epsilon", default=0.1, type=float, help="Exploration factor (if applicable).")
     parser.add_argument("--initial", default=0, type=float, help="Initial value function levels.")
     args = parser.parse_args()
 
     env = MultiArmedBandits(args.bandits, args.episode_length)
 
-    # TODO: Initialize all computation
-
+    average_rewards = []
     for episode in range(args.episodes):
         env.reset()
 
-        # TODO: Initialize episode
+        # TODO: Initialize required values (depending on mode).
 
+        average_rewards.append(0)
         done = False
         while not done:
             # TODO: Action selection according to mode
@@ -62,9 +62,9 @@ if __name__ == "__main__":
                 action =
 
             _, reward, done, _ = env.step(action)
+            average_rewards[-1] += reward / args.episode_length
 
             # TODO: Update parameters
 
-        # TODO: Maybe process episode results
-
-    # TODO: Print out final score as mean and variance of all obtained rewards.
+    # Print out final score as mean and variance of all obtained rewards.
+    print("Final score: {}, variance: {}".format(np.mean(average_rewards), np.var(average_rewards)))
