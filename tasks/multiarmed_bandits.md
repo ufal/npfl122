@@ -21,21 +21,22 @@ returned).
 Your goal is to implement the following modes of calculation. For each mode
 evaluate the performance given specified hyperparameters and plot the results
 for all modes together in a single graph.
-- `greedy`: perform $ε$-greedy search with parameter `epsilon` and initial value
-  function estimate of 0, computing the value function using averaging. Plot
-  results for $ε ∈ \{1/64, 1/32, 1/16, 1/8, 1/4\}$.
+- `greedy`: perform $ε$-greedy search with parameter `epsilon`, computing the
+  value function using averaging. Plot results for
+  $ε ∈ \{1/64, 1/32, 1/16, 1/8, 1/4\}$.
 - `greedy` and `alpha`$≠0$: perform $ε$-greedy search with parameter `epsilon` and
   initial function estimate of 0, using fixed learning rate `alpha`. Plot
   results for $α=0.15$ and $ε ∈ \{1/64, 1/32, 1/16, 1/8, 1/4\}$
-- `greedy` and `initial`$≠0$: perform $ε$-greedy search with parameter `epsilon` and
-  given `initial` value as starting value function, computing the value function
-  using averaging. Plot results for `initial`$=1$ and $ε ∈ \{1/64, 1/32, 1/16, 1/8, 1/4\}$.
-- `ucb`: perform $ε$-greedy search with parameter `epsilon`, using
-  UCB with confidence level `c` to select action and computing the value
+- `greedy`, `alpha`$≠0$ and `initial`$≠0$: perform $ε$-greedy search with
+  parameter `epsilon`, given `initial` value as starting value function and
+  fixed learning rate `alpha`. Plot results for `initial`$=1$, $α=0.15$ and
+  $ε ∈ \{1/128, 1/64, 1/32, 1/16\}$.
+- `ucb`: perform UCB search with confidence level `c` and computing the value
   function using averaging. Plot results for `c`$=1$ and
   $ε ∈ \{1/128, 1/64, 1/32, 1/16, 1/8\}$.
-- `gradient`: choose actions according to $\softmax$ distribution, updating the
-  parameters using SGD and MLE. Plot results for $α ∈ \{1/16, 1/8, 1/4, 1/2\}$.
+- `gradient`: choose actions according to softmax distribution, updating the
+  parameters using SGD to maximize expected reward. Plot results for
+  $α ∈ \{1/16, 1/8, 1/4, 1/2\}$.
 
 This task will be evaluated manually and you should submit the Python source and
 the generated graph.
