@@ -32,8 +32,7 @@ for all modes together in a single graph.
   fixed learning rate `alpha`. Plot results for `initial`$=1$, $α=0.15$ and
   $ε ∈ \{1/128, 1/64, 1/32, 1/16\}$.
 - `ucb`: perform UCB search with confidence level `c` and computing the value
-  function using averaging. Plot results for `c`$=1$ and
-  $ε ∈ \{1/128, 1/64, 1/32, 1/16, 1/8\}$.
+  function using averaging. Plot results for $c ∈ \{1/4, 1/2, 1, 2, 4\}$.
 - `gradient`: choose actions according to softmax distribution, updating the
   parameters using SGD to maximize expected reward. Plot results for
   $α ∈ \{1/16, 1/8, 1/4, 1/2\}$.
