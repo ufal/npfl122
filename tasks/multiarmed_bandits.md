@@ -4,7 +4,7 @@
 
 Perform a parameter study of various approaches to solving multiarmed bandits.
 For every hyperparameter choice, perform 1000 episodes, each consisting of
-1000 trials, and report average obtained reward.
+1000 trials, and report averaged return (a single number).
 
 Start with the [multiarmed_bandits.py](https://github.com/ufal/npfl122/tree/master/labs/01/multiarmed_bandits.py)
 template, which defines `MultiArmedBandits` environment. We use API based on
