@@ -16,11 +16,11 @@ which implements the gridworld mechanics, by providing the following methods:
   - `reward`: reward of the outcome
   - `new_state`: new state of the outcome
 
-Implement policy iteration algorithm, with the number of iterations specified by
-`--iterations` parameter. Start with value function of all zeros and during
-policy evaluation, use the current value function and perform one application of
-the Bellman equation. Perform the policy evaluation synchronously (i.e., do not
-overwrite the current value function when computing its improvement).
+Implement policy iteration algorithm, with `--steps` steps of policy
+evaluation/policy improvement. During policy evaluation, use the current value
+function and perform `--iterations` applications of the Bellman equation.
+Perform the policy evaluation synchronously (i.e., do not overwrite the current
+value function when computing its improvement).
 
 After given number of iterations, print the resulting value function
 and resulting policy.

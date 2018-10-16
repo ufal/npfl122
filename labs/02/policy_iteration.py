@@ -40,16 +40,18 @@ if __name__ == "__main__":
     # Parse arguments
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--iterations", default=10, type=int, help="Number of policy evaluation/improvements to perform.")
+    parser.add_argument("--steps", default=10, type=int, help="Number of policy evaluation/improvements to perform.")
+    parser.add_argument("--iterations", default=1, type=int, help="Number of iterations in policy evaluation step.")
     args = parser.parse_args()
 
     # Start with zero value function
     value_function = [0] * GridWorld.states()
 
-    # TODO: Implement policy iteration algorithm, with `args.iterations` iterations.
-    # During policy evaluation, use the current value function and perform one application of
-    # the Bellman equation. Perform the policy evaluation synchronously (i.e., do not
-    # overwrite the current value function when computing its improvement).
+    # TODO: Implement policy iteration algorithm, with `args.steps` steps of
+    # policy evaluation/policy improvement. During policy evaluation, use the
+    # current value function and perform `args.iterations` applications of the
+    # Bellman equation. Perform the policy evaluation synchronously (i.e., do
+    # not overwrite the current value function when computing its improvement).
 
     # TODO: Generate the final policy in a variable `policy`, containing action 0-3 for each GridWorld state.
 
