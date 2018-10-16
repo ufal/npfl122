@@ -4,7 +4,7 @@
 
 Consider the following gridworld:
 
-<div style="text-align: center"><img src="https://raw.githubusercontent.com/ufal/npfl122/master/tasks/policy_iteration.svg?sanitize=true" style="width: 80%"></div>
+![gridworld example](https://raw.githubusercontent.com/ufal/npfl122/master/tasks/policy_iteration.svg?sanitize=true)
 
 Start with [policy_iteration.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration.py),
 which implements the gridworld mechanics, by providing the following methods:
