@@ -21,7 +21,7 @@ evaluation/policy improvement. During policy evaluation, use the current value
 function and perform `--iterations` applications of the Bellman equation.
 Perform the policy evaluation synchronously (i.e., do not overwrite the current
 value function when computing its improvement). Assume the initial policy is
-uniform and initial value function zero.
+“go North” and initial value function is zero.
 
 After given number of iterations, print the resulting value function
 and resulting policy.
