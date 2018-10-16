@@ -4,7 +4,7 @@
 
 Consider the following gridworld:
 
-<img src="https://raw.githubusercontent.com/ufal/npfl122/master/tasks/policy_iteration.svg?sanitize=true" style="width: 100%">
+<div style="text-align: center"><img src="https://raw.githubusercontent.com/ufal/npfl122/master/tasks/policy_iteration.svg?sanitize=true" style="width: 80%"></div>
 
 Start with [policy_iteration.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration.py),
 which implements the gridworld mechanics, by providing the following methods:
@@ -20,7 +20,8 @@ Implement policy iteration algorithm, with `--steps` steps of policy
 evaluation/policy improvement. During policy evaluation, use the current value
 function and perform `--iterations` applications of the Bellman equation.
 Perform the policy evaluation synchronously (i.e., do not overwrite the current
-value function when computing its improvement).
+value function when computing its improvement). Assume the initial policy is
+uniform and initial value function zero.
 
 After given number of iterations, print the resulting value function
 and resulting policy.
