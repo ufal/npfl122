@@ -38,6 +38,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--steps", default=10, type=int, help="Number of policy evaluation/improvements to perform.")
     parser.add_argument("--iterations", default=1, type=int, help="Number of iterations in policy evaluation step.")
+    parser.add_argument("--gamma", default=1.0, type=float, help="Discount factor.")
     args = parser.parse_args()
 
     # Start with zero value function and "go North" policy
