@@ -23,5 +23,11 @@ Perform the policy evaluation synchronously (i.e., do not overwrite the current
 value function when computing its improvement). Assume the initial policy is
 “go North” and initial value function is zero.
 
-After given number of iterations, print the resulting value function
-and resulting policy.
+After given number of steps and iterations, print the resulting value function
+and resulting policy. For example, the output after 4 steps and 4 iterations
+should be:
+```
+    9.15→   10.30→   11.32→   12.33↑
+    8.12↑             3.35←    2.58←
+    6.95↑    5.90←    4.66←   -4.93↓
+```
