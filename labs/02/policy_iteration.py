@@ -10,13 +10,9 @@ class GridWorld:
 
     # Actions are ↑ → ↓ ←; with probability 80% they are performed as requested,
     # with 10% move 90° CCW is performed, with 10% move 90° CW is performed.
-    @staticmethod
-    def states():
-        return 11
+    states = 11
 
-    @staticmethod
-    def actions():
-        return ["↑", "→", "↓", "←"]
+    actions = ["↑", "→", "↓", "←"]
 
     @staticmethod
     def step(state, action):
@@ -45,7 +41,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Start with zero value function
-    value_function = [0] * GridWorld.states()
+    value_function = [0] * GridWorld.states
 
     # TODO: Implement policy iteration algorithm, with `args.steps` steps of
     # policy evaluation/policy improvement. During policy evaluation, use the
@@ -56,5 +52,10 @@ if __name__ == "__main__":
     # TODO: Generate the final policy in a variable `policy`, containing action 0-3 for each GridWorld state.
 
     # Print results
-    print(" ".join(map(lambda value: "{:.2f}".format(value), value_function)))
-    print(" ".join(map(lambda action: GridWorld.actions()[action], policy)))
+    for l in range(3):
+        for c in range(4):
+            state = l * 4 + c
+            if state >= 5: state -= 1
+            print("        " if l == 1 and c == 1 else "{:-8.2f}".format(value_function[state]), end="")
+            print(" " if l == 1 and c == 1 else GridWorld.actions[policy[state]], end="")
+        print()
