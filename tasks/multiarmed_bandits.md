@@ -1,5 +1,5 @@
 ### Assignment: multiarmed_bandits
-#### Date: Deadline: Sun 21, 23:59
+#### Date: Deadline: Oct 21, 23:59
 #### Points: **compulsory**
 
 Perform a parameter study of various approaches to solving multiarmed bandits.
