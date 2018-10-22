@@ -2,3 +2,4 @@
 
 ### Lecture: 4. Eligibility Traces, Function Approximation
 #### Date: Nov 05
+#### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides/?04
