@@ -7,7 +7,7 @@ environment from the [OpenAI Gym](https://gym.openai.com/) using the Q-learning
 reinforcement learning algorithm. Note that this task does not require
 TensorFlow.
 
-Use the supplied [cart_pole_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/03/cart_pole_evaluator.py)
+Use the supplied [mountain_car_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/03/mountain_car_evaluator.py)
 module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py)
 to interact with the discretized environment. The environment
 methods and properties are described in the `monte_carlo` assignment.
