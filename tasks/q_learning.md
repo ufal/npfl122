@@ -13,7 +13,7 @@ to interact with the discretized environment. The environment
 methods and properties are described in the `monte_carlo` assignment.
 Your goal is to reach an average reward of -150 during 100 evaluation episodes.
 
-You can start with the [monte_carlo.py](https://github.com/ufal/npfl122/tree/master/labs/03/q_learning.py)
+You can start with the [q_learning.py](https://github.com/ufal/npfl122/tree/master/labs/03/q_learning.py)
 template, which parses several useful parameters, creates the environment
 and illustrates the overall usage. Note that setting hyperparameters of
 Q-learning is a bit tricky – I usualy start with a larger value of $ε$ (like 0.2
