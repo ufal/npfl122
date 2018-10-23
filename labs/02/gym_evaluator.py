@@ -17,11 +17,17 @@ class GymEnvironment:
         self._episode_returns = []
 
     def _maybe_discretize(self, observation):
-        if self._bins is not None:
+        if self._separators is not None:
             buckets = np.array(observation, dtype=np.int)
             for i in range(len(observation)):
                 buckets[i] = np.digitize(observation[i], self._separators[i])
-            observation = np.polyval(buckets, self._bins)
+            if self._bins:
+                observation = np.polyval(buckets, self._bins)
+            else:
+                observation = 0
+                for i in range(len(self._separators)):
+                    observation *= 1 + len(self._separators[i])
+                    observation += buckets[i]
 
         return observation
 
@@ -29,11 +35,16 @@ class GymEnvironment:
     def states(self):
         if self._bins is not None:
             return self._bins ** len(self._separators)
+        if self._separators is not None:
+            states = 1
+            for separator in self._separators:
+                states *= 1 + len(separator)
+            return states
         raise RuntimeError("Continuous environments have infinitely many states")
 
     @property
     def state_shape(self):
-        if self._bins is not None:
+        if self._separators is not None:
             return []
         else:
             return list(self._env.observation_space.shape)
