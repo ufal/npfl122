@@ -1,5 +1,5 @@
-### Assignment: q_learning
-#### Date: Deadline: Nov 04, 23:59
+### Assignment: lunar_lander
+#### Date: Deadline: Nov 11, 23:59
 #### Points: **compulsory** & **5 bonus**
 
 Solve the [LunarLander-v2 environment](https://gym.openai.com/envs/LunarLander-v2)
