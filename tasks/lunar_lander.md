@@ -1,6 +1,6 @@
 ### Assignment: lunar_lander
 #### Date: Deadline: Nov 11, 23:59
-#### Points: **compulsory** & **5 bonus**
+#### Points: **compulsory** & **7 bonus**
 
 Solve the [LunarLander-v2 environment](https://gym.openai.com/envs/LunarLander-v2)
 environment from the [OpenAI Gym](https://gym.openai.com/). Note that this task
@@ -21,7 +21,7 @@ During evaluation in ReCodEx, three different random seeds will be employed, and
 you need to reach the required return on all of them. Time limit for each test
 is 5 minutes.
 
-The task is additionally a _competition_ and at most 5 points will be awarded
+The task is additionally a _competition_ and at most 7 points will be awarded
 according to relative ordering of your solution performances.
 
 You can start with the [lunar_lander.py](https://github.com/ufal/npfl122/tree/master/labs/03/lunar_lander.py)
