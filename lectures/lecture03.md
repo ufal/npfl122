@@ -2,6 +2,7 @@
 #### Date: Oct 22
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides/?03
 #### Lecture assignment: q_learning
+#### Lecture assignment: lunar_lander
 
 - Model-free and model-based methods, using state-value or action-value
   functions [Chapter 8 before Section 8.1, and Section 6.8 of RLB]
