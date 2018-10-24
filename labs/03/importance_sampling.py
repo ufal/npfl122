@@ -10,7 +10,6 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--episodes", default=1000, type=int, help="Training episodes.")
-    parser.add_argument("--importance_sampling", default="weighted", type=str, help="Kind of importance sampling.")
     args = parser.parse_args()
 
     # Create the environment
