@@ -1,16 +1,27 @@
 #!/usr/bin/env python3
+import math
 import sys
 
 import gym
 import numpy as np
 
 class GymEnvironment:
-    def __init__(self, env, bins=None, separators=None):
+    def __init__(self, env, separators=None, tiles=None):
         self._env = gym.make(env)
         self._env.seed(42)
 
-        self._bins = bins
         self._separators = separators
+        self._tiles = tiles
+        if self._separators is not None:
+            self._first_tile_states, self._rest_tiles_states = 1, 1
+            for separator in separators:
+                self._first_tile_states *= 1 + len(separator)
+                self._rest_tiles_states *= 2 + len(separator)
+            if tiles:
+                self._separator_offsets, self._separator_tops = [], []
+                for separator in separators:
+                    self._separator_offsets.append(0 if len(separator) <= 1 else (separator[1] - separator[0]) / tiles)
+                    self._separator_tops.append(math.inf if len(separator) <= 1 else separator[-1] + (separator[1] - separator[0]))
 
         self._evaluating_from = None
         self._episode_return = 0
@@ -18,34 +29,41 @@ class GymEnvironment:
 
     def _maybe_discretize(self, observation):
         if self._separators is not None:
-            buckets = np.array(observation, dtype=np.int)
-            for i in range(len(observation)):
-                buckets[i] = np.digitize(observation[i], self._separators[i])
-            if self._bins:
-                observation = np.polyval(buckets, self._bins)
+            state = 0
+            for i in range(len(self._separators)):
+                state *= 1 + len(self._separators[i])
+                state += np.digitize(observation[i], self._separators[i])
+            if self._tiles:
+                states = [state]
+                for t in range(1, self._tiles):
+                    state = 0
+                    for i in range(len(self._separators)):
+                        state *= 2 + len(self._separators[i])
+                        value = observation[i] + ((t * (2 * i + 1)) % self._tiles) * self._separator_offsets[i]
+                        if value > self._separator_tops[i]:
+                            state += 1 + len(self._separators[i])
+                        else:
+                            state += np.digitize(value, self._separators[i])
+                    states.append(self._first_tile_states + (t - 1) * self._rest_tiles_states + state)
+                observation = states
             else:
-                observation = 0
-                for i in range(len(self._separators)):
-                    observation *= 1 + len(self._separators[i])
-                    observation += buckets[i]
+                observation = state
 
         return observation
 
     @property
     def states(self):
-        if self._bins is not None:
-            return self._bins ** len(self._separators)
         if self._separators is not None:
-            states = 1
-            for separator in self._separators:
-                states *= 1 + len(separator)
+            states = self._first_tile_states
+            if self._tiles:
+                states += (self._tiles - 1) * self._rest_tiles_states
             return states
         raise RuntimeError("Continuous environments have infinitely many states")
 
     @property
     def state_shape(self):
         if self._separators is not None:
-            return []
+            return [] if not self._tiles else [self._tiles]
         else:
             return list(self._env.observation_space.shape)
 

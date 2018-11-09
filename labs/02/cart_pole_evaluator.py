@@ -12,6 +12,6 @@ def environment(discrete=True):
             np.linspace(-0.5, 0.5, num=bins + 1)[1:-1], # cart velocity
             np.linspace(-2, 2, num=bins + 1)[1:-1],     # pole angle velocity
         ]
-        return gym_evaluator.GymEnvironment("CartPole-v1", bins, separators)
+        return gym_evaluator.GymEnvironment("CartPole-v1", separators)
 
     return gym_evaluator.GymEnvironment("CartPole-v1")
