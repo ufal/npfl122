@@ -7,7 +7,7 @@ environment from the [OpenAI Gym](https://gym.openai.com/) using the Monte Carlo
 reinforcement learning algorithm.
 
 Use the supplied [cart_pole_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/cart_pole_evaluator.py)
-module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py)
+module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py))
 to interact with the discretized environment. The environment has the
 following methods and properties:
 - `states`: number of states of the environment

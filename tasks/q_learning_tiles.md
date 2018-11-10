@@ -8,7 +8,7 @@ environment using linear function approximation with tile coding.
 Your goal is to reach an average reward of -110 during 100 evaluation episodes.
 
 Use the updated [mountain_car_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/03/mountain_car_evaluator.py)
-module (depending on updated [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py)
+module (depending on updated [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py))
 to interact with the discretized environment. The environment
 methods and properties are described in the `monte_carlo` assignment, with the
 following change:
