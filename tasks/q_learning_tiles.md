@@ -4,21 +4,24 @@
 
 Improve the `q_learning` task performance on the
 [MountainCar-v0 environment](https://gym.openai.com/envs/MountainCar-v0)
-environment using tile coding. Your goal is to reach an average reward of -110
-during 100 evaluation episodes.
+environment using linear function approximation with tile coding.
+Your goal is to reach an average reward of -110 during 100 evaluation episodes.
 
 Use the updated [mountain_car_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/03/mountain_car_evaluator.py)
 module (depending on updated [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py)
 to interact with the discretized environment. The environment
 methods and properties are described in the `monte_carlo` assignment, with the
 following change:
-- The `state` returned by the `env.step` method is a _list_ containing tile
-  indices of the current state. Each of these indices are smaller than
-  `env.states` (and therefore `env.states` returns in fact a number of
-  tiles, or weights in the parametrization of the `Q` function approximation).
+- The `env.weights` method return the number of weights of the linear function
+  approximation.
+- The `state` returned by the `env.step` method is a _list_ containing weight
+  indices of the current state. The (action-)value function for a state is
+  therefore approximated as a sum of the weights whose indices are returned
+  by `env.step`.
 
-  The default number of offset tiles is `args.tiles=8`, but you can use any
-  number you want (but the assignment is solvable with 8).
+  The default number of tiles in tile encoding (i.e., the size of the list with
+  weight indices) is `args.tiles=8`, but you can use any number you want (but
+  the assignment is solvable with 8).
 
 You can start with the [q_learning_tiles.py](https://github.com/ufal/npfl122/tree/master/labs/04/q_learning_tiles.py)
 template, which parses several useful parameters, creates the environment

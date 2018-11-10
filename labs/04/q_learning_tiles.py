@@ -24,8 +24,8 @@ if __name__ == "__main__":
     # Create the environment
     env = mountain_car_evaluator.environment(tiles=args.tiles)
 
-    # Implement Q-learning RL algorithm.
-    Q = np.zeros([env.states, env.actions])
+    # Implement Q-learning RL algorithm, using linear approximation.
+    W = np.zeros([env.weights, env.actions])
     epsilon = args.epsilon
     alpha = args.alpha / args.tiles
 
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
             next_state, reward, done, _ = env.step(action)
 
-            # TODO: Update Q values
+            # TODO: Update W values
 
             state = next_state
             if done:

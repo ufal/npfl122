@@ -61,6 +61,12 @@ class GymEnvironment:
         raise RuntimeError("Continuous environments have infinitely many states")
 
     @property
+    def weights(self):
+        if self._separators is not None and self._tiles:
+            return self._first_tile_states + (self._tiles - 1) * self._rest_tiles_states
+        raise RuntimeError("Only environments with tile encoding have weights")
+
+    @property
     def state_shape(self):
         if self._separators is not None:
             return [] if not self._tiles else [self._tiles]
