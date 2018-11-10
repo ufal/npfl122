@@ -11,7 +11,7 @@ Use the updated [mountain_car_evaluator.py](https://github.com/ufal/npfl122/tree
 module (depending on updated [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py))
 to interact with the discretized environment. The environment
 methods and properties are described in the `monte_carlo` assignment, with the
-following change:
+following changes:
 - The `env.weights` method return the number of weights of the linear function
   approximation.
 - The `state` returned by the `env.step` method is a _list_ containing weight
