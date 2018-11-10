@@ -15,9 +15,10 @@ following change:
 - The `env.weights` method return the number of weights of the linear function
   approximation.
 - The `state` returned by the `env.step` method is a _list_ containing weight
-  indices of the current state. The (action-)value function for a state is
-  therefore approximated as a sum of the weights whose indices are returned
-  by `env.step`.
+  indices of the current state (i.e., the feature vector of the state consists
+  of zeros and ones, and only the indices of the ones are returned). The
+  (action-)value function for a state is therefore approximated as a sum of the
+  weights whose indices are returned by `env.step`.
 
   The default number of tiles in tile encoding (i.e., the size of the list with
   weight indices) is `args.tiles=8`, but you can use any number you want (but
