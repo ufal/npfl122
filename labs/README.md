@@ -12,7 +12,7 @@ the packages inside it by running
 `VENV_DIR/bin/pip3 install tensorflow==1.11.0 gym==0.9.5 scipy box2d-py atari-py`.
 On Windows, you can use third-party precompiled versions of
 [box2d-py](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
-and [atary-py](https://github.com/Kojoley/atari-py/releases).
+and [atari-py](https://github.com/Kojoley/atari-py/releases).
 
 ### Teamwork
 
