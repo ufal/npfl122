@@ -14,6 +14,15 @@ On Windows, you can use third-party precompiled versions of
 [box2d-py](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
 and [atari-py](https://github.com/Kojoley/atari-py/releases).
 
+### Submitting Data Files to ReCodEx
+
+Even if [ReCodEx](https://recodex.mff.cuni.cz/) allows submitting data files
+beside Python sources, the data files are not available during evaluation.
+Therefore, in order to submit models, you need to embed them in Python sources.
+You can use [the `embed.py` script](https://github.com/ufal/npfl122/blob/master/labs/embed.py),
+which compressed and embeds given files and directories into a Python module
+providing an `extract()` method.
+
 ### Teamwork
 
 Working in teams of size 2 (or at most 3) is encouraged. All members of the team
