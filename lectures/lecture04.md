@@ -8,6 +8,4 @@
 - Off-policy n-step Sarsa [Section 7.3 of RLB]
 - Tree backup algorithm [Section 7.5 of RLB]
 - Function approximation [Sections 9-9.3 of RLB]
-- Linear function approximation [Section 9.4 of RLB, without the Proof of
-  Convergence if Linear TD(0)]
 - Tile coding [Section 9.5.4 of RLB]
