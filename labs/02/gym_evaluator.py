@@ -26,6 +26,7 @@ class GymEnvironment:
         self._evaluating_from = None
         self._episode_return = 0
         self._episode_returns = []
+        self._episode_ended = True
 
     def _maybe_discretize(self, observation):
         if self._separators is not None:
@@ -85,13 +86,18 @@ class GymEnvironment:
         if start_evaluate and self._evaluating_from is None:
             self._evaluating_from = self.episode
 
+        self._episode_ended = False
         return self._maybe_discretize(self._env.reset())
 
     def step(self, action):
+        if self._episode_ended:
+            raise RuntimeError("Cannot run `step` on environments without an active episode, run `reset` first")
+
         observation, reward, done, info = self._env.step(action)
 
         self._episode_return += reward
         if done:
+            self._episode_ended = True
             self._episode_returns.append(self._episode_return)
 
             if self.episode % 10 == 0:
