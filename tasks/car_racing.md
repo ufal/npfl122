@@ -1,6 +1,6 @@
 ### Assignment: car_racing
 #### Date: Deadline: Dec 2, 23:59
-#### Points: **7** bonus only
+#### Points: **10** bonus only
 
 In this bonus-only exercise to play with Deep Q Network and its variants,
 try solving the [CarRacing-v0 environment](https://gym.openai.com/envs/CarRacing-v0)
