@@ -1,5 +1,5 @@
 ### Assignment: car_racing
-#### Date: Deadline: Nov 25, 23:59
+#### Date: Deadline: Dec 2, 23:59
 #### Points: **7** bonus only
 
 In this bonus-only exercise to play with Deep Q Network and its variants,
