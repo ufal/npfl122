@@ -31,5 +31,5 @@ the assignment, even if both N-step Sarsa and Tree Backup converge a little
 faster.
 
 During evaluation in ReCodEx, three different random seeds will be employed, and
-you will get a point for each setting where you reach the required reward.
-The time limit for each test is 5 minutes.
+you need to reach the required return on all of them. The time limit for each
+test is 5 minutes.

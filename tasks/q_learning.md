@@ -20,5 +20,5 @@ Q-learning is a bit tricky – I usualy start with a larger value of $ε$ (like 
 or even 0.5) an then gradually decrease it to almost zero.
 
 During evaluation in ReCodEx, three different random seeds will be employed, and
-you will get a point for each setting where you reach the required reward.
-The time limit for each test is 5 minutes.
+you need to reach the required return on all of them. The time limit for each
+test is 5 minutes.
