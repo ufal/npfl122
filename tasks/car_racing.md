@@ -18,7 +18,7 @@ and consist of an array with the following three elements:
 
 Internally you should generate discrete actions and convert them to the required
 representation before the `step` call. Good initial action space is to use
-9 actions -- a Cartesian product of 3 steering actions (left/right/none) and
+9 actions – a Cartesian product of 3 steering actions (left/right/none) and
 3 driving actions (gas/brake/none).
 
 Note that the [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_racing_evaluator.py)
