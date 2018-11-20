@@ -96,6 +96,8 @@ if __name__ == "__main__":
     while True:
         state, done = env.reset(True), False
         while not done:
-            probabilities = network.predict([state])[0]
+            # TODO: Compute action `probabilities` using `network.predict` and current `state`
+
+            # Choose greedy action this time
             action = np.argmax(probabilities)
             state, reward, done, _ = env.step(action)
