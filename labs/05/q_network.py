@@ -33,6 +33,11 @@ class Network:
             # Initialize variables
             self.session.run(tf.global_variables_initializer())
 
+    def copy_variables_from(self, other):
+        for variable, other_variable in zip(self.session.graph.get_collection(tf.GraphKeys.GLOBAL_VARIABLES),
+                                            other.session.graph.get_collection(tf.GraphKeys.GLOBAL_VARIABLES)):
+            variable.load(other_variable.eval(other.session), self.session)
+
     def predict(self, states):
         return self.session.run(self.predicted_values, {self.states: states})
 
