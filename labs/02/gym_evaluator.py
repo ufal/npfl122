@@ -76,7 +76,10 @@ class GymEnvironment:
 
     @property
     def actions(self):
-        return self._env.action_space.n
+        if hasattr(self._env.action_space, "n"):
+            return self._env.action_space.n
+        else:
+            raise RuntimeError("The environment has continuous action space, cannot return number of actions")
 
     @property
     def episode(self):
