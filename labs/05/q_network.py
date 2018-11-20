@@ -17,7 +17,8 @@ class Network:
     def construct(self, args, state_shape, num_actions):
         with self.session.graph.as_default():
             self.states = tf.placeholder(tf.float32, [None] + state_shape)
-            self.q_values = tf.placeholder(tf.float32, [None, num_actions])
+            self.actions = tf.placeholder(tf.int32, [None])
+            self.q_values = tf.placeholder(tf.float32, [None])
 
             # Compute the q_values
             hidden = self.states
@@ -26,7 +27,7 @@ class Network:
             self.predicted_values = tf.layers.dense(hidden, num_actions)
 
             # Training
-            loss = tf.losses.mean_squared_error(self.q_values, self.predicted_values)
+            loss = tf.losses.mean_squared_error(self.q_values, tf.boolean_mask(self.predicted_values, tf.one_hot(self.actions, num_actions)))
             global_step = tf.train.create_global_step()
             self.training = tf.train.AdamOptimizer(args.learning_rate).minimize(loss, global_step=global_step, name="training")
 
@@ -41,8 +42,8 @@ class Network:
     def predict(self, states):
         return self.session.run(self.predicted_values, {self.states: states})
 
-    def train(self, states, q_values):
-        self.session.run(self.training, {self.states: states, self.q_values: q_values})
+    def train(self, states, actions, q_values):
+        self.session.run(self.training, {self.states: states, self.actions: actions, self.q_values: q_values})
 
 if __name__ == "__main__":
     # Fix random seed
@@ -97,8 +98,9 @@ if __name__ == "__main__":
             # of size `args.batch_size` (you can train on every `args.batch_size`-th step,
             # but in this simple task also on each step).
             #
-            # After you choose `states` and their target `q_values`, you train the network as
-            #   network.train(states, q_values)
+            # After you choose `states`, `actions` and their target `q_values`,
+            # you train the network as
+            #   network.train(states, actions, q_values)
 
             state = next_state
 
