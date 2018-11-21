@@ -349,6 +349,15 @@ class CarRacingCustomDraw(gym.Env):
         'video.frames_per_second' : FPS
     }
 
+    color_black = np.array([0., 0., 0.])
+    color_white = np.array([1., 1., 1.])
+    color_red = np.array([1., 0., 0.])
+    color_green = np.array([0., 1., 0.])
+    color_grass_dark = np.array([0.4, 0.8, 0.4])
+    color_grass_light = np.array([0.4, 0.9, 0.4])
+    color_abs_light = np.array([0., 0., 1.])
+    color_abs_dark = np.array([0.2, 0., 1.])
+
     def __init__(self):
         self._seed()
         self.contactListener_keepref = FrictionDetector(self)
@@ -363,6 +372,7 @@ class CarRacingCustomDraw(gym.Env):
         self.state = np.zeros([STATE_H, STATE_W, 3], dtype=np.float32)
         self.action_space = spaces.Box( np.array([-1,0,0]), np.array([+1,+1,+1]))  # steer, gas, brake
         self.observation_space = spaces.Box(low=0, high=255, shape=(STATE_H, STATE_W, 3))
+        self.frame_skip = 1
 
     def _seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
@@ -515,7 +525,7 @@ class CarRacingCustomDraw(gym.Env):
                 b1_r = (x1 + side*(TRACK_WIDTH+BORDER)*math.cos(beta1), y1 + side*(TRACK_WIDTH+BORDER)*math.sin(beta1))
                 b2_l = (x2 + side* TRACK_WIDTH        *math.cos(beta2), y2 + side* TRACK_WIDTH        *math.sin(beta2))
                 b2_r = (x2 + side*(TRACK_WIDTH+BORDER)*math.cos(beta2), y2 + side*(TRACK_WIDTH+BORDER)*math.sin(beta2))
-                self.road_poly.append(( [b1_l, b1_r, b2_r, b2_l], (1,1,1) if i%2==0 else (1,0,0) ))
+                self.road_poly.append(( [b1_l, b1_r, b2_r, b2_l], self.color_white if i%2==0 else self.color_red ))
         self.track = track
         return True
 
@@ -527,6 +537,8 @@ class CarRacingCustomDraw(gym.Env):
         self.t = 0.0
         self.road_poly = []
         self.human_render = False
+        self.frames = 0
+        self.frame_skip = 1
 
         while True:
             success = self._create_track()
@@ -537,34 +549,40 @@ class CarRacingCustomDraw(gym.Env):
         return self._step(None)[0]
 
     def _step(self, action):
-        if action is not None:
-            self.car.steer(-action[0])
-            self.car.gas(action[1])
-            self.car.brake(action[2])
+        total_reward = 0
+        for _ in range(max(self.frame_skip, 1)):
+            if action is not None:
+                self.car.steer(-action[0])
+                self.car.gas(action[1])
+                self.car.brake(action[2])
 
-        self.car.step(1.0/FPS)
-        self.world.Step(1.0/FPS, 6*30, 2*30)
-        self.t += 1.0/FPS
+            self.car.step(1.0/FPS)
+            self.world.Step(1.0/FPS, 6*30, 2*30)
+            self.t += 1.0/FPS
+
+            step_reward = 0
+            done = False
+            if action is not None: # First step without action, called from reset()
+                self.reward -= 0.1
+                # We actually don't want to count fuel spent, we want car to be faster.
+                #self.reward -=  10 * self.car.fuel_spent / ENGINE_POWER
+                self.car.fuel_spent = 0.0
+                step_reward = self.reward - self.prev_reward
+                self.prev_reward = self.reward
+                if self.tile_visited_count==len(self.track):
+                    done = True
+                x, y = self.car.hull.position
+                if abs(x) > PLAYFIELD or abs(y) > PLAYFIELD:
+                    done = True
+                    step_reward = -100
+
+            total_reward += step_reward
+            self.frames += 1
+            if self.frames > 1000: done = True
+            if done: break
 
         self._draw()
-
-        step_reward = 0
-        done = False
-        if action is not None: # First step without action, called from reset()
-            self.reward -= 0.1
-            # We actually don't want to count fuel spent, we want car to be faster.
-            #self.reward -=  10 * self.car.fuel_spent / ENGINE_POWER
-            self.car.fuel_spent = 0.0
-            step_reward = self.reward - self.prev_reward
-            self.prev_reward = self.reward
-            if self.tile_visited_count==len(self.track):
-                done = True
-            x, y = self.car.hull.position
-            if abs(x) > PLAYFIELD or abs(y) > PLAYFIELD:
-                done = True
-                step_reward = -100
-
-        return self.state, step_reward, done, {}
+        return self.state, total_reward, done, {}
 
     def _render(self, mode='human', close=False):
         if close:
@@ -604,16 +622,17 @@ class CarRacingCustomDraw(gym.Env):
                                  sin, cos, 0.0,
                                  0.0, 0.0, 1.0)
 
+            def apply_and_swap(self, point):
+                sa, sb, sc, sd, se, sf, _, _, _ = self.matrix
+                x, y = point
+                return (x * sd + y * se + sf, x * sa + y * sb + sc)
+
             def __mul__(self, other):
                 sa, sb, sc, sd, se, sf, _, _, _ = self.matrix
-                if isinstance(other, Transform):
-                    oa, ob, oc, od, oe, of, _, _, _ = other.matrix
-                    return Transform(sa * oa + sb * od, sa * ob + sb * oe, sa * oc + sb * of + sc,
-                                     sd * oa + se * od, sd * ob + se * oe, sd * oc + se * of + sf,
-                                     0.0, 0.0, 1.0)
-                else:
-                    vx, vy = other
-                    return (vx * sa + vy * sb + sc, vx * sd + vy * se + sf)
+                oa, ob, oc, od, oe, of, _, _, _ = other.matrix
+                return Transform(sa * oa + sb * od, sa * ob + sb * oe, sa * oc + sb * of + sc,
+                                 sd * oa + se * od, sd * ob + se * oe, sd * oc + se * of + sf,
+                                 0.0, 0.0, 1.0)
 
             def __imul__(self, other):
                 return self.__mul__(other)
@@ -622,7 +641,7 @@ class CarRacingCustomDraw(gym.Env):
             def __init__(self, env):
                 self.env = env
             def draw_polygon(self, path, color):
-                self.env._fill_polygon(self.env._transform_poly(path), self.env.state, color)
+                self.env._fill_polygon(path, self.env.state, color)
 
         if "t" not in self.__dict__: return  # reset() not called yet
 
@@ -640,59 +659,64 @@ class CarRacingCustomDraw(gym.Env):
         self.transform *= Transform.translation(-scroll_x, -scroll_y)
 
         # Clear
-        self.state[:, :, :] = 0
+        self.state[:, :, :] = self.color_black
 
         # Draw road, car and indicators
-        self._render_road()
+        self._render_road(scroll_x, scroll_y, zoom)
         self.car.draw(Renderer(self), False)
         self._render_indicators()
 
 
-    def _render_road(self):
-        self._fill_polygon(self._transform_poly(
-            [(-PLAYFIELD, +PLAYFIELD),
-             (+PLAYFIELD, +PLAYFIELD),
-             (+PLAYFIELD, -PLAYFIELD),
-             (-PLAYFIELD, -PLAYFIELD)]), self.state, (0.4, 0.8, 0.4))
+    def _render_road(self, scroll_x, scroll_y, zoom):
+        self._fill_polygon([
+            (-PLAYFIELD, +PLAYFIELD),
+            (+PLAYFIELD, +PLAYFIELD),
+            (+PLAYFIELD, -PLAYFIELD),
+            (-PLAYFIELD, -PLAYFIELD)], self.state, self.color_grass_dark)
         k = PLAYFIELD/20.0
+        mindist = 2000000 / (zoom ** 2)
         for x in range(-20, 20, 2):
+            kx = k*x
+            dist = (kx - scroll_x) ** 2
+            if dist >= mindist: continue
             for y in range(-20, 20, 2):
-                self._fill_polygon(self._transform_poly(
-                    [(k*x + k, k*y + 0),
-                     (k*x + 0, k*y + 0),
-                     (k*x + 0, k*y + k),
-                     (k*x + k, k*y + k)]), self.state, (0.4, 0.9, 0.4))
+                ky = k * y
+                if dist + (ky - scroll_y) ** 2 >= mindist: continue
+                self._fill_polygon([
+                    (kx + k, ky + 0),
+                    (kx + 0, ky + 0),
+                    (kx + 0, ky + k),
+                    (kx + k, ky + k)], self.state, self.color_grass_light)
         for poly, color in self.road_poly:
-            self._fill_polygon(self._transform_poly(poly), self.state, color)
+            if (poly[0][0] - scroll_x) ** 2 + (poly[0][1] - scroll_y) ** 2 >= mindist: continue
+            self._fill_polygon(poly, self.state, color)
 
     def _render_indicators(self):
         s = STATE_W/40
         h = STATE_H/40
-        self._fill_polygon([(0, STATE_H), (STATE_W, STATE_H), (STATE_W, STATE_H - 5*h), (0, STATE_H - 5*h)], self.state, (0, 0, 0))
+        self._fill_polygon([(0, STATE_H), (STATE_W, STATE_H), (STATE_W, STATE_H - 5*h), (0, STATE_H - 5*h)], self.state,
+                           self.color_black, transform=False)
         def vertical_ind(place, val, color):
             self._fill_polygon([((place+0)*s, STATE_H-h-h*val),
                                 ((place+2)*s, STATE_H-h-h*val),
                                 ((place+2)*s, STATE_H-h),
-                                ((place+0)*s, STATE_H-h)], self.state, color)
+                                ((place+0)*s, STATE_H-h)], self.state, color, transform=False)
         def horiz_ind(place, val, color):
             self._fill_polygon([((place+0)*s, STATE_H-4*h),
                                 ((place+val)*s, STATE_H-4*h),
                                 ((place+val)*s, STATE_H-1.5*h),
-                                ((place+0)*s, STATE_H-1.5*h)], self.state, color)
+                                ((place+0)*s, STATE_H-1.5*h)], self.state, color, transform=False)
         true_speed = np.sqrt(np.square(self.car.hull.linearVelocity[0]) + np.square(self.car.hull.linearVelocity[1]))
-        vertical_ind(1, 0.02*true_speed, (1,1,1))
-        vertical_ind(4, 0.01*self.car.wheels[0].omega, (0.0,0,1)) # ABS sensors
-        vertical_ind(6, 0.01*self.car.wheels[1].omega, (0.0,0,1))
-        vertical_ind(8, 0.01*self.car.wheels[2].omega, (0.2,0,1))
-        vertical_ind(10,0.01*self.car.wheels[3].omega, (0.2,0,1))
-        horiz_ind(20, -10.0*self.car.wheels[0].joint.angle, (0,1,0))
-        horiz_ind(30, -0.8*self.car.hull.angularVelocity, (1,0,0))
+        vertical_ind(1, 0.02*true_speed, self.color_white)
+        vertical_ind(4, 0.01*self.car.wheels[0].omega, self.color_abs_light) # ABS sensors
+        vertical_ind(6, 0.01*self.car.wheels[1].omega, self.color_abs_light)
+        vertical_ind(8, 0.01*self.car.wheels[2].omega, self.color_abs_dark)
+        vertical_ind(10,0.01*self.car.wheels[3].omega, self.color_abs_dark)
+        horiz_ind(20, -10.0*self.car.wheels[0].joint.angle, self.color_green)
+        horiz_ind(30, -0.8*self.car.hull.angularVelocity, self.color_red)
 
-    def _transform_poly(self, polygon):
-        return [self.transform * point for point in polygon]
-
-    # Taken from https://github.com/luispedro/mahotas/blob/master/mahotas/polygon.py
-    def _fill_polygon(self, polygon, canvas, color):
+    # Adapted from https://github.com/luispedro/mahotas/blob/master/mahotas/polygon.py
+    def _fill_polygon(self, polygon, canvas, color, transform=True):
         '''
         fill_polygon([(y0,x0), (y1,x1),...], canvas, color=1)
         Draw a filled polygon in canvas
@@ -708,9 +732,18 @@ class CarRacingCustomDraw(gym.Env):
         # algorithm adapted from: http://www.alienryderflex.com/polygon_fill/
         if not len(polygon):
             return
-        polygon = [(float(y),float(x)) for x,y in polygon]
+
+        if transform:
+            polygon = [self.transform.apply_and_swap(point) for point in polygon]
+        else:
+            polygon = [(float(y), float(x)) for x, y in polygon]
+
         min_y = max(int(min(y for y,x in polygon)), 0)
-        max_y = min(max(int(max(y + 1 for y,x in polygon)), 0), canvas.shape[0] - 1)
+        if min_y >= canvas.shape[0]: return
+        max_y = min(max(int(max(y + 1 for y,x in polygon)), 0), canvas.shape[0])
+        if max_y <= 0: return
+        if min(x for y,x in polygon) >= canvas.shape[1]: return
+        if max(x for y,x in polygon) < 0: return
         for y in range(min_y, max_y):
             nodes = []
             j = -1
@@ -725,7 +758,7 @@ class CarRacingCustomDraw(gym.Env):
                 j = i
             nodes.sort()
             for n,nn in zip(nodes[::2],nodes[1::2]):
-                canvas[y, max(int(n), 0):min(max(int(nn), 0), canvas.shape[1]-1)] = color
+                canvas[y, max(int(n), 0):min(max(int(nn), 0), canvas.shape[1])] = color
 
 
 ###############################
@@ -735,13 +768,19 @@ class CarRacingCustomDraw(gym.Env):
 gym.envs.register(
     id="CarRacingCustomDraw-v0",
     entry_point=CarRacingCustomDraw,
-    max_episode_steps=1000,
     reward_threshold=900,
 )
 
 import gym_evaluator
 def environment():
-    return gym_evaluator.GymEnvironment("CarRacingCustomDraw-v0")
+    env = gym_evaluator.GymEnvironment("CarRacingCustomDraw-v0")
+
+    def step(action, frame_skip=1):
+        env._env.unwrapped.frame_skip = frame_skip
+        return gym_evaluator.GymEnvironment.step(env, action)
+    env.step = step
+
+    return env
 
 # Allow running the environment and  controlling it with arrows
 if __name__=="__main__":
