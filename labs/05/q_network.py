@@ -95,8 +95,7 @@ if __name__ == "__main__":
             replay_buffer.append(Transition(state, action, reward, done, next_state))
 
             # TODO: If the replay_buffer is large enough, preform a training batch
-            # of size `args.batch_size` (you can train on every `args.batch_size`-th step,
-            # but in this simple task also on each step).
+            # of `args.batch_size` uniformly randomly chosen transitions.
             #
             # After you choose `states`, `actions` and their target `q_values`,
             # you train the network as
