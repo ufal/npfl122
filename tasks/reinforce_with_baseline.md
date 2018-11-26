@@ -1,4 +1,4 @@
-### Assignment: reinforce
+### Assignment: reinforce_with_baseline
 #### Date: Deadline: Dec 09, 23:59
 #### Points: **compulsory**
 
