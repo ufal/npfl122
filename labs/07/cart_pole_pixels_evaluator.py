@@ -11,6 +11,8 @@ class CartPolePixels(gym.envs.classic_control.CartPoleEnv):
         self._image = np.zeros([80, 80, self._images], dtype=np.float32)
         self._viewer = None
 
+        self.observation_space = gym.spaces.Box(low=0., high=1., shape=(80, 80, self._images))
+
     def _reset(self):
         observation = super()._reset()
         for step in range(self._images - 1):
