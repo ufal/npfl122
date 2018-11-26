@@ -1,6 +1,7 @@
 ### Lecture: 7. Policy Gradient Methods
 #### Date: Nov 26
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides/?07
+#### Lecture assignment: reinforce_with_baseline
 
 - Policy Gradient Methods [Sections 13-13.1 of RLB]
 - Policy Gradient Theorem [Section 13.2 of RLB]
