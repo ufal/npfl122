@@ -13,6 +13,7 @@ the packages inside it by running
 On Windows, you can use third-party precompiled versions of
 [box2d-py](https://www.lfd.uci.edu/~gohlke/pythonlibs/)
 and [atari-py](https://github.com/Kojoley/atari-py/releases).
+Note that when your CPU does not support AVX, you need to install TensorFlow 1.5.
 
 ### Submitting Data Files to ReCodEx
 
