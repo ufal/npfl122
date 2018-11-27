@@ -1,6 +1,6 @@
 ### Assignment: cart_pole_pixels
 #### Date: Deadline: Dec 09, 23:59
-#### Points: **compulsory** & **5 bonus**
+#### Points: **compulsory** & **7 bonus**
 
 The supplied [cart_pole_pixels_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/07/cart_pole_pixels_evaluator.py)
 module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py))
@@ -13,7 +13,7 @@ return of 50 during 100 evaluation episodes. During evaluation in ReCodEx, two
 different random seeds will be employed, and you need to reach the required
 return on all of them. Time limit for each test is 5 minutes.
 
-The task is additionally a _competition_ and at most 5 points will be awarded
+The task is additionally a _competition_ and at most 7 points will be awarded
 according to relative ordering of your solution performances.
 
 The [cart_pole_pixels.py](https://github.com/ufal/npfl122/tree/master/labs/07/cart_pole_pixels.py)
