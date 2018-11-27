@@ -28,7 +28,7 @@ class CartPolePixels(gym.envs.classic_control.CartPoleEnv):
             if self._viewer is not None:
                 self._viewer.close()
                 self._viewer = None
-                return
+            return
 
         if self._viewer is None:
             from gym.envs.classic_control import rendering
