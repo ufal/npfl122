@@ -582,7 +582,7 @@ class CarRacingCustomDraw(gym.Env):
             if done: break
 
         self._draw()
-        return self.state, total_reward, done, {}
+        return np.copy(self.state), total_reward, done, {}
 
     def _render(self, mode='human', close=False):
         if close:
