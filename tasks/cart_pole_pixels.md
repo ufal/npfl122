@@ -11,7 +11,7 @@ as an $80×80$ image with three channels, with each channel representing one tim
 To pass the compulsory part of the assignment, you need to reach an average
 return of 50 during 100 evaluation episodes. During evaluation in ReCodEx, two
 different random seeds will be employed, and you need to reach the required
-return on all of them. Time limit for each test is 5 minutes.
+return on all of them. Time limit for each test is 10 minutes.
 
 The task is additionally a _competition_ and at most 7 points will be awarded
 according to relative ordering of your solution performances.
