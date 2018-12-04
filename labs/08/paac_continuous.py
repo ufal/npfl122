@@ -14,7 +14,7 @@ class Network:
 
     def construct(self, args, tiles, weights, tiles, actions):
         with self.session.graph.as_default():
-            self.states = tf.placeholder(tf.int32, [None, None])
+            self.states = tf.placeholder(tf.int32, [None, weights])
             self.actions = tf.placeholder(tf.float32, [None, actions])
             self.returns = tf.placeholder(tf.float32, [None])
 
