@@ -23,7 +23,7 @@ class Network:
             # - add a fully connected layer with num_actions and no activation, computing `logits`
             # - compute `self.probabilities` as tf.nn.softmax of `logits`
 
-            # TODO: Compute `baseline`, by starting with a fully connected layer processing `self.states` and
+            # TODO: Compute `baseline`, by starting with `self.states` and
             # - add a fully connected layer of size args.hidden_layer and ReLU activation
             # - add a fully connected layer with 1 output and no activation
             # - modify the result to have shape `[batch_size]` (you can use for example `[:, 0]`)
