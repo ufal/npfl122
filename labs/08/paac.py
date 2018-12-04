@@ -31,8 +31,8 @@ class Network:
             # TODO: Compute `loss` as a sum of three losses:
             # - sparse softmax cross entropy of `self.actions` and `logits`,
             #   weighted by `self.returns - tf.stop_gradient(self.values)`.
-            # - negative value of the distribution entropy (use `entropy` method of `tf.distribution.Categorical`)
-            #   weighted by `args.entropy_regularization`.
+            # - negative value of the distribution entropy (use `entropy` method of
+            #   `tf.distributions.Categorical`) weighted by `args.entropy_regularization`.
             # - mean square error of the `self.returns` and `self.values`
 
             global_step = tf.train.create_global_step()

@@ -30,7 +30,7 @@ class Network:
             # For `self.sds`, apply an additional `tf.nn.softplus` (or use it as
             # activation for its output layer.
 
-            # TODO: Compute `action_distribution` using tf.distributions.Normal
+            # TODO: Create `action_distribution` using tf.distributions.Normal
             # and computed `self.mus` and `self.sds`.
 
             # TODO(reinforce_with_baseline): Compute `self.values`, starting with self.states and
@@ -40,12 +40,12 @@ class Network:
 
             # TODO: Compute `loss` as a sum of three losses:
             # - negative log probability of the `self.actions` in the `action_distribution`
-            #   (using tf.distributions.Normal.log_prob method). You need to sum
-            #   the log probabilities of actions for a single batch example (axis==1).
-            #   Then weight the vector by (self.returns - tf.stop_gradient(self.values))
+            #   (using `log_prob` method). You need to sum the log probabilities
+            #   of subactions for a single batch example (using tf.reduce_sum with axis=1).
+            #   Then weight the resulting vector by (self.returns - tf.stop_gradient(self.values))
             #   and compute its mean.
-            # - negative value of the distribution entropy (use `entropy` method of `tf.distribution.Normal`)
-            #   weighted by `args.entropy_regularization`.
+            # - negative value of the distribution entropy (use `entropy` method of
+            #   the `action_distribution`) weighted by `args.entropy_regularization`.
             # - mean square error of the `self.returns` and `self.values`
 
             global_step = tf.train.create_global_step()
