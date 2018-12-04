@@ -23,7 +23,7 @@ class Network:
             # - add a fully connected layer with num_actions and no activation, computing `logits`
             # - compute `self.probabilities` as tf.nn.softmax of `logits`
 
-            # TODO(reinforce_with_baseline): Compute `self.values`, by starting self.states and
+            # TODO(reinforce_with_baseline): Compute `self.values`, starting with self.states and
             # - add a fully connected layer of size args.hidden_layer and ReLU activation
             # - add a fully connected layer with 1 output and no activation
             # - modify the result to have shape `[batch_size]` (you can use for example `[:, 0]`)
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     network = Network(threads=args.threads)
     network.construct(args, env.state_shape, env.actions)
 
-    # TODO: Initialize parallel workers by env.parallel_init
+    # Initialize parallel workers by env.parallel_init
     states = env.parallel_init(args.workers)
     while True:
         # Training
