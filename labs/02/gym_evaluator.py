@@ -84,6 +84,22 @@ class GymEnvironment:
             raise RuntimeError("The environment has continuous action space, cannot return number of actions")
 
     @property
+    def action_shape(self):
+        if hasattr(self._env.action_space, "shape"):
+            return list(self._env.action_space.shape)
+        else:
+            return []
+
+    @property
+    def action_ranges(self):
+        if not hasattr(self._env.action_space, "shape"):
+            raise RuntimeError("The environment does not have continuous actions, cannot return action ranges")
+        if hasattr(self._env.action_space, "low") and hasattr(self._env.action_space, "high"):
+            return list(self._env.action_space.low), list(self._env.action_space.high)
+        else:
+            raise RuntimeError("The environment has no action ranges defined")
+
+    @property
     def episode(self):
         return len(self._episode_returns)
 
