@@ -139,25 +139,10 @@ class GymEnvironment:
         if self._workers is not None:
             raise RuntimeError("The parallel_init method already called")
 
-        def _worker(parent, env, seed, connection):
-            gym.undo_logger_setup()
-            env = gym.make(env)
-            env.seed(42) #seed)
-
-            connection.send(parent._maybe_discretize(env.reset()))
-            try:
-                while True:
-                    action = connection.recv()
-                    state, reward, done, info = env.step(action)
-                    if done: state = env.reset()
-                    connection.send((parent._maybe_discretize(state), reward, done, info))
-            except KeyboardInterrupt:
-                pass
-
         self._workers = []
         for i in range(environments):
             connection, connection_worker = multiprocessing.Pipe()
-            worker = multiprocessing.Process(target=_worker, args=(self, self._env.spec.id, 43 + i, connection_worker))
+            worker = multiprocessing.Process(target=GymEnvironment._parallel_worker, args=(self, self._env.spec.id, 43 + i, connection_worker))
             worker.start()
             self._workers.append((connection, worker))
 
@@ -169,6 +154,21 @@ class GymEnvironment:
             states.append(connection.recv())
 
         return states
+
+    def _parallel_worker(parent, env, seed, connection):
+        gym.undo_logger_setup()
+        env = gym.make(env)
+        env.seed(42) #seed)
+
+        connection.send(parent._maybe_discretize(env.reset()))
+        try:
+            while True:
+                action = connection.recv()
+                state, reward, done, info = env.step(action)
+                if done: state = env.reset()
+                connection.send((parent._maybe_discretize(state), reward, done, info))
+        except KeyboardInterrupt:
+            pass
 
     def parallel_step(self, actions):
         if self._workers is None:
