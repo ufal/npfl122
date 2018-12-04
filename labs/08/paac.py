@@ -41,7 +41,7 @@ class Network:
             # Initialize variables
             self.session.run(tf.global_variables_initializer())
 
-    def predict_probabilities(self, states):
+    def predict_actions(self, states):
         return self.session.run(self.probabilities, {self.states: states})
 
     def predict_values(self, states):
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     while True:
         # Training
         for _ in range(args.evaluate_each):
-            # TODO: Choose actions using network.predict_probabilities
+            # TODO: Choose actions using network.predict_actions
 
             # TODO: Perform steps by env.parallel_steps
 
@@ -101,6 +101,6 @@ if __name__ == "__main__":
                 if args.render_each and env.episode > 0 and env.episode % args.render_each == 0:
                     env.render()
 
-                probabilities = network.predict_probabilities([state])[0]
+                probabilities = network.predict_actions([state])[0]
                 action = np.argmax(probabilities)
                 state, reward, done, _ = env.step(action)
