@@ -10,6 +10,8 @@ class GymEnvironment:
         self._env = gym.make(env)
         self._env.seed(42)
 
+        self._workers = None
+
         self._separators = separators
         self._tiles = tiles
         if self._separators is not None:
@@ -113,6 +115,56 @@ class GymEnvironment:
             self._episode_return = 0
 
         return self._maybe_discretize(observation), reward, done, info
+
+    def parallel_init(self, environments):
+        import atexit
+        import multiprocessing
+
+        if self._workers is not None:
+            raise RuntimeError("The parallel_init method already called")
+
+        def _worker(parent, env, seed, connection):
+            gym.undo_logger_setup()
+            env = gym.make(env)
+            env.seed(42) #seed)
+
+            connection.send(parent._maybe_discretize(env.reset()))
+            try:
+                while True:
+                    action = connection.recv()
+                    state, reward, done, info = env.step(action)
+                    if done: state = env.reset()
+                    connection.send((parent._maybe_discretize(state), reward, done, info))
+            except KeyboardInterrupt:
+                pass
+
+        self._workers = []
+        for i in range(environments):
+            connection, connection_worker = multiprocessing.Pipe()
+            worker = multiprocessing.Process(target=_worker, args=(self, self._env.spec.id, 43 + i, connection_worker))
+            worker.start()
+            self._workers.append((connection, worker))
+
+        import atexit
+        atexit.register(lambda: [worker.terminate() for _, worker in self._workers])
+
+        states = []
+        for connection, _ in self._workers:
+            states.append(connection.recv())
+
+        return states
+
+    def parallel_step(self, actions):
+        if self._workers is None:
+            raise RuntimeError("The parallel_init method was not called before parallel_step")
+
+        for action, (connection, _) in zip(actions, self._workers):
+            connection.send(action)
+
+        results = []
+        for connection, _ in self._workers:
+            results.append(connection.recv())
+        return results
 
     def render(self):
         self._env.render()
