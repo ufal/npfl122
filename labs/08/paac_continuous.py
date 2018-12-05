@@ -18,17 +18,24 @@ class Network:
             self.actions = tf.placeholder(tf.float32, [None, actions])
             self.returns = tf.placeholder(tf.float32, [None])
 
-            # TODO: The self.states are vectors of tile indices, convert them
-            # to one-hot encoding and store them as `states`. I.e., for each
-            # batch example, state should be a vector of length `weights` with
-            # `tiles` ones and rest being zeros.
+            # TODO: Because `self.states` are vectors of tile indices, convert them
+            # to one-hot encoding and store them as `states`. I.e., for batch
+            # example i, state should be a vector of length `weights` with `tiles` ones
+            # on indices `self.states[i, 0..`tiles`-1] and the rest being zeros.
+
+            # Expert remark: The `states` representation is very sparse, so much better
+            # performance can be achieved by converting it to `SparseTensor`. However,
+            # the `tf.layers.dense` cannot process `SparseTensor` inputs, so you would have
+            # to implement it manually using `tf.sparse_tensor_dense_matmul`.
 
             # TODO: Compute `self.mus` and `self.sds`, each of shape [batch_size, actions].
-            # Compute each independently using `states` as input, adding
-            # a fully connected layer with args.hidden_layer units and ReLU activation,
-            # and a fully connected layer with `actions` outputs without activation.
-            # For `self.sds`, apply an additional `tf.nn.softplus` (or use it as
-            # activation for its output layer.
+            # Compute each independently using `states` as input, adding a fully connected
+            # layer with args.hidden_layer units and ReLU activation. Then:
+            # - For `self.mus` add a fully connected layer with `actions` outputs.
+            #   To avoid `self.mus` moving from the required [-1,1] range, you can apply
+            #   `tf.tanh` activation.
+            # - For `self.sds` add a fully connected layer with `actions` outputs
+            #   and `tf.nn.softplus` action.
 
             # TODO: Create `action_distribution` using tf.distributions.Normal
             # and computed `self.mus` and `self.sds`.
