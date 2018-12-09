@@ -158,7 +158,7 @@ class GymEnvironment:
     def _parallel_worker(parent, env, seed, connection):
         gym.undo_logger_setup()
         env = gym.make(env)
-        env.seed(42) #seed)
+        env.seed(seed)
 
         connection.send(parent._maybe_discretize(env.reset()))
         try:
