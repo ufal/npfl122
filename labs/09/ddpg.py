@@ -68,7 +68,7 @@ class Network:
             # You can group several operations into one using `tf.group`.
 
             global_step = tf.train.create_global_step()
-            self.training = tf.group([...])
+            self.training = tf.group(...)
 
             # Initialize variables
             self.session.run(tf.global_variables_initializer())
