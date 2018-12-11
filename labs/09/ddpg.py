@@ -96,7 +96,7 @@ class OrnsteinUhlenbeckNoise:
         self.state = np.copy(self.mu)
 
     def sample(self):
-        self.state += self.theta * (self.mu - self.state) + self.sigma * np.random.normal(size=self.state.shape)
+        self.state += self.theta * (self.mu - self.state) + np.random.normal(scale=self.sigma, size=self.state.shape)
         return self.state
 
 
