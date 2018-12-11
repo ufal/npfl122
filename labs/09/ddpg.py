@@ -59,11 +59,11 @@ class Network:
                 update_target_ops.append(target_var.assign((1.-args.target_tau) * target_var + args.target_tau * var))
 
             # TODO: Training
-            # - define actor_loss
-            # - define critic_loss
-            # Then train
-            # - the critic (using critic variables only, if required)
-            # - the actor (using actor variables only, if required)
+            # Define actor_loss and critic loss and then:
+            # - train the critic (if required, using critic variables only,
+            #     by using `var_list` argument of `Optimizer.minimize`)
+            # - train the actor (if required, using actor variables only,
+            #     by using `var_list` argument of `Optimizer.minimize`)
             # - update target network variables
             # You can group several operations into one using `tf.group`.
 
