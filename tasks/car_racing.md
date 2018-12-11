@@ -7,8 +7,6 @@ to the same numpy array with the state, which could have caused problems if you
 did not create a copy (when stacking images or resizing it). It has now been
 fixed.</span>
 
-returned  A bug in the environment was fixe
-
 In this bonus-only exercise to play with Deep Q Network and its variants,
 try solving the [CarRacing-v0 environment](https://gym.openai.com/envs/CarRacing-v0)
 environment from the [OpenAI Gym](https://gym.openai.com/).
