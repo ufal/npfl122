@@ -35,7 +35,7 @@ class Network:
             #   To avoid `self.mus` moving from the required [-1,1] range, you can apply
             #   `tf.tanh` activation.
             # - For `self.sds` add a fully connected layer with `actions` outputs
-            #   and `tf.nn.softplus` action.
+            #   and `tf.nn.softplus` activation.
 
             # TODO: Create `action_distribution` using tf.distributions.Normal
             # and computed `self.mus` and `self.sds`.
