@@ -35,12 +35,12 @@ class Network:
             #   To avoid `self.mus` moving from the required [-1,1] range, you can apply
             #   `tf.tanh` activation.
             # - For `self.sds` add a fully connected layer with `actions` outputs
-            #   and `tf.nn.softplus` action.
+            #   and `tf.nn.softplus` activation.
 
             # TODO: Create `action_distribution` using tf.distributions.Normal
             # and computed `self.mus` and `self.sds`.
 
-            # TODO(reinforce_with_baseline): Compute `self.values`, starting with self.states and
+            # TODO(reinforce_with_baseline): Compute `self.values`, starting with `states` and
             # - add a fully connected layer of size args.hidden_layer and ReLU activation
             # - add a fully connected layer with 1 output and no activation
             # - modify the result to have shape `[batch_size]` (you can use for example `[:, 0]`)
@@ -107,11 +107,11 @@ if __name__ == "__main__":
             # using np.random.normal to sample action and np.clip
             # to clip it using action_lows and action_highs,
 
-            # TODO: Perform steps by env.parallel_steps
+            # TODO: Perform steps by env.parallel_step
 
             # TODO: Compute return estimates by
             # - extracting next_states from steps
-            # - computing value function approximatin in next_states
+            # - computing value function approximation in next_states
             # - estimating returns by reward + (0 if done else args.gamma * next_state_value)
 
             # TODO: Train network using current states, chosen actions and estimated returns
