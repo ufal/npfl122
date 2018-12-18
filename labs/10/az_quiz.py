@@ -4,9 +4,10 @@ import numpy as np
 class AZQuiz:
     actions = 28
     N = 7
+    C = 3
 
     def __init__(self):
-        self._board = np.zeros([self.N, self.N, 3], dtype=np.bool)
+        self._board = np.zeros([self.N, self.N, self.C], dtype=np.bool)
         self._to_play = 0
         self._winner = None
         self._viewer = None
