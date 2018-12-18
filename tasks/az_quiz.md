@@ -3,7 +3,7 @@
 #### Points: **10** bonus only
 
 In this bonus-only exercise, use Monte Carlo Tree Search to learn
-an agent for a simplified version of [AZ Kvíz](https://cs.wikipedia.org/wiki/AZ-kv%C3%ADz).
+an agent for a simplified version of [AZ-kvíz](https://cs.wikipedia.org/wiki/AZ-kv%C3%ADz).
 In our version, the agent does not have to answer questions and we use a fixed
 distribution of a correct answer.
 
