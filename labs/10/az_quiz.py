@@ -49,7 +49,7 @@ class AZQuiz:
             if np.random.uniform() <= self._ADDITIONAL_QUESTION_PROB:
                 field[self._to_play] = 1
             else:
-                gield[1 - self._to_play] = 1
+                field[1 - self._to_play] = 1
                 self._to_play = 1 - self._to_play
             field[2] = 0
         self._to_play = 1 - self._to_play
