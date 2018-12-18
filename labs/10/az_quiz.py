@@ -118,6 +118,8 @@ if __name__ == "__main__":
         while action is None or not quiz.valid(action):
             try:
                 action = int(input("Action for player {}: ".format(quiz.to_play)))
+            except KeyboardInterrupt:
+                raise
             except:
                 pass
         quiz.move(action)
