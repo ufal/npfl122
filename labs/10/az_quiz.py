@@ -103,3 +103,17 @@ class AZQuiz:
 
     _ACTION_Y = np.array([0,1,1,2,2,2,3,3,3,3,4,4,4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,6], dtype=np.int8)
     _ACTION_X = np.array([0,0,1,0,1,2,0,1,2,3,0,1,2,3,4,0,1,2,3,4,5,0,1,2,3,4,5,6], dtype=np.int8)
+
+if __name__ == "__main__":
+    quiz = AZQuiz()
+    while quiz.winner is None:
+        quiz.render()
+
+        action = None
+        while action is None or not quiz.valid(action):
+            try:
+                action = int(input("Action for player {}: ".format(quiz.to_play)))
+            except:
+                pass
+        quiz.move(action)
+    print("Congratulation player {}".format(quiz.winner))
