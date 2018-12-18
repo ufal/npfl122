@@ -20,6 +20,10 @@ class AZQuiz:
         return clone
 
     @property
+    def board(self):
+        return np.copy(self._board)
+
+    @property
     def to_play(self):
         return self._to_play if not self._winner else None
 
