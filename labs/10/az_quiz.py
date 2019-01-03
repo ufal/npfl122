@@ -30,7 +30,7 @@ class AZQuiz:
 
     @property
     def to_play(self):
-        return self._to_play if self._winner is None nelse None
+        return self._to_play if self._winner is None else None
 
     @property
     def winner(self):
