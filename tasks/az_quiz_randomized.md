@@ -1,5 +1,5 @@
 ### Assignment: az_quiz_randomized
-#### Date: Deadline: Jan 06, 23:59
+#### Date: Deadline: Jan 13, 23:59
 #### Points: **5** bonus only
 
 Extend the `az_quiz` assignment to handle the possibility of wrong
@@ -17,6 +17,6 @@ possible next states).
 
 The evaluation in ReCodEx will be implemented by utilizing an interface
 described in
-[az_quiz_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_evaluator.py).
+[az_quiz_evaluator_recodex.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_evaluator_recodex.py).
 
 For inspiration, use the [official pseudocode for AlphaZero](http://science.sciencemag.org/highwire/filestream/719481/field_highwire_adjunct_files/1/aar6404_DataS1.zip).

@@ -5,5 +5,5 @@ class Player:
         raise NotImplementedError()
 
 def evaluate(player):
-    # Will be added later
+    # Will be implemented in ReCodEx
     pass
