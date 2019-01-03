@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 class Player:
-    def play(az_quiz):
+    def play(self, az_quiz):
         raise NotImplementedError()
 
 def evaluate(player):
