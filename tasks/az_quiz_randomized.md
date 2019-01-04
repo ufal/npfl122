@@ -27,8 +27,9 @@ Your solution in ReCodEx is automatically evaluated only against a random player
 and a very simple heuristic
 [az_quiz_player_simple_heuristic.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_simple_heuristic.py),
 playing against each of them 10 games as a starting player and 10 games
-as a non-starting player. The time limit for the games is 10 minutes and your
-solution is accepted if it wins at least once. The final evaluation will be
-performed after the deadline by a round-robin tournament.
+as a non-starting player. The time limit for the games is 10 minutes and you
+should see win rate directly in ReCodEx. The final evaluation will be
+performed after the deadline by a round-robin tournament, utilizing your latest
+submission with non-zero win rate.
 
 For inspiration, use the [official pseudocode for AlphaZero](http://science.sciencemag.org/highwire/filestream/719481/field_highwire_adjunct_files/1/aar6404_DataS1.zip).
