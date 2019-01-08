@@ -54,7 +54,7 @@ class Network:
           rewards: [batch_size, n]
               observed rewards;
               guaranteed to be 0 for rewards after episode termination
-          actor_logits: [batch_size, n]
+          actor_logits: [batch_size, n, num_actions]
               logits of actions under current (target) policy
           critic_values: [batch_size, n+1]
               critic estimation of values of encountered states;
