@@ -56,12 +56,15 @@ class GymEnvironment:
 
     @property
     def states(self):
-        if self._separators is not None:
-            states = self._first_tile_states
-            if self._tiles:
-                states += (self._tiles - 1) * self._rest_tiles_states
-            return states
-        raise RuntimeError("Continuous environments have infinitely many states")
+        if hasattr(self._env.observation_space, "n"):
+            return self._env.observation_space.n
+        else:
+            if self._separators is not None:
+                states = self._first_tile_states
+                if self._tiles:
+                    states += (self._tiles - 1) * self._rest_tiles_states
+                return states
+            raise RuntimeError("Continuous environments have infinitely many states")
 
     @property
     def weights(self):
