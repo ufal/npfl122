@@ -5,7 +5,7 @@
 In this bonus-only exercise we explore a partially observable environment.
 Consider a one-player variant of a memory game (pexeso), where a player repeatedly
 flip cards. If the player flips two cards with the same symbol in succession,
-the cards are removed and the player recieves a reward of +1. Otherwise the
+the cards are removed and the player recieves a reward of +2. Otherwise the
 player recieves a reward of -1. An episode ends when all cards are removed.
 
 For a given even $N$, there are $N$ actions – the card indices, and $N/2$
