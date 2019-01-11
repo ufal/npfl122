@@ -2,7 +2,7 @@ You should submit the assignments in the [ReCodEx Code
 Examiner](https://recodex.mff.cuni.cz/), where they will be either automatically
 or manually evaluated (depending on the assignment).
 The evaluation is performed using Python 3.6, TensorFlow 1.11.0, NumPy 1.15.2
-and OpenAI Gym 0.9.5. For those using PyTorch, CPU version 0.4.1 is available.
+and OpenAI Gym 0.9.5. For those using PyTorch, CPU version 1.0.0 is available.
 
 You can install TensorFlow and Gym either to user packages using
 `pip3 install --user tensorflow==1.11.0 gym==0.9.5 scipy box2d-py atari-py`
