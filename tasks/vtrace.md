@@ -10,3 +10,5 @@ thoroughly test the off-policy capability of the V-trace algorithm.
 
 However, the evaluation in ReCodEx will be performed by calling only the
 `vtrace` method and comparing its results to a reference implementation.
+Several values of hyperparameters will be used, each test has a time limit
+of 1 minute, and all tests must pass.
