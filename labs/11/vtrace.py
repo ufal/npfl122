@@ -75,7 +75,7 @@ class Network:
         # TODO: Compute vs from the last one to the first one.
         # The last vs[args.n] is just critic_values[:, args.n]
         # The others can be computed recursively as
-        #   vs[t] = critic_values[:, t] + delta_t V + gamma * (vs[t+1] - critic_values[:, t+1])
+        #   vs[t] = critic_values[:, t] + delta_t V + gamma * cs[t] * (vs[t+1] - critic_values[:, t+1])
 
         # TODO: Define and return loss, which consists of
         # - usuall actor loss, with weights being tf.stop_gradient of
