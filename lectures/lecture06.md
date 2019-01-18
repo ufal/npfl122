@@ -1,6 +1,7 @@
 ### Lecture: 6. Rainbow
 #### Date: Nov 19
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides/?06
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides.pdf/npfl122-06.pdf,PDF Slides
 #### Lecture assignment: car_racing
 #### Lecture assignment: reinforce
 

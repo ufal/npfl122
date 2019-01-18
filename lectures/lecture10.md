@@ -1,6 +1,7 @@
 ### Lecture: 10. TD3, Monte Carlo Tree Search
 #### Date: Dec 17
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides/?10
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides.pdf/npfl122-10.pdf,PDF Slides
 #### Lecture assignment: walker_hardcore
 #### Lecture assignment: az_quiz
 #### Lecture assignment: az_quiz_randomized

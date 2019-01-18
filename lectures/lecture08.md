@@ -1,6 +1,7 @@
 ### Lecture: 8. Advantage Actor-Critic, Continuous Action Space
 #### Date: Dec 03
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides/?08
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides.pdf/npfl122-08.pdf,PDF Slides
 #### Lecture assignment: paac
 #### Lecture assignment: paac_continuous
 

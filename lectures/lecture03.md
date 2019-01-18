@@ -1,6 +1,7 @@
 ### Lecture: 3. Temporal Difference Methods, Off-Policy Methods
 #### Date: Oct 22
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides/?03
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides.pdf/npfl122-03.pdf,PDF Slides
 #### Lecture assignment: q_learning
 #### Lecture assignment: importance_sampling
 #### Lecture assignment: lunar_lander
