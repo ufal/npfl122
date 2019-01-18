@@ -1,5 +1,5 @@
 ### Assignment: memory_game
-#### Date: Deadline: Jan 20, 23:59
+#### Date: Deadline: Jan 27, 23:59
 #### Points: **5** bonus only
 
 In this bonus-only exercise we explore a partially observable environment.
