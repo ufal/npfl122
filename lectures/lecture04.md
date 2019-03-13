@@ -1,6 +1,6 @@
 ### Lecture: 4. N-step Methods, Function Approximation
 #### Date: Nov 05
-#### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides/?04#1
+#### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides/?04
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1819/slides.pdf/npfl122-04.pdf,PDF Slides
 #### Lecture assignment: q_learning_tiles
 
