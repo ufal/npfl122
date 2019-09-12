@@ -11,8 +11,8 @@ In this bonus-only exercise to play with Deep Q Network and its variants,
 try solving the [CarRacing-v0 environment](https://gym.openai.com/envs/CarRacing-v0)
 environment from the [OpenAI Gym](https://gym.openai.com/).
 
-Use the supplied [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_racing_evaluator.py)
-module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py)
+Use the supplied [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/past-1819/labs/06/car_racing_evaluator.py)
+module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/past-1819/labs/02/gym_evaluator.py)
 to interact with the environment. The environment is continuous and states are
 RGB images of size $96×96×3$, but you can downsample them even more. The actions
 are also continuous and consist of an array with the following three elements:
@@ -34,7 +34,7 @@ relative ordering of your solution performances. In ReCodEx, your solution
 is evaluated on 15 different tracks with a total time limit of 15 minutes.
 If your average return is at least 100, ReCodEx shows the solution as correct.
 
-The [car_racing.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_racing.py)
+The [car_racing.py](https://github.com/ufal/npfl122/tree/past-1819/labs/06/car_racing.py)
 template parses several useful parameters and creates the environment.
-Note that the [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_racing_evaluator.py)
+Note that the [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/past-1819/labs/06/car_racing_evaluator.py)
 can be executed directly and in that case you can drive the car using arrows.

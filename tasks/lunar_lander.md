@@ -6,8 +6,8 @@ Solve the [LunarLander-v2 environment](https://gym.openai.com/envs/LunarLander-v
 environment from the [OpenAI Gym](https://gym.openai.com/). Note that this task
 does not require TensorFlow.
 
-Use the supplied [lunar_lander_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/03/lunar_lander_evaluator.py)
-module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py)
+Use the supplied [lunar_lander_evaluator.py](https://github.com/ufal/npfl122/tree/past-1819/labs/03/lunar_lander_evaluator.py)
+module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/past-1819/labs/02/gym_evaluator.py)
 to interact with the discretized environment. The environment
 methods and properties are described in the `monte_carlo` assignment,
 but include one additional method:
@@ -24,6 +24,6 @@ is 5 minutes.
 The task is additionally a _competition_ and at most 7 points will be awarded
 according to relative ordering of your solution performances.
 
-You can start with the [lunar_lander.py](https://github.com/ufal/npfl122/tree/master/labs/03/lunar_lander.py)
+You can start with the [lunar_lander.py](https://github.com/ufal/npfl122/tree/past-1819/labs/03/lunar_lander.py)
 template, which parses several useful parameters, creates the environment
 and illustrates the overall usage.

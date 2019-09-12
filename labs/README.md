@@ -20,7 +20,7 @@ Note that when your CPU does not support AVX, you need to install TensorFlow 1.5
 Even if [ReCodEx](https://recodex.mff.cuni.cz/) allows submitting data files
 beside Python sources, the data files are not available during evaluation.
 Therefore, in order to submit models, you need to embed them in Python sources.
-You can use [the `embed.py` script](https://github.com/ufal/npfl122/blob/master/labs/embed.py),
+You can use [the `embed.py` script](https://github.com/ufal/npfl122/blob/past-1819/labs/embed.py),
 which compressed and embeds given files and directories into a Python module
 providing an `extract()` method.
 
@@ -30,4 +30,4 @@ Working in teams of size 2 (or at most 3) is encouraged. All members of the team
 must submit in ReCodEx individually, but can have exactly the same
 sources/models/results. **However, each such solution must explicitly list all
 members of the team to allow plagiarism detection using
-[this template](https://github.com/ufal/npfl122/tree/master/labs/team_description.py).**
+[this template](https://github.com/ufal/npfl122/tree/past-1819/labs/team_description.py).**

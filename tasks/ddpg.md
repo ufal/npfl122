@@ -2,12 +2,12 @@
 #### Date: Deadline: Jan 06, 23:59
 #### Points: **compulsory**
 
-Using the [ddpg.py](https://github.com/ufal/npfl122/tree/master/labs/09/ddpg.py)
+Using the [ddpg.py](https://github.com/ufal/npfl122/tree/past-1819/labs/09/ddpg.py)
 template, solve the [Pendulum-v0 environment](https://gym.openai.com/envs/Pendulum-v0)
 environment using deep deterministic policy gradient algorithm.
 
 To create the evaluator, use
-[gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py)`.GymEvaluator("Pendulum-v0")`.
+[gym_evaluator.py](https://github.com/ufal/npfl122/tree/past-1819/labs/02/gym_evaluator.py)`.GymEvaluator("Pendulum-v0")`.
 The environment is continuous, states and actions are described at
 [OpenAI Gym Wiki](https://github.com/openai/gym/wiki/Pendulum-v0).
 

@@ -7,8 +7,8 @@ Improve the `q_learning` task performance on the
 environment using linear function approximation with tile coding.
 Your goal is to reach an average reward of -110 during 100 evaluation episodes.
 
-Use the updated [mountain_car_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/03/mountain_car_evaluator.py)
-module (depending on updated [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py))
+Use the updated [mountain_car_evaluator.py](https://github.com/ufal/npfl122/tree/past-1819/labs/03/mountain_car_evaluator.py)
+module (depending on updated [gym_evaluator.py](https://github.com/ufal/npfl122/tree/past-1819/labs/02/gym_evaluator.py))
 to interact with the discretized environment. The environment
 methods and properties are described in the `monte_carlo` assignment, with the
 following changes:
@@ -24,7 +24,7 @@ following changes:
   weight indices) is `args.tiles=8`, but you can use any number you want (but
   the assignment is solvable with 8).
 
-You can start with the [q_learning_tiles.py](https://github.com/ufal/npfl122/tree/master/labs/04/q_learning_tiles.py)
+You can start with the [q_learning_tiles.py](https://github.com/ufal/npfl122/tree/past-1819/labs/04/q_learning_tiles.py)
 template, which parses several useful parameters, creates the environment
 and illustrates the overall usage. Implementing Q-learning is enough to pass
 the assignment, even if both N-step Sarsa and Tree Backup converge a little

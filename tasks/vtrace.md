@@ -2,7 +2,7 @@
 #### Date: Deadline: Jan 20, 23:59
 #### Points: **compulsory**
 
-Using the [vtrace.py](https://github.com/ufal/npfl122/tree/master/labs/11/vtrace.py)
+Using the [vtrace.py](https://github.com/ufal/npfl122/tree/past-1819/labs/11/vtrace.py)
 template, implement the V-trace algorithm.
 
 The template uses the `CartPole-v1` environment and a replay buffer to more
