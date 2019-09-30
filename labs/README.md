@@ -1,7 +1,8 @@
 The tasks are evaluated automatically using the [ReCodEx Code
 Examiner](https://recodex.mff.cuni.cz/). The evaluation is
 performed using Python 3.6, TensorFlow 2.0.0, NumPy 1.17.2
-and OpenAI Gym 0.14.0.
+and OpenAI Gym 0.14.0. For those using PyTorch, CPU version
+1.2.0 is available.
 
 You can install TensorFlow and Gym either to user packages using
 `pip3 install --user tensorflow==2.0.0 gym==0.14.0 scipy box2d-py atari-py`
