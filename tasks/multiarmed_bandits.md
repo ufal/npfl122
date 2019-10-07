@@ -20,7 +20,7 @@ Of course, the states are not used by the multiarmed bandits (`None` is
 returned).
 
 Your goal is to implement the following modes of calculation. For each mode,
-[multiarmed_bandits_plot.py](https://github.com/ufal/npfl122/tree/master/labs/01/multiarmed_bandits_plot.py)
+[multiarmed_bandits_draw.py](https://github.com/ufal/npfl122/tree/master/labs/01/multiarmed_bandits_draw.py)
 evaluates the performance given specified hyperparameters
 and plots the results.
 - `greedy` _[2 points]_: perform $ε$-greedy search with parameter `epsilon`, computing the
