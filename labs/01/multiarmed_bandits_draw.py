@@ -8,7 +8,7 @@ import multiarmed_bandits
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("experiment", type=str, help="Experiment to draw, or `all`")
+    parser.add_argument("--experiment", default="all", type=str, help="Experiment to draw")
     args = parser.parse_args()
 
     experiments = {
@@ -20,6 +20,8 @@ if __name__ == "__main__":
     }
 
     for e in sorted(experiments) if args.experiment == "all" else [args.experiment]:
+        print("Computing results for experiment {}".format(e))
+
         args = multiarmed_bandits.parser.parse_args([])
         args.mode = e.split("-")[0]
 
