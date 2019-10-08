@@ -19,21 +19,22 @@ two methods:
 Of course, the states are not used by the multiarmed bandits (`None` is
 returned).
 
-Your goal is to implement the following modes of calculation. For each mode,
+Your goal is to implement the following modes of calculation. In addition
+to submitting the solution to ReCodEx, you should use
 [multiarmed_bandits_draw.py](https://github.com/ufal/npfl122/tree/master/labs/01/multiarmed_bandits_draw.py)
-evaluates the performance given specified hyperparameters
-and plots the results.
+to plots the results in a graph.
 - `greedy` _[2 points]_: perform $ε$-greedy search with parameter `epsilon`, computing the
-  value function using averaging. Plot results for $ε ∈ \{1/64, 1/32, 1/16, 1/8, 1/4\}$.
+  value function using averaging. (Results for $ε ∈ \{1/64, 1/32, 1/16, 1/8, 1/4\}$ are plotted.)
 - `greedy` and `alpha`$≠0$ _[1 point]_: perform $ε$-greedy search with parameter `epsilon` and
-  initial function estimate of 0, using fixed learning rate `alpha`. Plot
-  results for $α=0.15$ and $ε ∈ \{1/64, 1/32, 1/16, 1/8, 1/4\}$.
+  initial function estimate of 0, using fixed learning rate `alpha`. (Results
+  for $α=0.15$ and $ε ∈ \{1/64, 1/32, 1/16, 1/8, 1/4\}$ are plotted.)
 - `greedy`, `alpha`$≠0$ and `initial`$≠0$ _[1 point]_: perform $ε$-greedy search with
   parameter `epsilon`, given `initial` value as starting value function and
-  fixed learning rate `alpha`. Plot results for `initial`$=1$, $α=0.15$ and
-  $ε ∈ \{1/128, 1/64, 1/32, 1/16\}$.
+  fixed learning rate `alpha`. (Results for `initial`$=1$, $α=0.15$ and
+  $ε ∈ \{1/128, 1/64, 1/32, 1/16\}$ are plotted.)
 - `ucb` _[2 points]_: perform UCB search with confidence level `c` and computing the value
-  function using averaging. Plot results for $c ∈ \{1/4, 1/2, 1, 2, 4\}$.
+  function using averaging. (Results for $c ∈ \{1/4, 1/2, 1, 2, 4\}$ are
+  plotted.)
 - `gradient` _[2 points]_: choose actions according to softmax distribution, updating the
-  parameters using SGD to maximize expected reward. Plot results for
-  $α ∈ \{1/16, 1/8, 1/4, 1/2\}$.
+  parameters using SGD to maximize expected reward. (Results for
+  $α ∈ \{1/16, 1/8, 1/4, 1/2\}$ are plotted.)
