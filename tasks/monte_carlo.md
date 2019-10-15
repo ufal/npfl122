@@ -1,5 +1,5 @@
 ### Assignment: monte_carlo
-#### Date: Deadline: Oct 27, 23:59
+#### Date: Deadline: Nov 03, 23:59
 #### Points: 6 points
 
 Solve the [CartPole-v1 environment](https://gym.openai.com/envs/CartPole-v1)

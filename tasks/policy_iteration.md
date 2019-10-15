@@ -1,5 +1,5 @@
 ### Assignment: policy_iteration
-#### Date: Deadline: Oct 27, 23:59
+#### Date: Deadline: Nov 03, 23:59
 #### Points: 5 points
 
 Consider the following gridworld:
