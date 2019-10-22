@@ -2,6 +2,7 @@
 #### Date: Oct 14
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides/?02
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-02.pdf,PDF Slides
+#### Video: https://is.mff.cuni.cz/prednasky/prednaska/NPFL122/1
 #### Lecture assignment: policy_iteration
 #### Lecture assignment: monte_carlo
 
