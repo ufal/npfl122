@@ -49,7 +49,8 @@ if __name__ == "__main__":
     # policy evaluation/policy improvement. During policy evaluation, use the
     # current value function and perform `args.iterations` applications of the
     # Bellman equation. Perform the policy evaluation synchronously (i.e., do
-    # not overwrite the current value function when computing its improvement).
+    # not overwrite the current value function when computing its improvement,
+    # only overwrite the previous value function after each iteration).
 
     # TODO: The final greedy policy should be in `policy`
 
