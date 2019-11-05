@@ -21,3 +21,13 @@ must submit in ReCodEx individually, but can have exactly the same
 sources/models/results. **However, each such solution must explicitly list all
 members of the team to allow plagiarism detection using
 [this template](https://github.com/ufal/npfl122/tree/master/labs/team_description.py).**
+
+
+### Submitting Data Files to ReCodEx
+
+Because [ReCodEx](https://recodex.mff.cuni.cz/) allows submitting only Python
+sources in our settings, we need to embed models and other non-Python data
+into Python sources. You can use
+[the `embed.py` script](https://github.com/ufal/npfl122/blob/master/labs/embed.py),
+which compresses the given files and directories and embeds them into a Python
+module, which extracts them when imported or executed.
