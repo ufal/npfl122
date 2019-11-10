@@ -2,6 +2,7 @@
 #### Date: Oct 21
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides/?03
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-03.pdf,PDF Slides
+#### Video: https://is.mff.cuni.cz/prednasky/prednaska/NPFL122/3
 #### Lecture assignment: importance_sampling
 #### Lecture assignment: q_learning
 #### Lecture assignment: lunar_lander
