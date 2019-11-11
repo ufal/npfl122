@@ -3,6 +3,7 @@
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides/?05
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-05.pdf,PDF Slides
 #### Lecture assignment: q_learning_tiles
+#### Lecture assignment: q_network
 
 - Function approximation [Sections 9-9.3 of RLB]
 - Tile coding [Section 9.5.4 of RLB]
