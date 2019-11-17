@@ -1,6 +1,6 @@
 ### Assignment: multiarmed_bandits
 #### Date: Deadline: Oct 20, 23:59
-#### Points: 8
+#### Points: 8 points
 
 Perform a parameter study of various approaches to solving multiarmed bandits.
 For every hyperparameter choice, perform 100 episodes, each consisting of
