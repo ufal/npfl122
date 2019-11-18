@@ -26,13 +26,8 @@ action repeated.
 
 In ReCodEx, your solution is evaluated on 15 different tracks with a total time
 limit of 15 minutes. If your average return is at least 200, you obtain
-8 points.
-
-
-The task is a _competition_ and at most 10 points will be awarded according to
-relative ordering of your solution performances. In ReCodEx, your solution
-is evaluated on 15 different tracks with a total time limit of 15 minutes.
-If your average return is at least 100, ReCodEx shows the solution as correct.
+8 points. The task is also a _competition_ and at most 10 points will be awarded
+according to relative ordering of your solution performances.
 
 The [car_racing.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_racing.py)
 template parses several useful parameters and creates the environment.
