@@ -24,7 +24,8 @@ The environment supports frame skipping without rendering the skipped
 frames – the second argument to `env.step` determines how many time is the given
 action repeated.
 
-In ReCodEx, your solution is evaluated on 15 different tracks with a total time
+In ReCodEx, you are expected to submit an already trained model,
+which is evaluated on 15 different tracks with a total time
 limit of 15 minutes. If your average return is at least 200, you obtain
 8 points. The task is also a _competition_ and at most 10 points will be awarded
 according to relative ordering of your solution performances.
