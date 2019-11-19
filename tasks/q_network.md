@@ -6,7 +6,7 @@ Solve the [CartPole-v1 environment](https://gym.openai.com/envs/CartPole-v1)
 environment from the [OpenAI Gym](https://gym.openai.com/) using Q-learning
 with neural network as a function approximation.
 
-The [mountain_car_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/03/mountain_car_evaluator.py)
+The [cart_pole_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/cart_pole_evaluator.py)
 module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py))
 can also create a continuous environment using `environment(discrete=False)`.
 The continuous environment is very similar to the discrete environment, except
