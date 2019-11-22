@@ -578,7 +578,7 @@ class CarRacingCustomDraw(gym.Env):
             total_reward += step_reward
             self.frames += 1
             if self.frames > 1000: done = True
-            if done: break
+            if done or action is None: break
 
         self._draw()
         return np.copy(self.state), total_reward, done, {}
