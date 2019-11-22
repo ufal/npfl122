@@ -38,6 +38,7 @@ during training), by providing the following two methods:
   performs given action in respective environment, and return the usual
   information with one exception: **If `done=True`, then `next_state` is
   already an initial state of newly started episode.**
+
 </div>
 
 In ReCodEx, you are expected to submit an already trained model,
