@@ -359,6 +359,9 @@ class CarRacingCustomDraw(gym.Env):
     color_abs_dark = np.array([0.2, 0., 1.])
 
     def __init__(self, frame_skip):
+        if frame_skip < 1:
+            raise ValueError("The value of frame_skip must be at least 1")
+
         self.seed()
         self.contactListener_keepref = FrictionDetector(self)
         self.world = Box2D.b2World((0,0), contactListener=self.contactListener_keepref)
@@ -549,7 +552,7 @@ class CarRacingCustomDraw(gym.Env):
 
     def step(self, action):
         total_reward = 0
-        for _ in range(max(self.frame_skip, 1)):
+        for _ in range(self.frame_skip):
             if action is not None:
                 self.car.steer(-action[0])
                 self.car.gas(action[1])
