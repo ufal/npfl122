@@ -20,9 +20,25 @@ representation before the `step` call. Good initial action space is to use
 9 actions – a Cartesian product of 3 steering actions (left/right/none) and
 3 driving actions (gas/brake/none).
 
-The environment supports frame skipping without rendering the skipped
-frames – the second argument to `env.step` determines how many time is the given
-action repeated.
+<div class="text-success">
+
+Nov 22: The frame skipping support was changed. The
+evironment supports frame skipping without rendering the skipped frames, by
+passing `frame_skip` parameter to `car_racing_evaluator.environment(frame_skip=1)`
+method – the value of `frame_skip` determines how many times is an action
+repeated.
+
+Nov 19: The environment also supports parallel
+execution (use multiple CPU threads to simulate several environments in parallel
+during training), by providing the following two methods:
+- `parallel_init(num_workers) → initial_states`, which initializes the given
+  number of parallel workers and returns their environment initial states.
+  This method can be called at most once.
+- `parallel_step(actions) → List[next_state, reward, done, info]`, which
+  performs given action in respective environment, and return the usual
+  information with one exception: **If `done=True`, then `next_state` is
+  already an initial state of newly started episode.**
+</div>
 
 In ReCodEx, you are expected to submit an already trained model,
 which is evaluated on 15 different tracks with a total time

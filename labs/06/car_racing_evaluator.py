@@ -358,7 +358,7 @@ class CarRacingCustomDraw(gym.Env):
     color_abs_light = np.array([0., 0., 1.])
     color_abs_dark = np.array([0.2, 0., 1.])
 
-    def __init__(self):
+    def __init__(self, frame_skip):
         self.seed()
         self.contactListener_keepref = FrictionDetector(self)
         self.world = Box2D.b2World((0,0), contactListener=self.contactListener_keepref)
@@ -372,7 +372,7 @@ class CarRacingCustomDraw(gym.Env):
         self.state = np.zeros([STATE_H, STATE_W, 3], dtype=np.float32)
         self.action_space = spaces.Box( np.array([-1,0,0]), np.array([+1,+1,+1]))  # steer, gas, brake
         self.observation_space = spaces.Box(low=0, high=255, shape=(STATE_H, STATE_W, 3))
-        self.frame_skip = 1
+        self.frame_skip = frame_skip
 
     def seed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
@@ -538,7 +538,6 @@ class CarRacingCustomDraw(gym.Env):
         self.road_poly = []
         self.human_render = False
         self.frames = 0
-        self.frame_skip = 1
 
         while True:
             success = self._create_track()
@@ -765,22 +764,21 @@ class CarRacingCustomDraw(gym.Env):
 # Evaluator for NPFL122 class #
 ###############################
 
-gym.envs.register(
-    id="CarRacingCustomDraw-v0",
-    entry_point=CarRacingCustomDraw,
-    reward_threshold=900,
-)
+FRAME_SKIPS = range(1, 10)
+for frame_skip in FRAME_SKIPS:
+    gym.envs.register(
+        id="CarRacingCustomDrawFrameSkip{}-v0".format(frame_skip),
+        entry_point=CarRacingCustomDraw,
+        kwargs={"frame_skip": frame_skip},
+        reward_threshold=900,
+    )
 
 import gym_evaluator
-def environment():
-    env = gym_evaluator.GymEnvironment("CarRacingCustomDraw-v0")
+def environment(frame_skip=1):
+    if frame_skip not in FRAME_SKIPS:
+        raise ValueError("Unsupported frame skip {}, only {} are supported".format(frame_skip, list(FRAME_SKIPS)))
 
-    def step(action, frame_skip=1):
-        env._env.unwrapped.frame_skip = frame_skip
-        return gym_evaluator.GymEnvironment.step(env, action)
-    env.step = step
-
-    return env
+    return gym_evaluator.GymEnvironment("CarRacingCustomDrawFrameSkip{}-v0".format(frame_skip))
 
 # Allow running the environment and  controlling it with arrows
 if __name__=="__main__":
@@ -801,7 +799,7 @@ if __name__=="__main__":
         if k==key.RIGHT and a[0]==+1.0: a[0] = 0
         if k==key.UP:    a[1] = 0
         if k==key.DOWN:  a[2] = 0
-    env = CarRacingCustomDraw()
+    env = CarRacingCustomDraw(1)
     env.render()
     env.viewer.window.on_key_press = key_press
     env.viewer.window.on_key_release = key_release
