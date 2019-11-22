@@ -28,7 +28,7 @@ if __name__ == "__main__":
     tf.config.threading.set_intra_op_parallelism_threads(args.threads)
 
     # Create the environment
-    env = car_racing_evaluator.environment()
+    env = car_racing_evaluator.environment(args.frame_skip)
 
     # TODO: Implement a variation to Deep Q Network algorithm.
 
