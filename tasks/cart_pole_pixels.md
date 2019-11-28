@@ -13,7 +13,7 @@ return of 200 during 100 evaluation episodes. During evaluation in ReCodEx, two
 different random seeds will be employed, and you need to reach the required
 return on all of them. Time limit for each test is 10 minutes.
 
-The task is additionally a _competition_ and at most 7 points will be awarded
+The task is additionally a _competition_ and at most 5 points will be awarded
 according to relative ordering of your solution performances.
 
 The [cart_pole_pixels.py](https://github.com/ufal/npfl122/tree/master/labs/07/cart_pole_pixels.py)
