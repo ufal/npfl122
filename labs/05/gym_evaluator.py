@@ -106,6 +106,9 @@ class GymEnvironment:
         return len(self._episode_returns)
 
     def reset(self, start_evaluate=False):
+        if self._evaluating_from is not None and not self._episode_ended:
+            raise RuntimeError("Cannot reset a running episode after `start_evaluate=True`")
+
         if start_evaluate and self._evaluating_from is None:
             self._evaluating_from = self.episode
 
