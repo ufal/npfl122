@@ -12,7 +12,7 @@ The environment is continuous, states and actions are described at
 [OpenAI Gym Wiki](https://github.com/openai/gym/wiki/BipedalWalker-v2).
 
 In ReCodEx, you are expected to submit an already trained model,
-which is evaluated on 100 different tracks with a total time
+which is evaluated on 100 episodes with a total time
 limit of 10 minutes. If your average return is at least 100, you obtain
 8 points. The task is also a _competition_ and at most 10 points will be awarded
 according to relative ordering of your solution performances.
