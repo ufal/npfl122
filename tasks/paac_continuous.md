@@ -1,6 +1,6 @@
 ### Assignment: paac_continuous
 #### Date: Deadline: Dec 15, 23:59
-#### Points: 5 points
+#### Points: 6 points
 
 Using the [paac_continuous.py](https://github.com/ufal/npfl122/tree/master/labs/08/paac_continuous.py)
 template, solve the [MountainCarContinuous-v0 environment](https://gym.openai.com/envs/MountainCarContinuous-v0/)

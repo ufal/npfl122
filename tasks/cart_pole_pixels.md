@@ -1,6 +1,6 @@
 ### Assignment: cart_pole_pixels
 #### Date: Deadline: Dec 08, 23:59
-#### Points: 5 points + 5 bonus
+#### Points: 6 points + 6 bonus
 
 The supplied [cart_pole_pixels_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/07/cart_pole_pixels_evaluator.py)
 module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/02/gym_evaluator.py))
