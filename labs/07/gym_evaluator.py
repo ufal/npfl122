@@ -127,10 +127,12 @@ class GymEnvironment:
             self._episode_returns.append(self._episode_return)
 
             if self.episode % 10 == 0:
-                print("Episode {}, mean 100-episode return {}".format(
-                    self.episode, np.mean(self._episode_returns[-100:])), file=sys.stderr)
+                print("Episode {}, mean 100-episode return {:.2f} +-{:.2f}".format(
+                    self.episode, np.mean(self._episode_returns[-100:]),
+                    np.std(self._episode_returns[-100:])), file=sys.stderr)
             if self._evaluating_from is not None and self.episode >= self._evaluating_from + 100:
-                print("The mean 100-episode return after evaluation {}".format(np.mean(self._episode_returns[-100:])))
+                print("The mean 100-episode return after evaluation {:.2f} +-{:.2f}".format(
+                    np.mean(self._episode_returns[-100:]), np.std(self._episode_returns[-100:]), file=sys.std))
                 sys.exit(0)
 
             self._episode_return = 0
