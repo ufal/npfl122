@@ -146,12 +146,13 @@ class GymEnvironment:
         if self._workers is not None:
             raise RuntimeError("The parallel_init method already called")
 
-        self._workers = []
+        workers = []
         for i in range(environments):
             connection, connection_worker = multiprocessing.Pipe()
             worker = multiprocessing.Process(target=GymEnvironment._parallel_worker, args=(self, self._env.spec.id, 43 + i, connection_worker))
             worker.start()
-            self._workers.append((connection, worker))
+            workers.append((connection, worker))
+        self._workers = workers
 
         import atexit
         atexit.register(lambda: [worker.terminate() for _, worker in self._workers])
@@ -162,6 +163,7 @@ class GymEnvironment:
 
         return states
 
+    @staticmethod
     def _parallel_worker(parent, env, seed, connection):
         env = gym.make(env)
         env.seed(seed)
