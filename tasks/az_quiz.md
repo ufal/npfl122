@@ -34,7 +34,7 @@ interactive players available,
 [az_quiz_player_interactive_mouse.py](https://github.com/ufal/npfl122/tree/master/labs/09/az_quiz_player_interactive_mouse.py)
 and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/09/az_quiz_player_interactive_keyboard.py).
 
-For inspiration, use the [official pseudocode for AlphaZero](http://science.sciencemag.org/highwire/filestream/719481/field_highwire_adjunct_files/1/aar6404_DataS1.zip). However, note that there is an error on line 260, and the correct
+For inspiration, use the [official pseudocode for AlphaZero](http://science.sciencemag.org/highwire/filestream/719481/field_highwire_adjunct_files/1/aar6404_DataS1.zip). However, note that there is an error on line 258, and the correct
 version should look like
 ```
 value_score = 1 - child.value()
