@@ -22,3 +22,5 @@ or even 0.5) an then gradually decrease it to almost zero.
 During evaluation in ReCodEx, three different random seeds will be employed, and
 you need to reach the required return on all of them. The time limit for each
 test is 5 minutes.
+
+**Note that you must not submit `gym_evaluator.py` nor `mountain_car_evaluator.py` to ReCodEx.**

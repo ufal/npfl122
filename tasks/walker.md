@@ -19,3 +19,5 @@ according to relative ordering of your solution performances.
 
 You can start with the [ddpg.py](https://github.com/ufal/npfl122/tree/master/labs/08/ddpg.py)
 template, only set `args.env` to `BipedalWalker-v2`.
+
+**Note that you must not submit `gym_evaluator.py` to ReCodEx.**

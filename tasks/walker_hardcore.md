@@ -13,3 +13,5 @@ If your average return is at least 0, ReCodEx shows the solution as correct.
 
 You can start with the [ddpg.py](https://github.com/ufal/npfl122/tree/master/labs/08/ddpg.py)
 template, only set `args.env` to `BipedalWalkerHardcore-v2`.
+
+**Note that you must not submit `gym_evaluator.py` to ReCodEx.**

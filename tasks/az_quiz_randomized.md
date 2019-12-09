@@ -14,3 +14,5 @@ MDP. The information about distribution of possible next states is provided
 by the `AZQuiz.all_moves` method, which returns a list of `(probability,
 az_quiz_instance)` next states (in our environment, there are always two
 possible next states).
+
+**Note that you must not submit `az_quiz.py` nor `az_quiz_evaluator_recodex.py` to ReCodEx.**

@@ -25,3 +25,5 @@ During evaluation in ReCodEx, two different random seeds will be employed, and
 you need to reach the required return on all of them. Time limit for each test
 is 10 minutes (so you can train in ReCodEx, but you can also pretrain your
 network if you like).
+
+**Note that you must not submit `gym_evaluator.py` nor `cart_pole_evaluator.py` to ReCodEx.**

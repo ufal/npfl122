@@ -20,3 +20,5 @@ Your goal is to reach an average return of 490 during 100 evaluation episodes.
 During evaluation in ReCodEx, two different random seeds will be employed, and
 you need to reach the required return on all of them. Time limit for each test
 is 5 minutes.
+
+**Note that you must not submit `gym_evaluator.py` nor `cart_pole_evaluator.py` to ReCodEx.**

@@ -27,3 +27,5 @@ according to relative ordering of your solution performances.
 You can start with the [lunar_lander.py](https://github.com/ufal/npfl122/tree/master/labs/03/lunar_lander.py)
 template, which parses several useful parameters, creates the environment
 and illustrates the overall usage.
+
+**Note that you must not submit `gym_evaluator.py` nor `lunar_lander_evaluator.py` to ReCodEx.**

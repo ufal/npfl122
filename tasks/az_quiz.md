@@ -39,3 +39,5 @@ version should look like
 ```
 value_score = 1 - child.value()
 ```
+
+**Note that you must not submit `az_quiz.py` nor `az_quiz_evaluator_recodex.py` to ReCodEx.**

@@ -51,3 +51,5 @@ The [car_racing.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_raci
 template parses several useful parameters and creates the environment.
 Note that the [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_racing_evaluator.py)
 can be executed directly and in that case you can drive the car using arrows.
+
+**Note that you must not submit `gym_evaluator.py` nor `car_racing_evaluator.py` to ReCodEx.**

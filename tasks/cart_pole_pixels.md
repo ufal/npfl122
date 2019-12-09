@@ -20,3 +20,5 @@ The [cart_pole_pixels.py](https://github.com/ufal/npfl122/tree/master/labs/07/ca
 template parses several parameters and creates the environment.
 You are again supposed to train the model beforehand and submit
 only the trained neural network.
+
+**Note that you must not submit `gym_evaluator.py` nor `cart_pole_pixels_evaluator.py` to ReCodEx.**
