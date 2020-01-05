@@ -13,17 +13,15 @@ def evaluate(players, games, randomized, render):
     for i in range(games):
         for to_start in range(2):
             game = az_quiz.AZQuiz(randomized)
-            to_play = to_start
             try:
                 while game.winner is None:
-                    game.move(players[to_play].play(game.clone()))
-                    to_play = 1 - to_play
+                    game.move(players[to_start ^ game.to_play].play(game.clone()))
                     if render:
                         game.render()
                         time.sleep(0.3)
             except ValueError:
                 pass
-            if to_play == 1:
+            if game.winner == to_start:
                 wins[to_start] += 1
             if render:
                 time.sleep(1.0)

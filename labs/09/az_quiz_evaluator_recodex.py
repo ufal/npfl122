@@ -17,11 +17,9 @@ def evaluate(player, games=50, randomized=False):
     for i in range(games):
         for to_start in range(2):
             game = az_quiz.AZQuiz(randomized)
-            to_play = to_start
             while game.winner is None:
-                game.move(players[to_play].play(game.clone()))
-                to_play = 1 - to_play
-            if to_play == 1:
+                game.move(players[to_start ^ game.to_play].play(game.clone()))
+            if game.winner == to_start:
                 wins[to_start] += 1
 
         print("First player win rate after {} games: {:.2f}% ({:.2f}% and {:.2f}% when starting and not starting)".format(
