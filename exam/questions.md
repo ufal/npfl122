@@ -23,7 +23,7 @@
   an off-policy variant of Monte Carlo algorithm in tabular settings,
   both with ordinary and weighted importance sampling. Then describe
   Expected Sarsa as an off-policy algorithm not using importance sampling.
-  Finally, describe off-policy $n$-step Sarsa and Tree Backup algorithms.
+  Finally, describe off-policy $n$-step Sarsa.
 
 - **Function Approximation**
   Assuming function approximation, define the usual mean squared value error
@@ -50,7 +50,7 @@
   Show how continuous actions can be incorporated in policy gradient algorithms
   (i.e., in a REINFORCE algorithm, without proving the policy gradient theorem).
   Then formulate and prove deterministic policy gradient theorem. Finally,
-  sketch the DDPG algorithm.
+  describe the DDPG algorithm.
 
 - **Gradient Methods with Continuous Actions, TD3**
   Formulate and prove deterministic policy gradient theorem. Then, describe the
