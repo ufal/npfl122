@@ -128,7 +128,7 @@ class AZQuiz:
     def mouse_input(self):
         import pyglet
 
-        result = []
+        result = [None]
         def click(mouse_x, mouse_y, button, modifiers):
             action, chosen_action = 0, None
             A, I, W = 40, 35, 40 * 13
@@ -142,7 +142,7 @@ class AZQuiz:
                     action += 1
 
             if chosen_action is not None and self.valid(chosen_action):
-                result.append(chosen_action)
+                result[0] = chosen_action
                 self._viewer.window.close()
 
         self.render()
