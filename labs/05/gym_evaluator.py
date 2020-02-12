@@ -57,6 +57,8 @@ class GymEnvironment:
     def states(self):
         if hasattr(self._env.observation_space, "n"):
             return self._env.observation_space.n
+        elif hasattr(self._env.observation_space, "spaces") and all(hasattr(space, "n") for space in self._env.observation_space.spaces):
+            return tuple(space.n for space in self._env.observation_space.spaces)
         else:
             if self._separators is not None:
                 states = self._first_tile_states
