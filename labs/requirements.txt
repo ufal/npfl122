@@ -1,5 +1,5 @@
 # See description of the requirements in "README.md".
 tensorflow==2.3.1
-numpy==1.19.2
+numpy==1.18.5
 gym==0.17.2
 box2d==2.3.10
