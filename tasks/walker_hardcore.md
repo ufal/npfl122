@@ -11,7 +11,7 @@ relative ordering of your solution performances. In ReCodEx, your solution
 will be evaluated on 100 episodes with a total time limit of 10 minutes.
 If your average return is at least 0, ReCodEx shows the solution as correct.
 
-You can start with the [ddpg.py](https://github.com/ufal/npfl122/tree/master/labs/08/ddpg.py)
+You can start with the [ddpg.py](https://github.com/ufal/npfl122/tree/past-1920/labs/08/ddpg.py)
 template, only set `args.env` to `BipedalWalkerHardcore-v2`.
 
 **Note that you must not submit `gym_evaluator.py` to ReCodEx.**

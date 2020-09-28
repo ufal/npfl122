@@ -21,7 +21,7 @@ symbol indices.
 Every episode can be ended by at most $3N/2$ actions, and the required
 return is therefore greater or equal to zero. Note that there is a limit
 of at most $2N$ actions per episode. The described environment is provided
-by the [memory_game_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/10/memory_game_evaluator.py)
+by the [memory_game_evaluator.py](https://github.com/ufal/npfl122/tree/past-1920/labs/10/memory_game_evaluator.py)
 module.
 
 Your goal is to solve the environment, using supervised learning via provided
@@ -35,7 +35,7 @@ simulated once you pass `evaluating=True` to `env.reset` and your solution gets
 1 point (2 points for 16 cards) if the average return is nonnegative. You can
 train the agent directly in ReCodEx, or submit a pre-trained one.
 
-A template [memory_game.py](https://github.com/ufal/npfl122/tree/master/labs/10/memory_game.py)
+A template [memory_game.py](https://github.com/ufal/npfl122/tree/past-1920/labs/10/memory_game.py)
 is available, commenting a possible use of memory augmented networks.
 
 **Note that you must not submit `gym_environment.py` nor

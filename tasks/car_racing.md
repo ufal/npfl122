@@ -6,8 +6,8 @@ The goal of this competition is to use Deep Q Networks and its improvements
 on a more real-world  [CarRacing-v0 environment](https://gym.openai.com/envs/CarRacing-v0)
 environment from the [OpenAI Gym](https://gym.openai.com/).
 
-Use the supplied [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_racing_evaluator.py)
-module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/06/gym_evaluator.py)
+Use the supplied [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/past-1920/labs/06/car_racing_evaluator.py)
+module (depending on [gym_evaluator.py](https://github.com/ufal/npfl122/tree/past-1920/labs/06/gym_evaluator.py)
 to interact with the environment. The environment is continuous and states are
 RGB images of size $96×96×3$, but you can downsample them even more. The actions
 are also continuous and consist of an array with the following three elements:
@@ -47,9 +47,9 @@ limit of 15 minutes. If your average return is at least 200, you obtain
 8 points. The task is also a _competition_ and at most 10 points will be awarded
 according to relative ordering of your solution performances.
 
-The [car_racing.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_racing.py)
+The [car_racing.py](https://github.com/ufal/npfl122/tree/past-1920/labs/06/car_racing.py)
 template parses several useful parameters and creates the environment.
-Note that the [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/06/car_racing_evaluator.py)
+Note that the [car_racing_evaluator.py](https://github.com/ufal/npfl122/tree/past-1920/labs/06/car_racing_evaluator.py)
 can be executed directly and in that case you can drive the car using arrows.
 
 **Note that you must not submit `gym_evaluator.py` nor `car_racing_evaluator.py` to ReCodEx.**

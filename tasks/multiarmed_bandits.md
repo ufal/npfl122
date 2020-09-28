@@ -7,7 +7,7 @@ For every hyperparameter choice, perform 100 episodes, each consisting of
 1000 trials, and report the average and standard deviation of the 100 episode
 returns.
 
-Start with the [multiarmed_bandits.py](https://github.com/ufal/npfl122/tree/master/labs/01/multiarmed_bandits.py)
+Start with the [multiarmed_bandits.py](https://github.com/ufal/npfl122/tree/past-1920/labs/01/multiarmed_bandits.py)
 template, which defines `MultiArmedBandits` environment. We use API based on
 [OpenAI Gym](https://gym.openai.com/) `Environment` class, notably the following
 two methods:
@@ -21,7 +21,7 @@ returned).
 
 Your goal is to implement the following modes of calculation. In addition
 to submitting the solution to ReCodEx, you should use
-[multiarmed_bandits_draw.py](https://github.com/ufal/npfl122/tree/master/labs/01/multiarmed_bandits_draw.py)
+[multiarmed_bandits_draw.py](https://github.com/ufal/npfl122/tree/past-1920/labs/01/multiarmed_bandits_draw.py)
 to plots the results in a graph.
 - `greedy` _[2 points]_: perform $ε$-greedy search with parameter `epsilon`, computing the
   value function using averaging. (Results for $ε ∈ \{1/64, 1/32, 1/16, 1/8, 1/4\}$ are plotted.)

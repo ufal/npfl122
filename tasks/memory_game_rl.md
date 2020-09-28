@@ -14,7 +14,7 @@ the `--cards` argument). For each card number, your solution gets 2 points
 directly in ReCodEx, or submit a pre-trained one.
 
 There is no specific template for this assignment, reuse the
-[memory_game.py](https://github.com/ufal/npfl122/tree/master/labs/10/memory_game.py)
+[memory_game.py](https://github.com/ufal/npfl122/tree/past-1920/labs/10/memory_game.py)
 for the previous assignment.
 
 **Note that you must not submit `gym_environment.py` nor

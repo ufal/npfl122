@@ -7,7 +7,7 @@ try solving the [BipedalWalker-v2 environment](https://gym.openai.com/envs/Biped
 environment from the [OpenAI Gym](https://gym.openai.com/).
 
 To create the evaluator, use
-[gym_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/08/gym_evaluator.py)`.GymEvaluator("BipedalWalker-v2")`.
+[gym_evaluator.py](https://github.com/ufal/npfl122/tree/past-1920/labs/08/gym_evaluator.py)`.GymEvaluator("BipedalWalker-v2")`.
 The environment is continuous, states and actions are described at
 [OpenAI Gym Wiki](https://github.com/openai/gym/wiki/BipedalWalker-v2).
 
@@ -17,7 +17,7 @@ limit of 10 minutes. If your average return is at least 100, you obtain
 8 points. The task is also a _competition_ and at most 10 points will be awarded
 according to relative ordering of your solution performances.
 
-You can start with the [ddpg.py](https://github.com/ufal/npfl122/tree/master/labs/08/ddpg.py)
+You can start with the [ddpg.py](https://github.com/ufal/npfl122/tree/past-1920/labs/08/ddpg.py)
 template, only set `args.env` to `BipedalWalker-v2`.
 
 **Note that you must not submit `gym_evaluator.py` to ReCodEx.**

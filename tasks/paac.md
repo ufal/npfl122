@@ -2,7 +2,7 @@
 #### Date: Deadline: Dec 15, 23:59
 #### Points: 5 points
 
-Using the [paac.py](https://github.com/ufal/npfl122/tree/master/labs/08/paac.py)
+Using the [paac.py](https://github.com/ufal/npfl122/tree/past-1920/labs/08/paac.py)
 template, solve the [CartPole-v1 environment](https://gym.openai.com/envs/CartPole-v1)
 environment using parallel actor-critic algorithm. Use the `parallel_init`
 and `parallel_step` methods described in `car_racing` assignment.

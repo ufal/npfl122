@@ -4,9 +4,9 @@
 
 Consider the following gridworld:
 
-![gridworld example](https://raw.githubusercontent.com/ufal/npfl122/master/tasks/policy_iteration.svg?sanitize=true)
+![gridworld example](https://raw.githubusercontent.com/ufal/npfl122/past-1920/tasks/policy_iteration.svg?sanitize=true)
 
-Start with [policy_iteration.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration.py),
+Start with [policy_iteration.py](https://github.com/ufal/npfl122/tree/past-1920/labs/02/policy_iteration.py),
 which implements the gridworld mechanics, by providing the following methods:
 - `GridWorld.states`: return number of states (`11`)
 - `GridWorld.actions`: return lists with labels of the actions (`["↑", "→", "↓", "←"]`)

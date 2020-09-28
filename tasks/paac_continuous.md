@@ -2,7 +2,7 @@
 #### Date: Deadline: Dec 15, 23:59
 #### Points: 6 points
 
-Using the [paac_continuous.py](https://github.com/ufal/npfl122/tree/master/labs/08/paac_continuous.py)
+Using the [paac_continuous.py](https://github.com/ufal/npfl122/tree/past-1920/labs/08/paac_continuous.py)
 template, solve the [MountainCarContinuous-v0 environment](https://gym.openai.com/envs/MountainCarContinuous-v0/)
 environment using parallel actor-critic algorithm with continuous actions.
 
