@@ -1,6 +1,5 @@
 # See description of the requirements in "README.md".
-tensorflow==2.0.3
-gym==0.14.0
-scipy
-box2d-py
-atari-py
+tensorflow==2.3.1
+numpy==1.19.2
+gym==0.17.2
+box2d==2.3.10
