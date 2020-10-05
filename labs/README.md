@@ -1,6 +1,5 @@
 The tasks are evaluated automatically using the
-[ReCodEx Code Examiner](https://recodex.mff.cuni.cz/). To register into ReCodEx,
-[follow these instructions](#faq_recodex).
+[ReCodEx Code Examiner](https://recodex.mff.cuni.cz/).
 
 The evaluation is performed using Python 3.8, TensorFlow 2.3.1, NumPy 1.18.5,
 OpenAI Gym 0.17.2 and Box2D 2.3.10. You should
