@@ -3,6 +3,7 @@
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides/?01
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-01.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-01.mp4,Video
+#### Lecture assignment: monte_carlo
 
 - *History of RL [Chapter 1 of RLB]*
 - Multi-armed bandits [Sections 2-2.6 of RLB]
