@@ -36,6 +36,7 @@ def main(env, args):
     np.random.seed(args.seed)
 
     # TODO: Initialize the estimates
+
     rewards = 0
     for step in range(args.episode_length):
         # TODO: Select an action according to `env.greedy(args.epsilon)`.
@@ -47,7 +48,7 @@ def main(env, args):
 
         # TODO: Update parameters
 
-    # TODO: Return the average of obtained rewards
+
     return rewards / args.episode_length
 
 if __name__ == "__main__":
