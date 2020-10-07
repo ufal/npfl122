@@ -18,9 +18,9 @@ def main(env, args):
     np.random.seed(args.seed)
 
     # TODO:
-    # - Create Q, a zero-filled NumPy array with shape [env.states, env.actions],
+    # - Create Q, a zero-filled NumPy array with shape [number of states, number of actions],
     #   representing estimated Q value of a given (state, action) pair.
-    # - Create C, a zero-filled NumPy array with shape [env.states, env.actions],
+    # - Create C, a zero-filled NumPy array with the same shape,
     #   representing number of observed returns of a given (state, action) pair.
 
     for _ in range(args.episodes):
@@ -35,9 +35,8 @@ def main(env, args):
 
             next_state, reward, done, _ = env.step(action)
 
-        # TODO: Compute returns from the recieved rewards.
-
-        # TODO: Update Q and C
+        # TODO: Compute returns from the recieved rewards
+        # and update Q and C.
 
     # Final evaluation
     while True:
