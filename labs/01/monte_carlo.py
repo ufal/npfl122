@@ -38,6 +38,8 @@ def main(env, args):
 
             next_state, reward, done, _ = env.step(action)
 
+            state = next_state
+
         # TODO: Compute returns from the recieved rewards
         # and update Q and C.
 
