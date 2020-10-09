@@ -52,7 +52,7 @@ def main(env, args):
     return rewards / args.episode_length
 
 if __name__ == "__main__":
-    args = parser.parse_args()
+    args = parser.parse_args([] if "__file__" not in globals() else None)
 
     # Create the environment
     env = MultiArmedBandits(args.bandits, seed=args.seed)

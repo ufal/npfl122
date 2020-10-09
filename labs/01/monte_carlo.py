@@ -53,7 +53,7 @@ def main(env, args):
 
 
 if __name__ == "__main__":
-    args = parser.parse_args()
+    args = parser.parse_args([] if "__file__" not in globals() else None)
 
     # Create the environment
     env = wrappers.EvaluationWrapper(wrappers.DiscreteCartPoleWrapper(gym.make("CartPole-v1")), args.seed)
