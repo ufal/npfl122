@@ -27,6 +27,7 @@ def main(env, args):
 
     for _ in range(args.episodes):
         # TODO: Perform episode, collecting states, actions and rewards
+
         state, done = env.reset(), False
         while not done:
             if args.render_each and env.episode > 0 and env.episode % args.render_each == 0:
