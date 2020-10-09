@@ -42,7 +42,7 @@ def main(env, args):
     rewards = 0
     for step in range(args.episode_length):
         # TODO: Select an action according to `env.greedy(args.epsilon)`.
-        action=None
+        action = None
 
         # Perform it
         reward = env.step(action)
