@@ -7,11 +7,13 @@ import numpy as np
 import wrappers
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--episodes", default=None, type=int, help="Training episodes.")
-parser.add_argument("--epsilon", default=None, type=float, help="Exploration factor.")
+# These arguments will be set appropriately by ReCodEx, even if you change them.
 parser.add_argument("--recodex", default=False, action="store_true", help="Running in ReCodEx")
 parser.add_argument("--render_each", default=0, type=int, help="Render some episodes.")
 parser.add_argument("--seed", default=None, type=int, help="Random seed.")
+# For these and any other arguments you add, ReCodEx will keep your default value.
+parser.add_argument("--episodes", default=None, type=int, help="Training episodes.")
+parser.add_argument("--epsilon", default=None, type=float, help="Exploration factor.")
 
 def main(env, args):
     # Fix random seed
