@@ -24,12 +24,12 @@
 - _What file does ReCodEx execute and what arguments does it use?_
 
   Exactly one file with `py` suffix must contain a line starting with `def main(`.
-  Such a file is imported by ReCodEx (during the import, `__name__ == "__recodex__"`)
-  and the `main` method is executed.
+  Such a file is imported by ReCodEx and the `main` method is executed
+  (during the import, `__name__ == "__recodex__"`).
 
   The file must also export an argument parser called `parser`. ReCodEx uses its
   arguments and default values, but is overwrites some of the arguments
-  depending on the test being executed -- the template always indicates which
+  depending on the test being executed – the template should always indicate which
   arguments are set by ReCodEx and which are left intact.
 
 - _What are the time and memory limits?_
