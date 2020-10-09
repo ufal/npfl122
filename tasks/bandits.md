@@ -1,6 +1,7 @@
 ### Assignment: bandits
 #### Date: Deadline: Oct 20, 23:59
 #### Points: 4 points
+#### Examples: bandits_examples
 
 Implement the $ε$-greedy strategy for solving multi-armed bandits.
 
@@ -20,3 +21,23 @@ Your goal is to implement the following solution variants:
 
 Note that the initial estimates should be set to a given value and `epsilon` can
 be zero, in which case purely greedy actions are used.
+#### Examples Start: bandits_examples
+Please note that the results are stochastic, so your results may differ slightly.
+
+- `python3 bandits.py --alpha=0 --epsilon=0.1 --initial=0`
+```
+1.39 0.08
+```
+- `python3 bandits.py --alpha=0 --epsilon=0 --initial=1`
+```
+1.48 0.22
+```
+- `python3 bandits.py --alpha=0.15 --epsilon=0.1 --initial=0`
+```
+1.37 0.09
+```
+- `python3 bandits.py --alpha=0.15 --epsilon=0 --initial=1`
+```
+1.52 0.04
+```
+#### Examples End:

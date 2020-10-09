@@ -34,10 +34,7 @@ parser.add_argument("--seed", default=42, type=int, help="Random seed.")
 # If you add more arguments, ReCodEx will keep them with your default values.
 
 def main(env, args):
-    # Fix random seed
-    np.random.seed(args.seed)
-
-    # TODO: Initialize the estimates
+    # TODO: Initialize the estimates, to `args.initial`.
 
     rewards = 0
     for step in range(args.episode_length):
@@ -48,7 +45,8 @@ def main(env, args):
         reward = env.step(action)
         rewards += reward
 
-        # TODO: Update parameters
+        # TODO: Update parameters, either using averaging (when `args.alpha` == 0)
+        # or by an update with a learning rate of `args.alpha`.
 
 
     return rewards / args.episode_length
@@ -58,6 +56,9 @@ if __name__ == "__main__":
 
     # Create the environment
     env = MultiArmedBandits(args.bandits, seed=args.seed)
+
+    # Fix random seed
+    np.random.seed(args.seed)
 
     returns = []
     for _ in range(args.episodes):
