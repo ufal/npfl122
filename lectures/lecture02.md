@@ -2,6 +2,7 @@
 #### Date: Oct 12
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides/?02
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-02.pdf,PDF Slides
+#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-02.practicals.mp4,Practicals
 #### Lecture assignment: policy_iteration
 #### Lecture assignment: policy_iteration_exact
 #### Lecture assignment: policy_iteration_exploring_mc
