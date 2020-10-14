@@ -4,6 +4,8 @@
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-02.pdf,PDF Slides
 #### Lecture assignment: policy_iteration
 #### Lecture assignment: policy_iteration_exact
+#### Lecture assignment: policy_iteration_exploring_mc
+#### Lecture assignment: policy_iteration_greedy_mc
 
 - Policies and Value Functions [Sections 3.5-3.6 of RLB]
 - Value Iteration [Sections 4 and 4.4 of RLB]
