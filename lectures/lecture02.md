@@ -2,6 +2,8 @@
 #### Date: Oct 12
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides/?02
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-02.pdf,PDF Slides
+#### Lecture assignment: policy_iteration
+#### Lecture assignment: policy_iteration_exact
 
 - Policies and Value Functions [Sections 3.5-3.6 of RLB]
 - Value Iteration [Sections 4 and 4.4 of RLB]
