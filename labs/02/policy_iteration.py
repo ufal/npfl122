@@ -53,6 +53,8 @@ def main(args):
     # current value function and perform `args.iterations` applications of the
     # Bellman equation. Perform the policy evaluation synchronously (i.e., do
     # not overwrite the current value function when computing its improvement).
+    # During the policy improvement, if multiple actions have the same estimate,
+    # choose the one with the smaller index.
 
     # TODO: The final value function should be in `value_function` and final greedy policy in `policy`.
     return value_function, policy

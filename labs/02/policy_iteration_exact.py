@@ -50,6 +50,8 @@ def main(args):
     # TODO: Implement policy iteration algorithm, with `args.steps` steps of
     # policy evaluation/policy improvement. During policy evaluation, compute
     # the value function exactly by solving the system of linear equations.
+    # During the policy improvement, if multiple actions have the same estimate,
+    # choose the one with the smaller index.
 
     # TODO: The final value function should be in `value_function` and final greedy policy in `policy`.
     return value_function, policy

@@ -66,6 +66,8 @@ def main(args):
     #     - compute the return of the simulation
     #     - update the estimate using averaging, but only for the first
     #       state-action pair
+    # During the policy improvement, if multiple actions have the same estimate,
+    # choose the one with the smaller index.
 
     # TODO: Compute `value_function` by taking the value from
     # `action_value_function` according to the computed policy.
