@@ -9,7 +9,7 @@ class GridWorld:
     # 4 x 5 6
     # 7 8 9 10
 
-    # The rewards are +1 in state 3 and -100 in state 6
+    # The rewards are +1 in state 10 and -100 in state 6
 
     # Actions are ↑ → ↓ ←; with probability 80% they are performed as requested,
     # with 10% move 90° CCW is performed, with 10% move 90° CW is performed.
