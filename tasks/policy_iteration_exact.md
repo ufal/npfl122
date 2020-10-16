@@ -8,6 +8,7 @@ extend the `policy_iteration` assignment to perform policy evaluation
 exactly by solving a system of linear equations.
 
 #### Examples Start: policy_iteration_exact_examples
+Note that your results may sometimes be slightly different (for example because of varying floating point arithmetic on your CPU).
 - `python3 policy_iteration_exact.py --gamma=0.95 --steps=1`
 ```
    -0.00→    0.00→    0.00↑    0.00↑

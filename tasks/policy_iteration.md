@@ -25,6 +25,7 @@ value function when computing its improvement). Assume the initial policy is
 “go North” and initial value function is zero.
 
 #### Examples Start: policy_iteration_examples
+Note that your results may sometimes be slightly different (for example because of varying floating point arithmetic on your CPU).
 - `python3 policy_iteration.py --gamma=0.95 --iterations=1 --steps=1`
 ```
     0.00↑    0.00↑    0.00↑    0.00↑
