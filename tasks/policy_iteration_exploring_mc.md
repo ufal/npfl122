@@ -3,7 +3,8 @@
 #### Points: 2 points
 #### Examples: policy_iteration_exploring_mc_examples
 
-Extend the `policy_iteration` assignment to perform policy evaluation
+Starting with [policy_iteration_exploring_mc.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration_exploring_mc.py),
+extend the `policy_iteration` assignment to perform policy evaluation
 by using Monte Carlo estimation with exploring starts.
 
 The estimation can now be performed model-free (without the access to the full
