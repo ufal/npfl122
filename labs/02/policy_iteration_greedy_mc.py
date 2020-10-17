@@ -70,6 +70,8 @@ def main(args):
     #     `env.epsilon_greedy(args.epsilon, greedy_action)`
     #     - this metod returns a random action with probability `args.epsilon`
     #     - otherwise it returns the passed `greedy_action`
+    #     - for replicability, make sure to call it exactly `args.mc_length`
+    #       times in every simulation
     #   - compute the return of the simulation
     #   - update the estimate using averaging, but only for the first
     #     state-action pair
