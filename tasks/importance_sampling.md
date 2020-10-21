@@ -1,6 +1,6 @@
 ### Assignment: importance_sampling
 #### Date: Deadline: Nov 03, 23:59
-#### Points: 3 points
+#### Points: 2 points
 #### Examples: importance_sampling_examples
 
 Using the [FrozenLake-v0 environment](https://gym.openai.com/envs/FrozenLake-v0)
