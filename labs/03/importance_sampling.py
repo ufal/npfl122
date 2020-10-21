@@ -23,7 +23,7 @@ def main(args):
     # Behaviour policy is uniformly random.
     # Target policy uniformly chooses either action 1 or 2.
     V = np.zeros(env.observation_space.n)
-    C = np.zeros_like(V)
+    C = np.zeros(env.observation_space.n)
 
     for _ in range(args.episodes):
         state, done = env.reset(), False
