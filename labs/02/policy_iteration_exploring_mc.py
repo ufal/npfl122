@@ -64,8 +64,8 @@ def main(args):
     #       action with respect to the policy (apart from the first step,
     #       where the action is pre-definted)
     #     - compute the return of the simulation
-    #     - update the estimate using averaging, but only for the first
-    #       occurrence of the first state-action pair
+    #     - update the estimate using averaging (across the previous steps),
+    #       but only for the first occurrence of the first state-action pair
     # During the policy improvement, if multiple actions have the same estimate,
     # choose the one with the smaller index.
 
