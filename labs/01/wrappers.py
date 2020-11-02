@@ -5,9 +5,10 @@ import gym
 import numpy as np
 
 class EvaluationWrapper(gym.Wrapper):
-    def __init__(self, env, seed=None, evaluate_for=100):
+    def __init__(self, env, seed=None, evaluate_for=100, report_each=10):
         super().__init__(env)
         self._evaluate_for = evaluate_for
+        self._report_each = report_each
 
         self.seed(seed)
         self.action_space.seed(seed)
@@ -43,7 +44,7 @@ class EvaluationWrapper(gym.Wrapper):
             self._episode_running = False
             self._episode_returns.append(self._episode_return)
 
-            if self.episode % 10 == 0:
+            if self.episode % self._report_each == 0:
                 print("Episode {}, mean {}-episode return {:.2f} +-{:.2f}".format(
                     self.episode, self._evaluate_for, np.mean(self._episode_returns[-self._evaluate_for:]),
                     np.std(self._episode_returns[-self._evaluate_for:])), file=sys.stderr)
@@ -58,21 +59,50 @@ class EvaluationWrapper(gym.Wrapper):
 
 
 class DiscretizationWrapper(gym.ObservationWrapper):
-    def __init__(self, env, separators):
+    def __init__(self, env, separators, tiles=None):
         super().__init__(env)
         self._separators = separators
+        self._tiles = tiles
 
-        states = 1
-        for separator in separators:
-            states *= 1 + len(separator)
-        self.observation_space = gym.spaces.Discrete(states)
+        if tiles is None:
+            states = 1
+            for separator in separators:
+                states *= 1 + len(separator)
+            self.observation_space = gym.spaces.Discrete(states)
+        else:
+            self._first_tile_states, self._rest_tiles_states = 1, 1
+            for separator in separators:
+                self._first_tile_states *= 1 + len(separator)
+                self._rest_tiles_states *= 2 + len(separator)
+            self.observation_space = gym.spaces.MultiDiscrete([
+                self._first_tile_states + i * self._rest_tiles_states for i in range(tiles)])
+
+            self._separator_offsets, self._separator_tops = [], []
+            for separator in separators:
+                self._separator_offsets.append(0 if len(separator) <= 1 else (separator[1] - separator[0]) / tiles)
+                self._separator_tops.append(math.inf if len(separator) <= 1 else separator[-1] + (separator[1] - separator[0]))
+
 
     def observation(self, observations):
         state = 0
         for observation, separator in zip(observations, self._separators):
             state *= 1 + len(separator)
             state += np.digitize(observation, separator)
-        return state
+        if self._tiles is None:
+            return state
+        else:
+            states = [state]
+            for t in range(1, self._tiles):
+                state = 0
+                for i in range(len(self._separators)):
+                    state *= 2 + len(self._separators[i])
+                    value = observations[i] + ((t * (2 * i + 1)) % self._tiles) * self._separator_offsets[i]
+                    if value > self._separator_tops[i]:
+                        state += 1 + len(self._separators[i])
+                    else:
+                        state += np.digitize(value, self._separators[i])
+                states.append(self._first_tile_states + (t - 1) * self._rest_tiles_states + state)
+            return states
 
 
 class DiscreteCartPoleWrapper(DiscretizationWrapper):
@@ -86,11 +116,13 @@ class DiscreteCartPoleWrapper(DiscretizationWrapper):
 
 
 class DiscreteMountainCarWrapper(DiscretizationWrapper):
-    def __init__(self, env, bins=24):
+    def __init__(self, env, bins=None, tiles=None):
+        if bins is None:
+            bins = 24 if tiles is None or tiles <= 1 else 12 if tiles <= 3 else 8
         super().__init__(env, [
             np.linspace(-1.2, 0.6, num=bins + 1)[1:-1],   # car position
             np.linspace(-0.07, 0.07, num=bins + 1)[1:-1], # car velocity
-        ])
+        ], tiles)
 
 
 class DiscreteLunarLanderWrapper(DiscretizationWrapper):
