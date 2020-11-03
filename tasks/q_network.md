@@ -16,7 +16,7 @@ that the states are vectors of real-valued observations with shape
 
 Use Q-learning with neural network as a function approximation, which for
 a given state returns state-action values for all actions. You can use any
-network architecture, but one hidden layer of 20 ReLU units is a good start.
+network architecture, but one hidden layer of several dozens ReLU units is a good start.
 Your goal is to reach an average return of 400 during 100 evaluation episodes.
 
 During evaluation in ReCodEx, two different random seeds will be employed, and
