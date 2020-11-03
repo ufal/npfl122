@@ -45,7 +45,7 @@ def main(env, args):
             state = next_state
 
         if args.epsilon_final_at:
-            epsilon = np.exp(np.interp(env.episode + 1, [0, args.epsilon_final_at], [np.log(args.epsilon), np.log(args.epsilon_final)]))
+            epsilon = np.interp(env.episode + 1, [0, args.epsilon_final_at], [args.epsilon, args.epsilon_final])
 
     # Final evaluation
     while True:
