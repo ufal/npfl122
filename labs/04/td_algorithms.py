@@ -35,6 +35,8 @@ def main(args):
         next_action = np.argmax(Q[next_state]) if generator.uniform() >= args.epsilon else env.action_space.sample()
         next_action_prob = args.epsilon / env.action_space.n + (1 - args.epsilon) * (next_action == np.argmax(Q[next_state]))
         while not done:
+            # Do not modify the next 8 lines, even if the `next_action` is generated
+            # and not used when `done == True`.
             action, action_prob, state = next_action, next_action_prob, next_state
             next_state, reward, done, _ = env.step(action)
             next_action = np.argmax(Q[next_state]) if generator.uniform() >= args.epsilon else env.action_space.sample()
