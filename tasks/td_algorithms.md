@@ -16,158 +16,158 @@ correctly and it does not pass, do not hesitate to write me.
 Note that your results may sometimes be slightly different (for example because of varying floating point arithmetic on your CPU).
 - `python3 td_algorithms.py --mode=sarsa --n=1`
 ```
-Episode 100, mean 100-episode return -359.90 +-180.01
-Episode 200, mean 100-episode return -229.65 +-95.70
-Episode 300, mean 100-episode return -188.63 +-110.47
-Episode 400, mean 100-episode return -142.89 +-103.14
-Episode 500, mean 100-episode return -119.60 +-95.95
-Episode 600, mean 100-episode return -75.24 +-69.79
-Episode 700, mean 100-episode return -61.72 +-66.71
-Episode 800, mean 100-episode return -47.05 +-53.93
-Episode 900, mean 100-episode return -27.54 +-47.37
-Episode 1000, mean 100-episode return -20.95 +-30.10
+Episode 100, mean 100-episode return -360.33 +-184.47
+Episode 200, mean 100-episode return -224.77 +-98.00
+Episode 300, mean 100-episode return -182.97 +-100.50
+Episode 400, mean 100-episode return -138.60 +-96.61
+Episode 500, mean 100-episode return -106.91 +-82.49
+Episode 600, mean 100-episode return -88.05 +-79.26
+Episode 700, mean 100-episode return -57.03 +-53.84
+Episode 800, mean 100-episode return -33.09 +-54.11
+Episode 900, mean 100-episode return -30.81 +-45.75
+Episode 1000, mean 100-episode return -21.21 +-35.98
 ```
 - `python3 td_algorithms.py --mode=sarsa --n=1 --off_policy`
 ```
-Episode 100, mean 100-episode return -373.39 +-178.89
-Episode 200, mean 100-episode return -222.31 +-97.32
-Episode 300, mean 100-episode return -188.14 +-98.75
-Episode 400, mean 100-episode return -132.91 +-94.43
-Episode 500, mean 100-episode return -101.87 +-98.58
-Episode 600, mean 100-episode return -60.76 +-68.50
-Episode 700, mean 100-episode return -51.04 +-59.31
-Episode 800, mean 100-episode return -30.87 +-47.22
-Episode 900, mean 100-episode return -22.93 +-37.66
-Episode 1000, mean 100-episode return -15.19 +-33.73
+Episode 100, mean 100-episode return -368.15 +-184.96
+Episode 200, mean 100-episode return -207.59 +-101.46
+Episode 300, mean 100-episode return -170.73 +-100.77
+Episode 400, mean 100-episode return -143.05 +-97.48
+Episode 500, mean 100-episode return -93.66 +-90.10
+Episode 600, mean 100-episode return -66.25 +-68.43
+Episode 700, mean 100-episode return -38.15 +-56.84
+Episode 800, mean 100-episode return -25.82 +-44.67
+Episode 900, mean 100-episode return -18.04 +-37.85
+Episode 1000, mean 100-episode return -14.56 +-34.09
 ```
 - `python3 td_algorithms.py --mode=sarsa --n=4`
 ```
-Episode 100, mean 100-episode return -531.91 +-254.05
-Episode 200, mean 100-episode return -227.53 +-140.60
-Episode 300, mean 100-episode return -160.83 +-168.68
-Episode 400, mean 100-episode return -57.30 +-105.12
-Episode 500, mean 100-episode return -16.90 +-57.42
-Episode 600, mean 100-episode return -5.51 +-23.77
-Episode 700, mean 100-episode return -7.75 +-26.05
-Episode 800, mean 100-episode return -2.56 +-13.42
-Episode 900, mean 100-episode return -0.14 +-12.36
-Episode 1000, mean 100-episode return -0.82 +-11.08
+Episode 100, mean 100-episode return -516.63 +-256.06
+Episode 200, mean 100-episode return -205.93 +-160.51
+Episode 300, mean 100-episode return -169.65 +-165.20
+Episode 400, mean 100-episode return -68.71 +-131.53
+Episode 500, mean 100-episode return -15.79 +-45.34
+Episode 600, mean 100-episode return -8.01 +-38.65
+Episode 700, mean 100-episode return -6.21 +-30.64
+Episode 800, mean 100-episode return -5.69 +-16.12
+Episode 900, mean 100-episode return 0.68 +-8.99
+Episode 1000, mean 100-episode return -1.56 +-10.94
 ```
 - `python3 td_algorithms.py --mode=sarsa --n=4 --off_policy`
 ```
-Episode 100, mean 100-episode return -553.47 +-180.17
-Episode 200, mean 100-episode return -375.44 +-119.84
-Episode 300, mean 100-episode return -365.94 +-138.19
-Episode 400, mean 100-episode return -304.91 +-142.79
-Episode 500, mean 100-episode return -153.13 +-170.85
-Episode 600, mean 100-episode return -58.07 +-125.97
-Episode 700, mean 100-episode return -13.95 +-45.24
-Episode 800, mean 100-episode return -10.65 +-50.26
-Episode 900, mean 100-episode return -3.50 +-16.14
-Episode 1000, mean 100-episode return -2.70 +-13.37
+Episode 100, mean 100-episode return -524.26 +-195.11
+Episode 200, mean 100-episode return -345.41 +-181.73
+Episode 300, mean 100-episode return -286.07 +-165.83
+Episode 400, mean 100-episode return -249.51 +-187.19
+Episode 500, mean 100-episode return -112.83 +-158.33
+Episode 600, mean 100-episode return -80.56 +-145.49
+Episode 700, mean 100-episode return -20.16 +-71.73
+Episode 800, mean 100-episode return -17.42 +-62.07
+Episode 900, mean 100-episode return -5.14 +-27.98
+Episode 1000, mean 100-episode return -1.83 +-12.61
 ```
 - `python3 td_algorithms.py --mode=expected_sarsa --n=1`
 ```
-Episode 100, mean 100-episode return -361.82 +-191.18
-Episode 200, mean 100-episode return -223.74 +-89.97
-Episode 300, mean 100-episode return -185.13 +-105.88
-Episode 400, mean 100-episode return -133.16 +-92.85
-Episode 500, mean 100-episode return -96.37 +-93.79
-Episode 600, mean 100-episode return -63.07 +-71.77
-Episode 700, mean 100-episode return -58.80 +-74.54
-Episode 800, mean 100-episode return -40.60 +-51.91
-Episode 900, mean 100-episode return -34.29 +-49.64
-Episode 1000, mean 100-episode return -17.55 +-33.08
+Episode 100, mean 100-episode return -361.33 +-186.01
+Episode 200, mean 100-episode return -214.54 +-104.67
+Episode 300, mean 100-episode return -179.69 +-103.63
+Episode 400, mean 100-episode return -147.74 +-92.59
+Episode 500, mean 100-episode return -109.10 +-89.53
+Episode 600, mean 100-episode return -79.89 +-75.51
+Episode 700, mean 100-episode return -59.05 +-57.01
+Episode 800, mean 100-episode return -40.03 +-44.50
+Episode 900, mean 100-episode return -25.21 +-38.41
+Episode 1000, mean 100-episode return -19.67 +-34.80
 ```
 - `python3 td_algorithms.py --mode=expected_sarsa --n=1 --off_policy`
 ```
-Episode 100, mean 100-episode return -361.52 +-183.75
-Episode 200, mean 100-episode return -225.36 +-100.96
-Episode 300, mean 100-episode return -187.48 +-97.69
-Episode 400, mean 100-episode return -134.88 +-96.69
-Episode 500, mean 100-episode return -100.00 +-80.72
-Episode 600, mean 100-episode return -66.45 +-67.23
-Episode 700, mean 100-episode return -41.29 +-48.97
-Episode 800, mean 100-episode return -33.64 +-44.79
-Episode 900, mean 100-episode return -19.59 +-32.56
-Episode 1000, mean 100-episode return -16.06 +-30.43
+Episode 100, mean 100-episode return -358.93 +-187.30
+Episode 200, mean 100-episode return -221.93 +-91.20
+Episode 300, mean 100-episode return -176.05 +-110.42
+Episode 400, mean 100-episode return -124.69 +-92.91
+Episode 500, mean 100-episode return -98.44 +-86.99
+Episode 600, mean 100-episode return -64.75 +-69.56
+Episode 700, mean 100-episode return -51.46 +-52.95
+Episode 800, mean 100-episode return -28.69 +-44.46
+Episode 900, mean 100-episode return -17.27 +-30.60
+Episode 1000, mean 100-episode return -10.83 +-25.23
 ```
 - `python3 td_algorithms.py --mode=expected_sarsa --n=4`
 ```
-Episode 100, mean 100-episode return -547.51 +-209.08
-Episode 200, mean 100-episode return -264.92 +-127.12
-Episode 300, mean 100-episode return -171.70 +-175.02
-Episode 400, mean 100-episode return -74.00 +-144.16
-Episode 500, mean 100-episode return -36.78 +-79.85
-Episode 600, mean 100-episode return -5.32 +-23.55
-Episode 700, mean 100-episode return -2.52 +-16.14
-Episode 800, mean 100-episode return 1.14 +-11.30
-Episode 900, mean 100-episode return -0.04 +-11.26
-Episode 1000, mean 100-episode return -0.82 +-14.19
+Episode 100, mean 100-episode return -555.15 +-204.64
+Episode 200, mean 100-episode return -261.06 +-131.13
+Episode 300, mean 100-episode return -144.66 +-157.24
+Episode 400, mean 100-episode return -88.66 +-144.94
+Episode 500, mean 100-episode return -25.55 +-69.55
+Episode 600, mean 100-episode return -6.82 +-30.54
+Episode 700, mean 100-episode return -2.32 +-18.24
+Episode 800, mean 100-episode return -0.09 +-10.35
+Episode 900, mean 100-episode return -0.06 +-14.05
+Episode 1000, mean 100-episode return -0.28 +-11.60
 ```
 - `python3 td_algorithms.py --mode=expected_sarsa --n=4 --off_policy`
 ```
-Episode 100, mean 100-episode return -544.86 +-194.10
-Episode 200, mean 100-episode return -340.38 +-142.35
-Episode 300, mean 100-episode return -244.34 +-183.61
-Episode 400, mean 100-episode return -183.99 +-191.23
-Episode 500, mean 100-episode return -100.23 +-170.85
-Episode 600, mean 100-episode return -86.90 +-166.61
-Episode 700, mean 100-episode return -84.99 +-159.75
-Episode 800, mean 100-episode return -45.56 +-117.89
-Episode 900, mean 100-episode return -33.16 +-95.41
-Episode 1000, mean 100-episode return -2.89 +-11.83
+Episode 100, mean 100-episode return -526.36 +-202.40
+Episode 200, mean 100-episode return -306.17 +-167.38
+Episode 300, mean 100-episode return -258.25 +-180.35
+Episode 400, mean 100-episode return -146.21 +-174.19
+Episode 500, mean 100-episode return -120.67 +-167.93
+Episode 600, mean 100-episode return -85.25 +-153.25
+Episode 700, mean 100-episode return -23.43 +-92.30
+Episode 800, mean 100-episode return -21.92 +-70.71
+Episode 900, mean 100-episode return -4.94 +-22.51
+Episode 1000, mean 100-episode return -5.79 +-26.25
 ```
 - `python3 td_algorithms.py --mode=tree_backup --n=1`
 ```
-Episode 100, mean 100-episode return -361.82 +-191.18
-Episode 200, mean 100-episode return -223.74 +-89.97
-Episode 300, mean 100-episode return -185.13 +-105.88
-Episode 400, mean 100-episode return -133.16 +-92.85
-Episode 500, mean 100-episode return -96.37 +-93.79
-Episode 600, mean 100-episode return -63.07 +-71.77
-Episode 700, mean 100-episode return -58.80 +-74.54
-Episode 800, mean 100-episode return -40.60 +-51.91
-Episode 900, mean 100-episode return -34.29 +-49.64
-Episode 1000, mean 100-episode return -17.55 +-33.08
+Episode 100, mean 100-episode return -361.33 +-186.01
+Episode 200, mean 100-episode return -214.54 +-104.67
+Episode 300, mean 100-episode return -179.69 +-103.63
+Episode 400, mean 100-episode return -147.74 +-92.59
+Episode 500, mean 100-episode return -109.10 +-89.53
+Episode 600, mean 100-episode return -79.89 +-75.51
+Episode 700, mean 100-episode return -59.05 +-57.01
+Episode 800, mean 100-episode return -40.03 +-44.50
+Episode 900, mean 100-episode return -25.21 +-38.41
+Episode 1000, mean 100-episode return -19.67 +-34.80
 ```
 - `python3 td_algorithms.py --mode=tree_backup --n=1 --off_policy`
 ```
-Episode 100, mean 100-episode return -361.52 +-183.75
-Episode 200, mean 100-episode return -225.36 +-100.96
-Episode 300, mean 100-episode return -187.48 +-97.69
-Episode 400, mean 100-episode return -134.88 +-96.69
-Episode 500, mean 100-episode return -100.00 +-80.72
-Episode 600, mean 100-episode return -66.45 +-67.23
-Episode 700, mean 100-episode return -41.29 +-48.97
-Episode 800, mean 100-episode return -33.64 +-44.79
-Episode 900, mean 100-episode return -19.59 +-32.56
-Episode 1000, mean 100-episode return -16.06 +-30.43
+Episode 100, mean 100-episode return -358.93 +-187.30
+Episode 200, mean 100-episode return -221.93 +-91.20
+Episode 300, mean 100-episode return -176.05 +-110.42
+Episode 400, mean 100-episode return -124.69 +-92.91
+Episode 500, mean 100-episode return -98.44 +-86.99
+Episode 600, mean 100-episode return -64.75 +-69.56
+Episode 700, mean 100-episode return -51.46 +-52.95
+Episode 800, mean 100-episode return -28.69 +-44.46
+Episode 900, mean 100-episode return -17.27 +-30.60
+Episode 1000, mean 100-episode return -10.83 +-25.23
 ```
 - `python3 td_algorithms.py --mode=tree_backup --n=4`
 ```
-Episode 100, mean 100-episode return -529.04 +-227.39
-Episode 200, mean 100-episode return -319.63 +-101.42
-Episode 300, mean 100-episode return -213.11 +-159.49
-Episode 400, mean 100-episode return -87.48 +-134.82
-Episode 500, mean 100-episode return -41.35 +-95.06
-Episode 600, mean 100-episode return -24.18 +-72.25
-Episode 700, mean 100-episode return -5.93 +-22.41
-Episode 800, mean 100-episode return -0.28 +-14.11
-Episode 900, mean 100-episode return -0.52 +-9.41
-Episode 1000, mean 100-episode return -0.08 +-10.96
+Episode 100, mean 100-episode return -522.36 +-226.08
+Episode 200, mean 100-episode return -264.75 +-136.85
+Episode 300, mean 100-episode return -163.50 +-168.74
+Episode 400, mean 100-episode return -54.18 +-105.95
+Episode 500, mean 100-episode return -27.66 +-70.12
+Episode 600, mean 100-episode return -9.05 +-23.62
+Episode 700, mean 100-episode return -4.76 +-31.53
+Episode 800, mean 100-episode return -2.57 +-12.74
+Episode 900, mean 100-episode return 0.58 +-12.08
+Episode 1000, mean 100-episode return 1.17 +-9.07
 ```
 - `python3 td_algorithms.py --mode=tree_backup --n=4 --off_policy`
 ```
-Episode 100, mean 100-episode return -544.07 +-208.75
-Episode 200, mean 100-episode return -319.63 +-70.77
-Episode 300, mean 100-episode return -213.71 +-161.24
-Episode 400, mean 100-episode return -114.55 +-141.32
-Episode 500, mean 100-episode return -25.77 +-69.23
-Episode 600, mean 100-episode return -8.91 +-32.95
-Episode 700, mean 100-episode return -1.57 +-17.71
-Episode 800, mean 100-episode return -1.08 +-8.79
-Episode 900, mean 100-episode return -0.50 +-10.60
-Episode 1000, mean 100-episode return -0.60 +-11.27
+Episode 100, mean 100-episode return -519.80 +-233.81
+Episode 200, mean 100-episode return -302.58 +-123.70
+Episode 300, mean 100-episode return -203.98 +-153.41
+Episode 400, mean 100-episode return -95.12 +-136.49
+Episode 500, mean 100-episode return -25.28 +-65.11
+Episode 600, mean 100-episode return -4.79 +-19.20
+Episode 700, mean 100-episode return -8.53 +-29.38
+Episode 800, mean 100-episode return -5.13 +-19.44
+Episode 900, mean 100-episode return -1.98 +-12.35
+Episode 1000, mean 100-episode return -1.59 +-11.99
 ```
 #### Examples End:
