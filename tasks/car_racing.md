@@ -34,9 +34,9 @@ template parses several useful parameters and creates the environment.
 Note that the [car_racing_environment.py](https://github.com/ufal/npfl122/tree/master/labs/05/car_racing_environment.py)
 can be executed directly and in that case you can drive the car using arrows.
 
-Also, you might want to use a vectorized version of the environment for
+Also, you might want to use a **vectorized version of the environment** for
 training, which runs several individual environments in separate processes.
 The template contains instructions how to create it. The vectorized environment
 expects a vector of actions and returns a vector of observations, rewards, dones
-and infos. When one of the environments is `done`, **it is immediately reset and
-`state` is the initial state of a new episode**.
+and infos. When one of the environments is `done`, **it is immediately reset** and
+`state` is the initial state of a new episode.
