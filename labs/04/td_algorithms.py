@@ -63,8 +63,8 @@ def main(args):
             # as the behaviour policy action probability, and current `target_policy` as the
             # target policy (everywhere in the update).
             #
-            # Do not forget that when `done` is True, bootstrapping is not used,
-            # so the return is only the reward.
+            # Do not forget that when `done` is True, bootstrapping on the
+            # `next_state` is not used.
             #
             # Also note that when the episode ends and `args.n` > 1, there will
             # be several state-action pairs that also need to be updated. Perform
