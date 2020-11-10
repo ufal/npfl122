@@ -59,9 +59,10 @@ def main(args):
             #   - "tree_backup": tree backup algorithm
             #
             # Perform the updates as soon as you can -- whenever you have all the information
-            # to update `Q[state, action]`, do it. Use the corresponding `action_prob`
-            # as the behaviour policy action probability, and current `target_policy` as the
-            # target policy (everywhere in the update).
+            # to update `Q[state, action]`, do it. For each `action` use its corresponding
+            # `action_prob` at the time of taking the `action` as the behaviour policy action
+            # probability, and current `target_policy` as the target policy (everywhere
+            # in the update).
             #
             # Do not forget that when `done` is True, bootstrapping on the
             # `next_state` is not used.
