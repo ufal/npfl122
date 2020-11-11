@@ -43,7 +43,7 @@ class Network:
         # You should:
         # - compute the predicted baseline using the baseline model
         # - train the policy model, using `returns - predicted_baseline` as
-        #   advantage estimage
+        #   advantage estimate
         # - train the baseline model to predict `returns`
         raise NotImplementedError()
 
