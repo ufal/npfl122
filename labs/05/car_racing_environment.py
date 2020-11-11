@@ -799,9 +799,9 @@ class CarRacingSoft(gym.Env, EzPickle):
                 canvas[y, max(int(n), 0):min(max(int(nn), 0), canvas.shape[1])] = color
 
 
-###############################
-# Evaluator for NPFL122 class #
-###############################
+#################################
+# Environment for NPFL122 class #
+#################################
 
 FRAME_SKIPS = range(1, 10)
 for frame_skip in FRAME_SKIPS:
