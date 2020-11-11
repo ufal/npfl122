@@ -12,6 +12,6 @@ Start with the [reinforce.py](https://github.com/ufal/npfl122/tree/master/labs/0
 template, which provides a simple network implementation in TensorFlow. Feel
 free to use PyTorch instead, if you like.
 
-During evaluation in ReCodEx, two different random seeds will be employed, and
+During evaluation in ReCodEx, three different random seeds will be employed, and
 you need to reach the required return on all of them. Time limit for each test
 is 5 minutes.

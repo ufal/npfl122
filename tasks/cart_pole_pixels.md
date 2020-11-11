@@ -16,9 +16,9 @@ according to relative ordering of your solution performances.
 To pass the compulsory part of the assignment, you need to reach an average
 return of 300 during 100 evaluation episodes.
 
-During evaluation in ReCodEx, two different random seeds will be employed,
+During evaluation in ReCodEx, three different random seeds will be employed,
 each with time limit of 10 minutes, and if you reach an average return at least
-300 on both of them, you obtain 5 points. The task is also a _competition_ and
+300 on all of them, you obtain 5 points. The task is also a _competition_ and
 at most 6 points will be awarded according to relative ordering of your
 solution performances.
 
