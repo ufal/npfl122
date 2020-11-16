@@ -36,3 +36,13 @@
 
   The memory limit during evaluation is **1.5GB**. The time limit varies, but should
   be at least 10 seconds and at least twice the running time of my solution.
+
+### TOCEntry: Competitions
+
+- _Which algorithms are allowed during competitions?_
+
+  Unless stated otherwise, you can use **any algorithm** to solve the
+  competition task at hand. However, the implementation should be either
+  **created by you** or you should **understand it fully** (i.e., if you use for
+  example PPO algorithm, you should know how it works and how it is
+  implemented).
