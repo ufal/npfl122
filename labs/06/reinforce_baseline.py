@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import argparse
-import collections
 import os
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3") # Report only TF errors by default
 
