@@ -30,14 +30,20 @@ class Network:
         # Using Adam optimizer with given `args.learning_rate` is a good default.
         raise NotImplementedError()
 
-    # TODO: Define a training method. Note that we need to use @tf.function for
-    # efficiency (using `train_on_batch` on extremely small batches/networks
-    # has considerable overhead).
+    # TODO: Define a training method.
+    #
+    # Note that we need to use @tf.function for efficiency (using `train_on_batch`
+    # on extremely small batches/networks has considerable overhead).
+    #
+    # The `wrappers.typed_np_function` automatically converts input arguments
+    # to NumPy arrays of given type, and converts the result to a NumPy array.
+    @wrappers.typed_np_function(np.float32, np.int32, np.float32)
     @tf.function(experimental_relax_shapes=True)
     def train(self, states, actions, returns):
         raise NotImplementedError()
 
     # Predict method, again with manual @tf.function for efficiency.
+    @wrappers.typed_np_function(np.float32)
     @tf.function
     def predict(self, states):
         return self._model(states)
@@ -80,8 +86,7 @@ def main(env, args):
 
             # TODO: Add states, actions and returns to the training batch
 
-        # TODO: Train using the generated batch; do not forget to convert
-        # input arguments to numpy.
+        # TODO: Train using the generated batch.
 
     # Final evaluation
     while True:
