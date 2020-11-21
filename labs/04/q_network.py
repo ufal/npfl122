@@ -39,6 +39,10 @@ class Network:
     # The code below implements the first option, but you can change it if you want.
     # Also note that we need to use @tf.function for efficiency (using `train_on_batch`
     # on extremely small batches/networks has considerable overhead).
+    #
+    # The `wrappers.typed_np_function` automatically converts input arguments
+    # to NumPy arrays of given type, and converts the result to a NumPy array.
+    @wrappers.typed_np_function(np.float32, np.float32)
     @tf.function
     def train(self, states, q_values):
         self._model.optimizer.minimize(
@@ -47,12 +51,14 @@ class Network:
         )
 
     # Predict method, again with manual @tf.function for efficiency.
+    @wrappers.typed_np_function(np.float32)
     @tf.function
     def predict(self, states):
         return self._model(states)
 
     # If you want to use target network, the following method copies weights from
     # a given Network to the current one.
+    @tf.function
     def copy_weights_from(self, other):
         for var, other_var in zip(self._model.variables, other._model.variables):
             var.assign(other_var)
@@ -84,7 +90,7 @@ def main(env, args):
 
             # TODO: Choose an action.
             # You can compute the q_values of a given state by
-            #   q_values = network.predict(np.array([state], np.float32))[0]
+            #   q_values = network.predict([state])[0]
             action = None
 
             next_state, reward, done, _ = env.step(action)
