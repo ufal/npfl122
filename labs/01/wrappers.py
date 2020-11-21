@@ -175,26 +175,36 @@ def typed_np_function(*types):
     Can be used to wrap a function expecting NumPy inputs.
 
     It converts input positional arguments to NumPy arrays of the given types,
-    and passes the result through `np.array` before returning.
+    and passes the result through `np.array` before returning (while keeping
+    original tuples, lists and dictionaries).
     """
     def check_typed_np_function(wrapped, args):
         if len(types) != len(args):
             while hasattr(wrapped, "__wrapped__"): wrapped = wrapped.__wrapped__
             raise AssertionError("The typed_np_function decorator for {} expected {} arguments, but got {}".format(wrapped, len(types), len(args)))
 
+    def structural_map(function, value):
+        if isinstance(value, tuple):
+            return tuple(structural_map(function, element) for element in value)
+        if isinstance(value, list):
+            return [structural_map(function, element) for element in value]
+        if isinstance(value, dict):
+            return {key: structural_map(function, element) for key, element in value.items()}
+        return function(value)
+
     class TypedNpFunctionWrapperMethod:
         def __init__(self, instance, func):
             self._instance, self.__wrapped__ = instance, func
         def __call__(self, *args, **kwargs):
             check_typed_np_function(self.__wrapped__, args)
-            return np.array(self.__wrapped__(*[np.asarray(arg, typ) for arg, typ in zip(args, types)], **kwargs))
+            return structural_map(np.array, self.__wrapped__(*[np.asarray(arg, typ) for arg, typ in zip(args, types)], **kwargs))
 
     class TypedNpFunctionWrapper:
         def __init__(self, func):
             self.__wrapped__ = func
         def __call__(self, *args, **kwargs):
             check_typed_np_function(self.__wrapped__, args)
-            return np.array(self.__wrapped__(*[np.asarray(arg, typ) for arg, typ in zip(args, types)], **kwargs))
+            return structural_map(np.array, self.__wrapped__(*[np.asarray(arg, typ) for arg, typ in zip(args, types)], **kwargs))
         def __get__(self, instance, cls):
             return TypedNpFunctionWrapperMethod(instance, self.__wrapped__.__get__(instance, cls))
 
