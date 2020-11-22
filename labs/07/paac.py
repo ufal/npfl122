@@ -53,7 +53,7 @@ class Network:
     @wrappers.typed_np_function(np.float32)
     @tf.function
     def predict_values(self, states):
-        # TODO: Return predicted state-action values.
+        # TODO: Return estimates of value function.
         raise NotImplementedError()
 
 def main(env, args):
