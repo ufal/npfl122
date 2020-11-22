@@ -26,7 +26,7 @@ parser.add_argument("--workers", default=None, type=int, help="Number of paralle
 
 class Network:
     def __init__(self, env, args):
-        # TODO: Similarly to reinforce, define two models:
+        # TODO: Similarly to reinforce with baseline, define two models:
         # - actor, which predicts distribution over the actions
         # - critic, which predicts the value function
         #
@@ -53,7 +53,7 @@ class Network:
     @wrappers.typed_np_function(np.float32)
     @tf.function
     def predict_values(self, states):
-        # TODO: Return predicted state-action values.
+        # TODO: Return estimates of value function.
         raise NotImplementedError()
 
 def main(env, args):
