@@ -64,7 +64,8 @@ class Network:
         #   (using the `log_prob` method). You then need to sum the log probabilities
         #   of actions in a single batch example (using `tf.math.reduce_sum` with `axis=1`).
         #   Finally multiply the resulting vector by (returns - predicted values)
-        #   and compute its mean.
+        #   and compute its mean. Note that the gradient must not flow through
+        #   the predicted values (you can use `tf.stop_gradient` if necessary).
         # - negative value of the distribution entropy (use `entropy` method of
         #   the `action_distribution`) weighted by `args.entropy_regularization`.
         # - mean square error of the `returns` and predicted values.
