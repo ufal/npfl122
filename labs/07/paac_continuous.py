@@ -59,7 +59,7 @@ class Network:
         # `tfp.distributions.Normal` class and computed mus and sds.
         # In PyTorch, the corresponding class is `torch.distributions.normal.Normal`.
         #
-        # TODO: Compute total loss as a sum of three losses:
+        # TODO: Train the actor using the sum of the following two losses:
         # - negative log likelihood of the `actions` in the `action_distribution`
         #   (using the `log_prob` method). You then need to sum the log probabilities
         #   of actions in a single batch example (using `tf.math.reduce_sum` with `axis=1`).
@@ -68,7 +68,8 @@ class Network:
         #   the predicted values (you can use `tf.stop_gradient` if necessary).
         # - negative value of the distribution entropy (use `entropy` method of
         #   the `action_distribution`) weighted by `args.entropy_regularization`.
-        # - mean square error of the `returns` and predicted values.
+        #
+        # Train the critic using mean square error of the `returns` and predicted values.
         raise NotImplementedError()
 
     @wrappers.typed_np_function(np.float32)
