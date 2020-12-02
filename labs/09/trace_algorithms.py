@@ -12,11 +12,11 @@ parser.add_argument("--alpha", default=0.1, type=float, help="Learning rate alph
 parser.add_argument("--episodes", default=1000, type=int, help="Training episodes.")
 parser.add_argument("--epsilon", default=0.1, type=float, help="Exploration epsilon factor.")
 parser.add_argument("--gamma", default=0.99, type=float, help="Discount factor gamma.")
-parser.add_argument("--lambda", default=None, type=float, help="Trace factor lambda, if any.")
 parser.add_argument("--n", default=1, type=int, help="Use n-step method.")
 parser.add_argument("--off_policy", default=False, action="store_true", help="Off-policy (less exploratory target)")
 parser.add_argument("--recodex", default=False, action="store_true", help="Running in ReCodEx")
 parser.add_argument("--seed", default=42, type=int, help="Random seed.")
+parser.add_argument("--trace_lambda", default=None, type=float, help="Trace factor lambda, if any.")
 parser.add_argument("--vtrace_clip", default=None, type=float, help="V-Trace clip rho and c, if any.")
 # If you add more arguments, ReCodEx will keep them with your default values.
 
@@ -28,9 +28,9 @@ def main(args):
     # - R[state][action] is the reward
     # - D[state][action] is the True/False value indicating end of episode
     # - N[state][action] is the next state
-    N, R, D = np.split(
-        np.array([[env.P[s][a][0][1:] for a in range(env.action_space.n)] for s in range(env.observation_space.n)]),
-        3, axis=-1)
+    R, D, N = [
+        np.array([[env.P[s][a][0][i] for a in range(env.action_space.n)] for s in range(env.observation_space.n)]) for i in [2,3,1]
+    ]
 
     # Create a random seed generator
     generator = np.random.RandomState(args.seed)
@@ -48,9 +48,9 @@ def main(args):
 
             next_state, reward, done, _ = env.step(action)
 
-            target_policy = np.eye(env.action_space.n)[np.argmax(R + (1 - D) * args.gamma * V[N], axis=-1)]
-            target_epsilon = args.epsilon / 3 if args.off_policy else args.epsilon
-            target_policy = (1 - target_epsilon) * target_policy + target_epsilon / env.action_space.n * np.ones_like(target_policy)
+            if args.off_policy:
+                target_policy = np.eye(env.action_space.n)[np.argmax(R + (1 - D) * args.gamma * V[N], axis=-1)]
+                target_policy = (1 - args.epsilon / 3) * target_policy + args.epsilon / (3 * env.action_space.n) * np.ones_like(target_policy)
 
             # TODO: Perform the update to the state value function `V`, using
             # a TD update with the following parameters:
@@ -58,14 +58,15 @@ def main(args):
             # - `args.off_policy`:
             #    - if False, the epsilon-greedy behaviour policy is also the target policy
             #    - if True, the target policy is an epsilon/3-greedy policy
-            # - if `args.lambda` is not None, use eligibility traces
+            # - if `args.trace_lambda` is not None, use eligibility traces
             # - if `args.vtrace_clip` is not None, clip the importance sample ratios with it
             #
             # Perform the updates as soon as you can -- whenever you have all the information
-            # to update `V[state]`, do it. For each `action` use its corresponding
-            # `action_prob` at the time of taking the `action` as the behaviour policy action
-            # probability, and current `target_policy` as the target policy (everywhere
-            # in the update).
+            # to update `V[state]`, do it.
+            #
+            # When performing off-policy estimation, use `action_prob` at the time
+            # of taking an `action` as the behaviour policy action probability, and
+            # current `target_policy` as the target policy (everywhere in the update).
             #
             # Do not forget that when `done` is True, bootstrapping on the
             # `next_state` is not used.
