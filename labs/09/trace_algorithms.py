@@ -38,19 +38,15 @@ def main(args):
     V = np.zeros(env.observation_space.n)
 
     for _ in range(args.episodes):
-        next_state, done = env.reset(), False
+        state, done = env.reset(), False
 
         # Generate episode and update V using the given TD method
-        best_action = np.argmax(R[next_state] + (1 - D[next_state]) * args.gamma * V[N[next_state]])
-        next_action = best_action if generator.uniform() >= args.epsilon else env.action_space.sample()
-        next_action_prob = args.epsilon / env.action_space.n + (1 - args.epsilon) * (next_action == best_action)
         while not done:
-            action, action_prob, state = next_action, next_action_prob, next_state
+            best_action = np.argmax(R[state] + (1 - D[state]) * args.gamma * V[N[state]])
+            action = best_action if generator.uniform() >= args.epsilon else env.action_space.sample()
+            action_prob = args.epsilon / env.action_space.n + (1 - args.epsilon) * (action == best_action)
+
             next_state, reward, done, _ = env.step(action)
-            if not done:
-                best_action = np.argmax(R[next_state] + (1 - D[next_state]) * args.gamma * V[N[next_state]])
-                next_action = best_action if generator.uniform() >= args.epsilon else env.action_space.sample()
-                next_action_prob = args.epsilon / env.action_space.n + (1 - args.epsilon) * (next_action == best_action)
 
             target_policy = np.eye(env.action_space.n)[np.argmax(R + (1 - D) * args.gamma * V[N], axis=-1)]
             target_epsilon = args.epsilon / 3 if args.off_policy else args.epsilon
@@ -79,6 +75,8 @@ def main(args):
             # in the order in which you encountered the states in the trajectory
             # and during these updates, use the `target_policy` computed above
             # (do not modify it during these post-episode updates).
+
+            state = next_state
 
     return V
 
