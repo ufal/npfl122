@@ -31,10 +31,13 @@ def main(args):
     N, R, D = np.split(
         np.array([[env.P[s][a][0][1:] for a in range(env.action_space.n)] for s in range(env.observation_space.n)]),
         3, axis=-1)
+    N, R, D = N.squeeze(-1), R.squeeze(-1), D.squeeze(-1)
 
     # Create a random seed generator
     generator = np.random.RandomState(args.seed)
 
+    # As `lambda` is a Python keyword we cannot access the atributte directly with args.lambda.
+    lambda_ = getattr(args, 'lambda')
     V = np.zeros(env.observation_space.n)
 
     for _ in range(args.episodes):
@@ -48,9 +51,10 @@ def main(args):
 
             next_state, reward, done, _ = env.step(action)
 
-            target_policy = np.eye(env.action_space.n)[np.argmax(R + (1 - D) * args.gamma * V[N], axis=-1)]
-            target_epsilon = args.epsilon / 3 if args.off_policy else args.epsilon
-            target_policy = (1 - target_epsilon) * target_policy + target_epsilon / env.action_space.n * np.ones_like(target_policy)
+            if args.off_policy:
+                target_policy = np.eye(env.action_space.n)[np.argmax(R + (1 - D) * args.gamma * V[N], axis=-1)]
+                target_epsilon = args.epsilon / 3 if args.off_policy else args.epsilon
+                target_policy = (1 - target_epsilon) * target_policy + target_epsilon / env.action_space.n * np.ones_like(target_policy)
 
             # TODO: Perform the update to the state value function `V`, using
             # a TD update with the following parameters:
