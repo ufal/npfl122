@@ -1,5 +1,5 @@
 ### Assignment: trace_algorithms
-#### Date: Deadline: Dec 15, 23:59
+#### Date: Deadline: Feb 14, 23:59
 #### Points: 4 points
 
 Starting with the [trace_algorithms.py](https://github.com/ufal/npfl122/tree/master/labs/09/trace_algorithms.py)
