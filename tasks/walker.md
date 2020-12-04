@@ -14,5 +14,6 @@ limit of 10 minutes. If your average return is at least 100, you obtain
 8 points. The task is also a _competition_ and at most 10 points will be awarded
 according to relative ordering of your solution performances.
 
-You can start with the [ddpg.py](https://github.com/ufal/npfl122/tree/master/labs/07/ddpg.py)
-template, only set `args.env` to `BipedalWalker-v3`.
+You can start with the [walker.py](https://github.com/ufal/npfl122/tree/master/labs/08/walker.py)
+template, but should probably reuse a lot of code from
+[ddpg.py](https://github.com/ufal/npfl122/tree/master/labs/07/ddpg.py).
