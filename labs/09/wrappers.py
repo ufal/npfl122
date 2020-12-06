@@ -48,7 +48,7 @@ class EvaluationWrapper(gym.Wrapper):
             self._episode_running = False
             self._episode_returns.append(self._episode_return)
 
-            if self.episode % self._report_each == 0:
+            if self._report_each and self.episode % self._report_each == 0:
                 print("Episode {}, mean {}-episode return {:.2f} +-{:.2f}".format(
                     self.episode, self._evaluate_for, np.mean(self._episode_returns[-self._evaluate_for:]),
                     np.std(self._episode_returns[-self._evaluate_for:])), file=sys.stderr)
