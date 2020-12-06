@@ -98,31 +98,31 @@ The mean 1000-episode return after evaluation -22.17 +-73.86
 ```
 - `python3 trace_algorithms.py --n=4 --off_policy`
 ```
-Episode 100, mean 100-episode return -117.24 +-230.82
-Episode 200, mean 100-episode return -51.57 +-168.31
-Episode 300, mean 100-episode return -21.17 +-70.69
-Episode 400, mean 100-episode return -9.15 +-54.49
-Episode 500, mean 100-episode return -16.76 +-69.23
-Episode 600, mean 100-episode return -28.78 +-85.01
-Episode 700, mean 100-episode return -2.70 +-35.51
-Episode 800, mean 100-episode return 2.04 +-12.42
-Episode 900, mean 100-episode return 2.11 +-7.18
-Episode 1000, mean 100-episode return 3.09 +-7.54
-The mean 1000-episode return after evaluation 2.90 +-31.92
+Episode 100, mean 100-episode return -88.75 +-101.17
+Episode 200, mean 100-episode return -28.60 +-73.61
+Episode 300, mean 100-episode return -7.32 +-37.73
+Episode 400, mean 100-episode return 1.85 +-8.22
+Episode 500, mean 100-episode return 1.18 +-9.91
+Episode 600, mean 100-episode return 3.61 +-7.13
+Episode 700, mean 100-episode return 2.85 +-7.65
+Episode 800, mean 100-episode return 1.69 +-7.72
+Episode 900, mean 100-episode return 1.58 +-8.04
+Episode 1000, mean 100-episode return 1.17 +-9.15
+The mean 1000-episode return after evaluation 7.69 +-2.61
 ```
 - `python3 trace_algorithms.py --n=8 --off_policy`
 ```
-Episode 100, mean 100-episode return -149.37 +-113.62
-Episode 200, mean 100-episode return -122.90 +-271.17
-Episode 300, mean 100-episode return -59.51 +-152.97
-Episode 400, mean 100-episode return -144.60 +-352.50
-Episode 500, mean 100-episode return -194.83 +-485.96
-Episode 600, mean 100-episode return -318.01 +-648.72
-Episode 700, mean 100-episode return -257.36 +-592.33
-Episode 800, mean 100-episode return -161.44 +-463.22
-Episode 900, mean 100-episode return -264.20 +-595.78
-Episode 1000, mean 100-episode return -160.56 +-493.25
-The mean 1000-episode return after evaluation -151.62 +-453.81
+Episode 100, mean 100-episode return -122.49 +-113.92
+Episode 200, mean 100-episode return -35.93 +-85.81
+Episode 300, mean 100-episode return -13.67 +-58.23
+Episode 400, mean 100-episode return 3.70 +-7.68
+Episode 500, mean 100-episode return 1.98 +-8.26
+Episode 600, mean 100-episode return 0.45 +-8.44
+Episode 700, mean 100-episode return 2.41 +-8.29
+Episode 800, mean 100-episode return 1.90 +-6.92
+Episode 900, mean 100-episode return 3.42 +-7.81
+Episode 1000, mean 100-episode return 2.59 +-7.62
+The mean 1000-episode return after evaluation 7.88 +-2.69
 ```
 - `python3 trace_algorithms.py --n=1 --off_policy --vtrace_clip=1`
 ```
@@ -140,30 +140,30 @@ The mean 1000-episode return after evaluation -18.13 +-69.41
 ```
 - `python3 trace_algorithms.py --n=4 --off_policy --vtrace_clip=1`
 ```
-Episode 100, mean 100-episode return -70.81 +-85.32
-Episode 200, mean 100-episode return -2.69 +-16.06
-Episode 300, mean 100-episode return 1.57 +-12.96
-Episode 400, mean 100-episode return 3.57 +-7.22
-Episode 500, mean 100-episode return 2.22 +-7.57
-Episode 600, mean 100-episode return 1.69 +-7.65
-Episode 700, mean 100-episode return 1.91 +-8.33
-Episode 800, mean 100-episode return 1.88 +-7.36
-Episode 900, mean 100-episode return 3.57 +-7.46
-Episode 1000, mean 100-episode return 3.07 +-7.15
-The mean 1000-episode return after evaluation 7.88 +-2.62
+Episode 100, mean 100-episode return -67.42 +-80.24
+Episode 200, mean 100-episode return -5.69 +-18.39
+Episode 300, mean 100-episode return 0.28 +-11.68
+Episode 400, mean 100-episode return 2.29 +-8.32
+Episode 500, mean 100-episode return 1.61 +-8.47
+Episode 600, mean 100-episode return 1.73 +-7.92
+Episode 700, mean 100-episode return 1.89 +-8.27
+Episode 800, mean 100-episode return 3.10 +-7.44
+Episode 900, mean 100-episode return 2.72 +-8.17
+Episode 1000, mean 100-episode return 2.86 +-7.23
+The mean 1000-episode return after evaluation 7.81 +-2.56
 ```
 - `python3 trace_algorithms.py --n=8 --off_policy --vtrace_clip=1`
 ```
-Episode 100, mean 100-episode return -86.03 +-103.23
-Episode 200, mean 100-episode return -5.39 +-13.53
-Episode 300, mean 100-episode return -0.05 +-8.32
-Episode 400, mean 100-episode return 0.49 +-9.04
-Episode 500, mean 100-episode return 0.83 +-9.05
-Episode 600, mean 100-episode return 0.38 +-9.25
-Episode 700, mean 100-episode return 2.90 +-7.25
-Episode 800, mean 100-episode return 3.79 +-7.86
-Episode 900, mean 100-episode return 1.85 +-8.17
-Episode 1000, mean 100-episode return -0.75 +-10.54
-The mean 1000-episode return after evaluation -3.56 +-47.91
+Episode 100, mean 100-episode return -82.55 +-99.27
+Episode 200, mean 100-episode return -0.48 +-13.67
+Episode 300, mean 100-episode return 0.41 +-9.27
+Episode 400, mean 100-episode return 1.35 +-8.62
+Episode 500, mean 100-episode return 1.43 +-7.77
+Episode 600, mean 100-episode return 1.62 +-7.91
+Episode 700, mean 100-episode return 0.85 +-7.96
+Episode 800, mean 100-episode return 1.99 +-7.76
+Episode 900, mean 100-episode return 2.13 +-7.47
+Episode 1000, mean 100-episode return 1.71 +-7.98
+The mean 1000-episode return after evaluation 7.59 +-2.75
 ```
 #### Examples End:
