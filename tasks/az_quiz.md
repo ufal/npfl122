@@ -26,11 +26,11 @@ ReCodEx. If you achieve at least 75%, you will pass the assignment.
 The final competition evaluation will be performed after the deadline by
 a round-robin tournament.
 
-Note that [az_quiz_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/09/az_quiz_evaluator.py)
+Note that [az_quiz_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_evaluator.py)
 can be used to evaluate any two given implementations and there are two
 interactive players available, 
-[az_quiz_player_interactive_mouse.py](https://github.com/ufal/npfl122/tree/master/labs/09/az_quiz_player_interactive_mouse.py)
-and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/09/az_quiz_player_interactive_keyboard.py).
+[az_quiz_player_interactive_mouse.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_mouse.py)
+and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_keyboard.py).
 
 For inspiration, use the [official pseudocode for AlphaZero](http://science.sciencemag.org/highwire/filestream/719481/field_highwire_adjunct_files/1/aar6404_DataS1.zip). However, note that there are some errors in it.
 - On line 258, value of the children should be inverted, resulting in:
