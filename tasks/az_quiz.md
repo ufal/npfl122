@@ -41,8 +41,8 @@ For inspiration, use the [official pseudocode for AlphaZero](http://science.scie
   ```python
   value_score = - child.value()
   ```
-- On line 279, a value is inverted using $1 - \mathit{value}$; however, for values in
-  $[-1, 1]$, it should be inverted as $- \mathit{value}$.
+- On line 279, a value is inverted using `1 - value`; however, for values in
+  $[-1, 1]$, it should be inverted as `- value`.
 - Below line 287, the sampled gamma random variables should be normalized
   to produce a Dirichlet random sample:
   ```python
