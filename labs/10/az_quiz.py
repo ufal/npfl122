@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import sys
+
 import numpy as np
 
 class AZQuiz:
@@ -194,7 +196,7 @@ class AZQuiz:
                 self.window.close()
                 self.isopen = False
     def __del__(self):
-        if self._viewer:
+        if self._viewer and sys.meta_path:
             self._viewer.close()
 
 
