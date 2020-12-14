@@ -1,0 +1,4 @@
+### Lecture: 11. PopArt Normalization, R2D2, MuZero
+#### Date: Dec 14
+#### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides/?11
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-11.pdf,PDF Slides
