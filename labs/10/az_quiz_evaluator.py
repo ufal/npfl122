@@ -41,7 +41,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("player_1", type=str, help="First player module")
     parser.add_argument("player_2", type=str, help="Second player module")
-    parser.add_argument("--games", default=50, type=int, help="Number of alternating games to evaluate")
+    parser.add_argument("--games", default=56, type=int, help="Number of alternating games to evaluate")
     parser.add_argument("--randomized", default=False, action="store_true", help="Is answering allowed to fail and generate random results")
     parser.add_argument("--render", default=False, action="store_true", help="Should the games be rendered")
     args = parser.parse_args()
