@@ -33,6 +33,13 @@ interactive players available,
 and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_keyboard.py).
 
 For inspiration, use the [official pseudocode for AlphaZero](http://science.sciencemag.org/highwire/filestream/719481/field_highwire_adjunct_files/1/aar6404_DataS1.zip). However, note that there are some errors in it.
+- Below line 215, the following line should be inserted
+  ```python
+  root.visit_count = 1
+  ```
+  Otherwise the `visit_count` is 0, `ucb_score` will return all zeros for all
+  actions and during the first simulation, the last valid action in the root
+  will always be chosen.
 - On line 237, next action should be sampled according to a distribution
   of normalized visit counts, not according to a _softmax_ of visit counts.
 - On line 258, the value of a child should be inverted, if the player to play in
