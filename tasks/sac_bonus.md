@@ -1,5 +1,5 @@
 ### Assignment: sac_bonus
-#### Date: Deadline: Feb 14, 23:59
+#### Date: Deadline: Feb 28, 23:59
 #### Points: 8 bonus
 
 In this bonus-only exercise, try using the SAC algorithm to solve the

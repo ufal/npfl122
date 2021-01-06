@@ -1,5 +1,5 @@
 ### Assignment: trace_algorithms
-#### Date: Deadline: Feb 14, 23:59
+#### Date: Deadline: Feb 28, 23:59
 #### Points: 4 points
 #### Examples: trace_algorithms_examples
 
