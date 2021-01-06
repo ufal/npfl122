@@ -5,14 +5,37 @@ import time
 
 import az_quiz
 
-def load_player(player):
+import numpy as np
+
+def load_player(args, player):
     if player.endswith(".py"):
         player = player[:-3]
 
-    module = importlib.import_module(player)
-    args = module.parser.parse_args([])
-    args.recodex = True
-    return module.main(args)
+    def loader():
+        module = importlib.import_module(player)
+        args = module.parser.parse_args([])
+        args.recodex = True
+        return module.main(args)
+
+    if args.multiprocessing:
+        import multiprocessing
+
+        class Player:
+            def __init__(self):
+                self._conn, child_conn = multiprocessing.Pipe()
+                self._p = multiprocessing.Process(target=Player._worker, args=(child_conn, loader), daemon=True)
+                self._p.start()
+            def _worker(conn, loader):
+                player = loader()
+                while True:
+                    conn.send(player.play(conn.recv()))
+            def play(self, game):
+                self._conn.send(game)
+                return self._conn.recv()
+        return Player()
+
+    else:
+        return loader()
 
 def evaluate(players, games, randomized, first_fixed, render):
     wins = [0, 0]
@@ -41,12 +64,16 @@ if __name__ == "__main__":
     parser.add_argument("player_2", type=str, help="Second player module")
     parser.add_argument("--first_fixed", default=False, action="store_true", help="Choose first move randomly")
     parser.add_argument("--games", default=56, type=int, help="Number of alternating games to evaluate")
+    parser.add_argument("--multiprocessing", default=False, action="store_true", help="Load players in separate processes")
     parser.add_argument("--randomized", default=False, action="store_true", help="Is answering allowed to fail and generate random results")
     parser.add_argument("--render", default=False, action="store_true", help="Should the games be rendered")
+    parser.add_argument("--seed", default=42, type=int, help="Random seed")
     args = parser.parse_args()
 
+    np.random.seed(args.seed)
+
     evaluate(
-        [load_player(args.player_1), load_player(args.player_2)],
+        [load_player(args, args.player_1), load_player(args, args.player_2)],
         games=args.games,
         randomized=args.randomized,
         first_fixed=args.first_fixed,
