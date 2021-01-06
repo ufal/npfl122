@@ -5,6 +5,8 @@ import time
 
 import az_quiz
 
+import numpy as np
+
 def load_player(player):
     if player.endswith(".py"):
         player = player[:-3]
@@ -43,7 +45,10 @@ if __name__ == "__main__":
     parser.add_argument("--games", default=56, type=int, help="Number of alternating games to evaluate")
     parser.add_argument("--randomized", default=False, action="store_true", help="Is answering allowed to fail and generate random results")
     parser.add_argument("--render", default=False, action="store_true", help="Should the games be rendered")
+    parser.add_argument("--seed", default=42, type=int, help="Random seed")
     args = parser.parse_args()
+
+    np.random.seed(args.seed)
 
     evaluate(
         [load_player(args.player_1), load_player(args.player_2)],
