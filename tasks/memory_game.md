@@ -33,7 +33,8 @@ ReCodEx evaluates your solution on environments with 8, 12 and 16 cards
 (utilizing the `--cards` argument). For each card number, 100 episodes are
 simulated once you pass `evaluating=True` to `env.reset` and your solution gets
 1 point if the average return is nonnegative. You can
-train the agent directly in ReCodEx, or submit a pre-trained one.
+train the agent directly in ReCodEx (the time limit is 15 minutes),
+or submit a pre-trained one.
 
 A template [memory_game.py](https://github.com/ufal/npfl122/tree/master/labs/13/memory_game.py)
 is available, commenting a possible use of memory augmented networks.
