@@ -7,3 +7,8 @@
 #### Lecture assignment: paac
 #### Lecture assignment: paac_continuous
 #### Lecture assignment: ddpg
+
+- PAAC [[Alfredo V. Clemente et al.: Efficient Parallel Methods for Deep Reinforcement Learning](https://arxiv.org/abs/1705.04862)]
+- Gradient methods with continuous actions [Section 13.7 of RLB]
+- Deterministic policy gradient theorem (DPG) [[David Silver et al.: Deterministic Policy Gradient Algorithms](http://proceedings.mlr.press/v32/silver14.pdf)]
+- Deep deterministic policy gradient (DDPG) [[Timothy P. Lillicrap et al.: Continuous Control with Deep Reinforcement Learning](https://arxiv.org/abs/1509.02971)]

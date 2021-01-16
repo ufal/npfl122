@@ -5,3 +5,8 @@
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-09.mp4,Lecture
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-09.practicals.mp4,Practicals
 #### Lecture assignment: trace_algorithms
+
+- Off-policy correction using control varietes [Section 7.4 of RLB]
+- Eligibility traces [Sections 12, 12.1, 12.3, 12.8, 12.9 of RLB]
+- TD(λ) [Section 12.2 of RLB]
+- The V-trace algorithm, IMPALA [[Lasse Espeholt et al.: IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures](https://arxiv.org/abs/1802.01561)]
