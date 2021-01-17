@@ -4,6 +4,7 @@
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-03.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-03.mp4,Lecture
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-03.practicals.mp4,Practicals
+#### Questions: #lecture_3_questions
 #### Lecture assignment: importance_sampling
 #### Lecture assignment: q_learning
 #### Lecture assignment: lunar_lander

@@ -4,6 +4,7 @@
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-06.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-06.mp4,Lecture
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-06.practicals.mp4,Practicals
+#### Questions: #lecture_6_questions
 #### Lecture assignment: reinforce
 #### Lecture assignment: reinforce_baseline
 #### Lecture assignment: cart_pole_pixels

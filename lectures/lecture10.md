@@ -4,6 +4,7 @@
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-10.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-10.mp4,Lecture
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-10.practicals.mp4,Practicals
+#### Questions: #lecture_10_questions
 #### Lecture assignment: az_quiz
 #### Lecture assignment: az_quiz_randomized
 
