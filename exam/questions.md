@@ -43,6 +43,9 @@
 
 - Write down the Double Q-learning algorithm. [10]
 
+- Elaborate on how can importance sampling estimate expectations with
+  respect to $π$ based on samples of $b$. [5]
+
 - Show how to estimate returns in the off-policy case, both with (1) ordinary
   importance sampling and (2) weighted importance sampling. [10]
 
@@ -73,6 +76,8 @@
   approximation?. [5]
 
 - Write down the Baird's counterexample. [10]
+
+- Explain the role of a replay buffer in Deep Q Networks. [5]
 
 - How is the target network used and updated in Deep Q Networks? [5]
 
