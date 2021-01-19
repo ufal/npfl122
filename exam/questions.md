@@ -28,7 +28,8 @@
 
 - Write down the value iteration algorithm. [5]
 
-- Prove that Bellman backup operator is a contraction. [10]
+- Define the supremum norm $||\cdot||_\infty$ and prove that Bellman backup
+  operator is a contraction with respect to this norm. [10]
 
 - Formulate and prove the policy improvement theorem. [10]
 
