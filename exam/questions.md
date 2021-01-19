@@ -5,7 +5,7 @@
 - Describe multi-arm bandits and write down the $\epsilon$-greedy algorithm
   for solving it. [5]
 
-- Define a Markov Decision Process, including the definition of a return. [10]
+- Define a Markov Decision Process, including the definition of a return. [5]
 
 - Describe how does a partially observable Markov decision process extend the
   Markov decision process. [5]
