@@ -103,7 +103,9 @@
 - In Distributional RL, describe how is the distribution of rewards represented
   and how it is predicted using a neural network. [5]
 
-- Write down the Bellman update in Distributional RL. [5]
+- Write down the Bellman update in Distributional RL (the mapping of atoms does
+  not need to be mathematically flawless, it is enough to describe how it should
+  be done). [5]
 
 - Formulate the loss used in Distributional RL. [5]
 
