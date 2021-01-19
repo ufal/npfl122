@@ -44,7 +44,7 @@
 - Write down the Double Q-learning algorithm. [10]
 
 - Elaborate on how can importance sampling estimate expectations with
-  respect to $π$ based on samples of $b$. [5]
+  respect to $\pi$ based on samples of $b$. [5]
 
 - Show how to estimate returns in the off-policy case, both with (1) ordinary
   importance sampling and (2) weighted importance sampling. [10]
@@ -110,7 +110,7 @@
 - Formulate the policy gradient theorem. [5]
 
 - Prove the part of the policy gradient theorem showing the value
-  of $\nabla_\boldsymbol\theta v_\pi(s)$. [10]
+  of $\nabla_{\boldsymbol\theta} v_\pi(s)$. [10]
 
 - Assuming the policy gradient theorem, formulate the loss used by the REINFORCE
   algorithm and show how can its gradient be expressed as an expectation
@@ -140,13 +140,13 @@
   and how does the loss of a simple REINFORCE algorithm looks like. [10]
 
 - Formulate the deterministic policy gradient theorem for
-  $\nabla_\boldsymbol\theta v_\pi(s)$. [5]
+  $\nabla_{\boldsymbol\theta} v_\pi(s)$. [5]
 
 - Formulate the deterministic policy gradient theorem for
-  $\nabla_\boldsymbol\theta J(\boldsymbol\theta)$. [5]
+  $\nabla_{\boldsymbol\theta} J(\boldsymbol\theta)$. [5]
 
 - Prove the part of the deterministic policy gradient theorem showing the value
-  of $\nabla_\boldsymbol\theta v_\pi(s)$. [10]
+  of $\nabla_{\boldsymbol\theta} v_\pi(s)$. [10]
 
 - Write down the critic loss (or its derivative) and the actor policy loss (or
   its derivative) of the Deep Determinisic Policy Gradients (DDPG) algorithm. Make
@@ -167,13 +167,13 @@
 - Express the $n$-step return with off-policy correction as a sum of one-step TD
   errors. [5]
 
-- Define the $λ$-return. [5]
+- Define the $\lambda$-return. [5]
 
-- Define the $n$-step truncated $λ$-return. [5]
+- Define the $n$-step truncated $\lambda$-return. [5]
 
-- Express the $n$-step truncated $λ$-return as a sum of one-step TD errors. [5]
+- Express the $n$-step truncated $\lambda$-return as a sum of one-step TD errors. [5]
 
-- Express the $n$-step truncated $λ$-return with off-policy correction as a sum
+- Express the $n$-step truncated $\lambda$-return with off-policy correction as a sum
   of one-step TD errors. [5]
 
 - Define the V-trace estimate and write down the policy to whose value function
@@ -205,7 +205,7 @@
 - What does AlphaZero use to maintain exploration in a Monte-Carlo tree search?
   [5]
 
-- Describe the backup phase of Monte-Carlo tree search – the steps you perform
+- Describe the backup phase of Monte-Carlo tree search, i.e., the steps you perform
   when you reach a leaf during the tree search. [10]
 
 - How are the actions selected in AlphaZero self-play? [5]
