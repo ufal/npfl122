@@ -132,7 +132,7 @@
 
 - The Asynchronous advantage actor-critic (A3C) policy may utilize recurrent
   neural networks. How is the training structured to allow backpropagation
-  through them? [5]
+  through them (for comparison, vanilla DQN would not work)? [5]
 
 ####Questions@: ,Lecture 7 Questions
 - Explain the difference between a regular Actor-critic and Parallel Advantage
