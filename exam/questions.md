@@ -140,7 +140,7 @@
 
 - Considering continuous actions modelled by a normal distribution with
   diagonal covariance, describe how is the policy distribution predicted
-  and how does the loss of a simple REINFORCE algorithm looks like. [10]
+  and how does the loss of a simple REINFORCE algorithm look like. [10]
 
 - Formulate the deterministic policy gradient theorem for
   $\nabla_{\boldsymbol\theta} v_\pi(s)$. [5]
@@ -185,9 +185,6 @@
 - Explain why the fixed point of the V-trace operator does not depend on the
   truncation of all but the last importance sampling ratios. [10]
 
-- Write down the critic loss Explain why the fixed point of the V-trace operator does not depend on the
-  truncation of all but the last importance sampling ratios. [10]
-
 - Write down the critic loss (or its derivative) and the actor policy loss (or
   its derivative) of the IMPALA algorithm. [10]
 
@@ -224,7 +221,7 @@
 
 - Assuming $h$ is strictly monotonically increasing function and considering
   a deterministic Markov decision process, show to what does a transformed
-  Bellman operator $\mathcal{T}_h$ converges and prove it. [10]
+  Bellman operator $\mathcal{T}_h$ converge and prove it. [10]
 
 - Write down the return transformation used for Atari environments (for example
   by R2D2). [5]
