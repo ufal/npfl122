@@ -7,8 +7,9 @@ Starting with the [trace_algorithms.py](https://github.com/ufal/npfl122/tree/mas
 template, implement the following state value estimations:
 - use $n$-step estimates for a given $n$;
 - if requested, use eligibility traces with a given $λ$;
-- allow off-policy correction using importance sampling, optionally
-  clipping the importance sampling ratios by a given threshold.
+- allow off-policy correction using importance sampling with control variates,
+  optionally clipping the individual importance sampling ratios by a given
+  threshold.
 
 #### Examples Start: trace_algorithms_examples
 Note that your results may sometimes be slightly different (for example because of varying floating point arithmetic on your CPU).
