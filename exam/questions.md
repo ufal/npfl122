@@ -140,7 +140,7 @@
 - Explain the difference between a regular Actor-critic and Parallel Advantage
   Actor Critic algorithms. [5]
 
-- Considering continuous actions modelled by a normal distribution with
+- Considering continuous actions modeled by a normal distribution with
   diagonal covariance, describe how is the policy distribution predicted
   and how does the loss of a simple REINFORCE algorithm look like. [10]
 
