@@ -93,8 +93,9 @@
 - Explain the difference between DQN and Double DQN. [5]
 
 - Describe prioritized replay (how are transitions sampled from the replay
-  buffer, how is the sampled transition updated, how is importance sampling
-  used to account for the change in the sampling distribution). [10]
+  buffer, how up-to-date the priorities [according to which we sample] are,
+  how is importance sampling used to account for the change in the sampling
+  distribution). [10]
 
 - How is the action-value function computed in dueling networks? [5]
 
