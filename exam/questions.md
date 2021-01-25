@@ -22,7 +22,7 @@
 
 - Define optimal value function, optimal action-value function, optimal policy. [5]
 
-- Write down the Bellman equation. [5]
+- Write down the Bellman optimality equation. [5]
 
 - Define the Bellman backup operator. [5]
 
