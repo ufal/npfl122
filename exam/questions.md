@@ -167,19 +167,20 @@
   trained. [10]
 
 ####Questions@: ,Lecture 9 Questions
-- Express the $n$-step return as a sum of one-step TD errors. [5]
+- Define a one-step TD error and express the $n$-step return as a sum of them. [5]
 
-- Express the $n$-step return with off-policy correction as a sum of one-step TD
-  errors. [5]
+- Define a one-step TD error and express the $n$-step return with off-policy
+  correction as a sum of them. [5]
 
 - Define the $\lambda$-return. [5]
 
 - Define the $n$-step truncated $\lambda$-return. [5]
 
-- Express the $n$-step truncated $\lambda$-return as a sum of one-step TD errors. [5]
+- Define a one-step TD error and express the $n$-step truncated $\lambda$-return
+  as a sum of them. [5]
 
-- Express the $n$-step truncated $\lambda$-return with off-policy correction as a sum
-  of one-step TD errors. [5]
+- Define a one-step TD and express the $n$-step truncated $\lambda$-return with
+  off-policy correction as a sum of them. [5]
 
 - Define the V-trace estimate and write down the policy to whose value function
   the V-trace estimate converges to. [10]
