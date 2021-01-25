@@ -230,5 +230,5 @@
 - Write down the return transformation used for Atari environments (for example
   by R2D2). [5]
 
-- Describe the replay buffer elements in R2D2. What is the difference
-  between the zero-state and stored-state strategies? [5]
+- Describe the replay buffer elements in R2D2. What is the difference between
+  the zero-state and stored-state strategies, and how is burn-in used? [5]
