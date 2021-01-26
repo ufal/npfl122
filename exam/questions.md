@@ -20,7 +20,8 @@
 - Express a value function using an action-value function, and express an
   action-value function using a value function. [5]
 
-- Define optimal value function, optimal action-value function, optimal policy. [5]
+- Define optimal value function and optimal action-value function. Then define
+  optimal policy in such a way that its existence is guaranteed. [5]
 
 - Write down the Bellman optimality equation. [5]
 
@@ -143,7 +144,7 @@
 
 - Considering continuous actions modeled by a normal distribution with
   diagonal covariance, describe how is the policy distribution predicted
-  and how does the loss of a simple REINFORCE algorithm look like. [10]
+  and how does the loss of a simple REINFORCE algorithm look like. [5]
 
 - Formulate the deterministic policy gradient theorem for
   $\nabla_{\boldsymbol\theta} v_\pi(s)$. [5]
