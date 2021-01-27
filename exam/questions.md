@@ -75,9 +75,7 @@
 - Prove that semi-gradient TD update is not an SGD update of any loss. [10]
 
 - What are the three elements causing off-policy divergence with function
-  approximation?. [5]
-
-- Write down the Baird's counterexample. [10]
+  approximation? Write down the Baird's counterexample. [10]
 
 - Explain the role of a replay buffer in Deep Q Networks. [5]
 
