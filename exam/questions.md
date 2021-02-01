@@ -99,7 +99,7 @@
 - How is the action-value function computed in dueling networks? [5]
 
 - Describe a fully connected layer in Noisy nets (parametrization, computation,
-  noise generation). [5]
+  effective noise generation). [5]
 
 - In Distributional RL, describe how is the distribution of rewards represented
   and how it is predicted using a neural network. [5]
