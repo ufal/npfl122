@@ -222,9 +222,10 @@
 
 - Define the transformed Bellman operator. [5]
 
-- Assuming $h$ is strictly monotonically increasing function and considering
-  a deterministic Markov decision process, show to what does a transformed
-  Bellman operator $\mathcal{T}_h$ converge and prove it. [10]
+- Define the transformed Bellman operator. Then, assuming $h$ is strictly
+  monotonically increasing function and considering a deterministic Markov
+  decision process, show to what does a transformed Bellman operator
+  $\mathcal{T}_h$ converge and prove it. [10]
 
 - Write down the return transformation used for Atari environments (for example
   by R2D2). [5]
