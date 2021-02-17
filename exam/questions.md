@@ -54,7 +54,7 @@
 - Write down the Expected Sarsa algorithm and show how to obtain
   Q-learning from it. [10]
 
-- Show the temporal-difference estimate of $n$-step return. [5]
+- Show the bootstrapped estimate of $n$-step return. [5]
 
 - Write down the update in on-policy $n$-step Sarsa (assuming you already
   have $n$ previous steps, actions and rewards). [5]
