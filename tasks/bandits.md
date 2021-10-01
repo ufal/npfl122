@@ -5,7 +5,7 @@
 
 Implement the $ε$-greedy strategy for solving multi-armed bandits.
 
-Start with the [bandits.py](https://github.com/ufal/npfl122/tree/master/labs/01/bandits.py)
+Start with the [bandits.py](https://github.com/ufal/npfl122/tree/past-2021/labs/01/bandits.py)
 template, which defines `MultiArmedBandits` environment, which has the following
 two methods:
 - `reset()`: reset the environment

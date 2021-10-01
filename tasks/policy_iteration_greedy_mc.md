@@ -3,7 +3,7 @@
 #### Points: 2 points
 #### Examples: policy_iteration_greedy_mc_examples
 
-Starting with [policy_iteration_greedy_mc.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration_greedy_mc.py),
+Starting with [policy_iteration_greedy_mc.py](https://github.com/ufal/npfl122/tree/past-2021/labs/02/policy_iteration_greedy_mc.py),
 extend the `policy_iteration_exploring_mc` assignment to perform policy
 evaluation by using $ε$-greedy Monte Carlo estimation.
 

@@ -3,7 +3,7 @@
 #### Points: 5 points
 #### Examples: td_algorithms_examples
 
-Starting with the [td_algorithms.py](https://github.com/ufal/npfl122/tree/master/labs/04/td_algorithms.py)
+Starting with the [td_algorithms.py](https://github.com/ufal/npfl122/tree/past-2021/labs/04/td_algorithms.py)
 template, implement all of the following $n$-step TD methods variants:
 - SARSA, expected SARSA and Tree backup;
 - either on-policy (with $ε$-greedy behaviour policy) or off-policy

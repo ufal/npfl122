@@ -3,7 +3,7 @@
 #### Points: 2 points
 #### Examples: policy_iteration_exact_examples
 
-Starting with [policy_iteration_exact.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration_exact.py),
+Starting with [policy_iteration_exact.py](https://github.com/ufal/npfl122/tree/past-2021/labs/02/policy_iteration_exact.py),
 extend the `policy_iteration` assignment to perform policy evaluation
 exactly by solving a system of linear equations.
 
