@@ -3,4 +3,5 @@ tensorflow==2.6.0
 tensorflow_probability==0.14.1
 numpy==1.19.5
 gym==0.20.0
+pyglet==1.5.21
 ufal.pybox2d==2.3.10
