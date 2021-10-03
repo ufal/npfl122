@@ -23,7 +23,7 @@ Note that the initial estimates should be set to a given value and `epsilon` can
 be zero, in which case purely greedy actions are used.
 
 #### Tests Start: bandits_tests
-_Note that your results may be slightly different, depending on your CPU type and whether you use GPU._
+_Note that your results may be slightly different, depending on your CPU type and whether you use a GPU._
 - `python3 bandits.py --alpha=0 --epsilon=0.1 --initial=0`
 ```
 1.39 0.08
