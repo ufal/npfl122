@@ -21,7 +21,7 @@ symbol indices.
 Every episode can be ended by at most $3N/2$ actions, and the required
 return is therefore greater or equal to zero. Note that there is a limit
 of at most $2N$ actions per episode. The described environment is provided
-by the [memory_game_evaluator.py](https://github.com/ufal/npfl122/tree/past-2021/labs/13/memory_game_evaluator.py)
+by the [memory_game_environment.py](https://github.com/ufal/npfl122/tree/past-2021/labs/13/memory_game_environment.py)
 module.
 
 Your goal is to solve the environment, using supervised learning via the provided
