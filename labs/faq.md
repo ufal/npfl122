@@ -5,14 +5,14 @@
 - _Installing to central user packages repository_
 
   You can install all required packages to central user packages repository using
- `pip3 install --user tensorflow==2.3.1 tensorflow_probability==0.11.1 numpy==1.18.5 gym==0.17.2 box2d==2.3.10`.
+ `pip3 install --user tensorflow==2.6.0 tensorflow_probability==0.14.1 numpy==1.19.5 gym==0.20.0 ufal.pybox2d==2.3.10`.
 
 - _Installing to a virtual environment_
 
   Python supports virtual environments, which are directories containing
-  independent sets of installed packages. You can create the virtual environment
+  independent sets of installed packages. You can create a virtual environment
   by running `python3 -m venv VENV_DIR` followed by
-  `VENV_DIR/bin/pip3 install tensorflow==2.3.1 tensorflow_probability==0.11.1 numpy==1.18.5 gym==0.17.2 box2d==2.3.10`.
+  `VENV_DIR/bin/pip3 install tensorflow==2.6.0 tensorflow_probability==0.14.1 numpy==1.19.5 gym==0.20.0 ufal.pybox2d==2.3.10`.
 
 ### TOCEntry: ReCodEx
 
@@ -42,7 +42,4 @@
 - _Which algorithms are allowed during competitions?_
 
   Unless stated otherwise, you can use **any algorithm** to solve the
-  competition task at hand. However, the implementation should be either
-  **created by you** or you should **understand it fully** (i.e., if you use for
-  example PPO algorithm, you should know how it works and how it is
-  implemented).
+  competition task at hand, but the implementation must be **created by you**.
