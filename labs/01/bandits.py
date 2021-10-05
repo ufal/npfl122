@@ -3,21 +3,23 @@ import argparse
 
 import numpy as np
 
+# A class providing MultiArmedBandits environment.
+# You should not modify it or access its private attributes.
 class MultiArmedBandits():
     def __init__(self, bandits: int, seed: int):
-        self._generator = np.random.RandomState(seed)
-        self._bandits = [None] * bandits
+        self.__generator = np.random.RandomState(seed)
+        self.__bandits = [None] * bandits
         self.reset()
 
     def reset(self):
-        for i in range(len(self._bandits)):
-            self._bandits[i] = self._generator.normal(0., 1.)
+        for i in range(len(self.__bandits)):
+            self.__bandits[i] = self.__generator.normal(0., 1.)
 
     def step(self, action: int):
-        return self._generator.normal(self._bandits[action], 1.)
+        return self.__generator.normal(self.__bandits[action], 1.)
 
     def greedy(self, epsilon: float):
-        return self._generator.uniform() >= epsilon
+        return self.__generator.uniform() >= epsilon
 
 
 parser = argparse.ArgumentParser()
