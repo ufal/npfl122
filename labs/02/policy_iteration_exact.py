@@ -18,13 +18,13 @@ class GridWorld:
     actions: list[str] = ["↑", "→", "↓", "←"]
 
     @staticmethod
-    def step(state: int, action: int) -> list[(float, float, int)]:
+    def step(state: int, action: int) -> list[tuple[float, float, int]]:
         return [GridWorld._step(0.8, state, action),
                 GridWorld._step(0.1, state, (action + 1) % 4),
                 GridWorld._step(0.1, state, (action + 3) % 4)]
 
     @staticmethod
-    def _step(probability: float, state: int, action: int) -> list[(float, float, int)]:
+    def _step(probability: float, state: int, action: int) -> tuple[float, float, int]:
         if state >= 5: state += 1
         x, y = state % 4, state // 4
         offset_x = -1 if action == 3 else action == 1
@@ -33,7 +33,7 @@ class GridWorld:
         if not(new_x >= 4 or new_x < 0  or new_y >= 3 or new_y < 0 or (new_x == 1 and new_y == 1)):
             state = new_x + 4 * new_y
         if state >= 5: state -= 1
-        return [probability, +1 if state == 10 else -100 if state == 6 else 0, state]
+        return (probability, +1 if state == 10 else -100 if state == 6 else 0, state)
 
 parser = argparse.ArgumentParser()
 # These arguments will be set appropriately by ReCodEx, even if you change them.
@@ -47,9 +47,9 @@ def argmax_with_tolerance(x: np.ndarray, axis: int = -1):
     x = np.asarray(x)
     return np.argmax(x + 1e-6 >= np.max(x, axis=axis, keepdims=True), axis=axis)
 
-def main(args: argparse.Namespace) -> (list[float], list[int]):
+def main(args: argparse.Namespace) -> tuple[list[float], list[int]]:
     # Start with zero value function and "go North" policy
-    value_function = [0] * GridWorld.states
+    value_function = [0.0] * GridWorld.states
     policy = [0] * GridWorld.states
 
     # TODO: Implement policy iteration algorithm, with `args.steps` steps of
