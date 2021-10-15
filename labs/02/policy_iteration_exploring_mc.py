@@ -62,15 +62,15 @@ def main(args: argparse.Namespace) -> tuple[list[float], list[int]]:
     # TODO: Implement a variant of policy iteration algorithm, with
     # `args.steps` steps of policy evaluation/policy improvement. During policy
     # evaluation, estimate action-value function by Monte Carlo simulation:
-    # - for state in range(env.states):
-    #   - for action in range(len(env.actions)):
-    #     - start in given state-action pair
+    # - for start_state in range(env.states):
+    #   - for start_action in range(len(env.actions)):
+    #     - start in given start_state-start_action pair
     #     - perform `args.mc_length` Monte Carlo steps, utilizing greedy
     #       action with respect to the policy (apart from the first step,
     #       where the action is pre-definted)
     #     - compute the return of the whole simulation
-    #     - update the action-value function at the (state, action) pair,
-    #       considering the simulation return as its estimate, by averaging
+    #     - update the action-value function at the (state_state, state_action)
+    #       pair, considering the simulation return as its estimate, by averaging
     #       all estimates from this and previous steps of policy evaluation.
     # During the policy improvement, use the `argmax_with_tolerance` to
     # choose the best action.

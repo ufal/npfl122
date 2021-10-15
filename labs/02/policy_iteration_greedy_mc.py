@@ -68,8 +68,8 @@ def main(args: argparse.Namespace) -> tuple[list[float], list[int]]:
     # TODO: Implement a variant of policy iteration algorithm, with
     # `args.steps` steps of policy evaluation/policy improvement. During policy
     # evaluation, estimate action-value function by Monte Carlo simulation:
-    # - for state in range(env.states):
-    #   - start in a given state
+    # - for start_state in range(env.states):
+    #   - start in a given start_state
     #   - perform `args.mc_length` Monte Carlo steps, utilizing
     #     epsilon-greedy actions with respect to the policy, using
     #     `env.epsilon_greedy(args.epsilon, greedy_action)`
@@ -78,8 +78,8 @@ def main(args: argparse.Namespace) -> tuple[list[float], list[int]]:
     #     - for replicability, make sure to call it exactly `args.mc_length`
     #       times in every simulation
     #   - compute the return of the simulation
-    #   - update the action-value function at the (state, first_action) pair,
-    #     considering the simulation return as its estimate, by averaging
+    #   - update the action-value function at the (start_state, start action)
+    #     pair, considering the simulation return as its estimate, by averaging
     #     all estimates from this and previous steps of policy evaluation.
     # During the policy improvement, use the `argmax_with_tolerance` to
     # choose the best action.
