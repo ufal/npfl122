@@ -43,7 +43,7 @@ parser.add_argument("--recodex", default=False, action="store_true", help="Runni
 parser.add_argument("--steps", default=10, type=int, help="Number of policy evaluation/improvements to perform.")
 # If you add more arguments, ReCodEx will keep them with your default values.
 
-def argmax_with_tolerance(x: np.ndarray, axis: int = -1):
+def argmax_with_tolerance(x: np.ndarray, axis: int = -1) -> np.ndarray:
     """Argmax with small tolerance, choosing the value with smallest index on ties"""
     x = np.asarray(x)
     return np.argmax(x + 1e-6 >= np.max(x, axis=axis, keepdims=True), axis=axis)
