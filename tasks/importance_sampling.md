@@ -3,7 +3,7 @@
 #### Points: 2 points
 #### Tests: importance_sampling_tests
 
-Using the [FrozenLake-v0 environment](https://gym.openai.com/envs/FrozenLake-v0)
+Using the [FrozenLake-v1 environment](https://gym.openai.com/envs/FrozenLake-v0)
 environment, implement Monte Carlo weighted importance sampling to estimate
 state value function $V$ of target policy, which uniformly chooses either action
 1 (down) or action 2 (right), utilizing behaviour policy, which uniformly
