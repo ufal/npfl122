@@ -13,10 +13,10 @@ but include one additional method:
   where `trajectory` is a list of the tripples _(action, reward, next_state)_.
   You can use this method only during training, **not during evaluation**.
 
-To pass the task, you need to reach an average return of 0 during 100 evaluation episodes.
+To pass the task, you need to reach an average return of 0 during 1000 evaluation episodes.
 During evaluation in ReCodEx, three different random seeds will be employed, and
 you need to reach the required return on all of them. Time limit for each test
-is 5 minutes.
+is 10 minutes.
 
 The task is additionally a _competition_ and at most 7 points will be awarded
 according to relative ordering of your solution performances.
