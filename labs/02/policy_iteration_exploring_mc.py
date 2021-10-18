@@ -69,7 +69,7 @@ def main(args: argparse.Namespace) -> tuple[list[float], list[int]]:
     #       action with respect to the policy (apart from the first step,
     #       where the action is pre-definted)
     #     - compute the return of the whole simulation
-    #     - update the action-value function at the (state_state, state_action)
+    #     - update the action-value function at the (start_state, start_action)
     #       pair, considering the simulation return as its estimate, by averaging
     #       all estimates from this and previous steps of policy evaluation.
     # During the policy improvement, use the `argmax_with_tolerance` to
