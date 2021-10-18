@@ -70,11 +70,11 @@ Episode 1000, mean 100-episode return -1.50 +-17.14
 ```
 - `python3 td_algorithms.py --mode=expected_sarsa --n=4 --off_policy`
 ```
-Episode 200, mean 100-episode return -342.13 +-119.75
-Episode 400, mean 100-episode return -238.56 +-180.54
-Episode 600, mean 100-episode return -70.32 +-137.42
-Episode 800, mean 100-episode return -14.74 +-60.16
-Episode 1000, mean 100-episode return -5.30 +-19.23
+Episode 200, mean 100-episode return -360.77 +-127.22
+Episode 400, mean 100-episode return -232.19 +-196.49
+Episode 600, mean 100-episode return -71.42 +-142.10
+Episode 800, mean 100-episode return -7.37 +-26.92
+Episode 1000, mean 100-episode return -5.71 +-27.27
 ```
 - `python3 td_algorithms.py --mode=tree_backup --n=1`
 ```
