@@ -24,9 +24,6 @@ def argmax_with_tolerance(x: np.ndarray, axis: int = -1) -> np.ndarray:
     x = np.asarray(x)
     return np.argmax(x + 1e-6 >= np.max(x, axis=axis, keepdims=True), axis=axis)
 
-import sys
-sys.stderr = sys.stdout
-
 def main(args: argparse.Namespace) -> np.ndarray:
     # Create a random generator with a fixed seed
     generator = np.random.RandomState(args.seed)
@@ -40,14 +37,14 @@ def main(args: argparse.Namespace) -> np.ndarray:
     def choose_next_action(Q: np.ndarray) -> tuple[int, float]:
         greedy_action = argmax_with_tolerance(Q[next_state])
         next_action = greedy_action if generator.uniform() >= args.epsilon else env.action_space.sample()
-        return next_action, args.epsilon / env.action_space.n + (1 - args.epsilon)
+        return next_action, args.epsilon / env.action_space.n + (1 - args.epsilon) * (greedy_action == next_action)
 
     # The target policy is either the behavior policy (if not args.off_policy),
     # or the greedy policy (if args.off_policy).
     def current_target_policy(Q: np.ndarray) -> np.ndarray:
         target_policy = np.eye(env.action_space.n)[argmax_with_tolerance(Q, axis=-1)]
         if not args.off_policy:
-            target_policy = (1 - args.epsilon) * target_policy + args.epsilon / env.action_space.n * np.ones_like(target_policy)
+            target_policy = (1 - args.epsilon) * target_policy + args.epsilon / env.action_space.n
         return target_policy
 
     # Run the TD algorithm
