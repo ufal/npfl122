@@ -3,6 +3,10 @@
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides/?03
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-03.pdf, PDF Slides
 #### Questions: #lecture_3_questions
+#### Lecture assignment: importance_sampling
+#### Lecture assignment: q_learning
+#### Lecture assignment: lunar_lander
+#### Lecture assignment: td_algorithms
 
 - Model-free and model-based methods, using state-value or action-value
   functions [Chapter 8 before Section 8.1, and Section 6.8 of RLB]
