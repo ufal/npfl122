@@ -8,7 +8,7 @@ For those using PyTorch, 1.9.1 is also available.
 
 ### Teamwork
 
-Solving assignments in teams of size 2 or 3 is encouraged, but **everyone has to
+Solving assignments in teams (of size at most 3) is encouraged, but **everyone has to
 participate** (it is forbidden not to work on an assignment and then submit
 a solution created by other team members). All members of the team
 **must** submit in ReCodEx **individually**, but can have exactly the same
