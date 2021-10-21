@@ -1,4 +1,4 @@
-####Questions@: ,Lecture 1 Questions
+#### Questions@:, Lecture 1 Questions
 - Derive how to incrementally update a running average (how to compute
   an average of $N$ numbers using the average of the first $N-1$ numbers). [5]
 
@@ -10,7 +10,7 @@
 - Describe how does a partially observable Markov decision process extend the
   Markov decision process and how is the agent altered. [5]
 
-####Questions@: ,Lecture 2 Questions
+#### Questions@:, Lecture 2 Questions
 - Define a value function, such that all expectations are over simple random
   variables (actions, states, rewards), not trajectories. [5]
 
@@ -38,7 +38,7 @@
 
 - Write down the tabular Monte-Carlo on-policy every-visit $\epsilon$-soft algorithm. [10]
 
-####Questions@: ,Lecture 3 Questions
+#### Questions@:, Lecture 3 Questions
 - Write down the Sarsa algorithm. [10]
 
 - Write down the Q-learning algorithm. [10]
