@@ -85,7 +85,7 @@ class DiscretizationWrapper(gym.ObservationWrapper):
             self._separator_offsets, self._separator_tops = [], []
             for separator in separators:
                 self._separator_offsets.append(0 if len(separator) <= 1 else (separator[1] - separator[0]) / tiles)
-                self._separator_tops.append(math.inf if len(separator) <= 1 else separator[-1] + (separator[1] - separator[0]))
+                self._separator_tops.append(np.inf if len(separator) <= 1 else separator[-1] + (separator[1] - separator[0]))
 
 
     def observation(self, observations):
