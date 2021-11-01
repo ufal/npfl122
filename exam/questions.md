@@ -88,3 +88,24 @@
 
 - Write down the Deep Q Networks training algorithm. [10]
 
+#### Questions@:, Lecture 5 Questions
+- Explain the difference between DQN and Double DQN. [5]
+
+- Describe prioritized replay (how are transitions sampled from the replay
+  buffer, how up-to-date the priorities [according to which we sample] are,
+  how are unseen transitions boosted, how is importance sampling used to account
+  for the change in the sampling distribution). [10]
+
+- How is the action-value function computed in dueling networks? [5]
+
+- Describe a fully connected layer in Noisy nets (parametrization, computation,
+  effective noise generation). [5]
+
+- In Distributional RL, describe how is the distribution of rewards represented
+  and how it is predicted using a neural network. [5]
+
+- Write down the Bellman update in Distributional RL (the mapping of atoms does
+  not need to be mathematically flawless, it is enough to describe how it should
+  be done). [5]
+
+- Formulate the loss used in Distributional RL. [5]
