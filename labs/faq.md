@@ -37,6 +37,11 @@
   The memory limit during evaluation is **1.5GB**. The time limit varies, but it should
   be at least 10 seconds and at least twice the running time of my solution.
 
+- _Do agents need to be trained directly in ReCodEx?_
+
+  No, you can pre-train your agent locally (unless specified otherwise in a task
+  description).
+
 ### TOCEntry: Competitions
 
 - _Which algorithms are allowed during competitions?_
