@@ -39,7 +39,7 @@
 
 - _Do agents need to be trained directly in ReCodEx?_
 
-  No, you can pre-train your agent locally (unless specified otherwise in a task
+  No, you can pre-train your agent locally (unless specified otherwise in the task
   description).
 
 ### TOCEntry: Competitions
