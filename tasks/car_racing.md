@@ -1,6 +1,6 @@
 ### Assignment: car_racing
 #### Date: Deadline: Nov 14, 23:59
-#### Points: 8 points + 10 bonus
+#### Points: 8 points + 8 bonus
 
 The goal of this competition is to use Deep Q Networks (and any of Rainbow improvements)
 on a more real-world [CarRacing-v0 environment](https://gym.openai.com/envs/CarRacing-v0)
@@ -26,7 +26,7 @@ some frames need to be rendered).
 In ReCodEx, you are expected to submit an already trained model,
 which is evaluated on 15 different tracks with a total time
 limit of 15 minutes. If your average return is at least 300, you obtain
-8 points. The task is also a _competition_ and at most 10 points will be awarded
+8 points. The task is also a _competition_ and at most 8 points will be awarded
 according to relative ordering of your solution performances.
 
 The [car_racing.py](https://github.com/ufal/npfl122/tree/master/labs/05/car_racing.py)
