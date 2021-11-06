@@ -18,8 +18,9 @@ During evaluation in ReCodEx, three different random seeds will be employed, and
 you need to reach the required return on all of them. Time limit for each test
 is 15 minutes.
 
-The task is additionally a _competition_ and at most 7 points will be awarded
-according to relative ordering of your solution performances.
+The task is additionally a [_competition_](https://ufal.mff.cuni.cz/courses/npfl122/2122-winter#competitions)
+and at most 7 points will be awarded according to relative ordering of your
+solution performances.
 
 You can start with the [lunar_lander.py](https://github.com/ufal/npfl122/tree/master/labs/03/lunar_lander.py)
 template, which parses several useful parameters, creates the environment
