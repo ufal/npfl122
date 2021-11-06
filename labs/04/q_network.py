@@ -48,7 +48,7 @@ class Network:
     @tf.function
     def train(self, states: np.ndarray, q_values: np.ndarray) -> None:
         self._model.optimizer.minimize(
-            lambda: self._model.loss(q_values, self._model(states, training=True)),
+            lambda: self._model.compiled_loss(q_values, self._model(states, training=True)),
             var_list=self._model.trainable_variables
         )
 
