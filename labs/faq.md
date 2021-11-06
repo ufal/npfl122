@@ -41,10 +41,3 @@
 
   No, you can pre-train your agent locally (unless specified otherwise in the task
   description).
-
-### TOCEntry: Competitions
-
-- _Which algorithms are allowed during competitions?_
-
-  Unless stated otherwise, you can use **any algorithm** to solve the
-  competition task at hand, but the implementation must be **created by you**.
