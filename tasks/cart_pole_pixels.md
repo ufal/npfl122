@@ -9,7 +9,7 @@ as an $80×80$ image with three channels, with each channel representing one tim
 
 During evaluation in ReCodEx, three different random seeds will be employed,
 each with time limit of 10 minutes, and if you reach an average return at least
-300 on all of them, you obtain 5 points. The task is also
+300 on all of them, you obtain 4 points. The task is also
 a [_competition_](https://ufal.mff.cuni.cz/courses/npfl122/2122-winter#competitions)
 and at most 5 points will be awarded according to relative ordering of your
 solution performances.
