@@ -3,6 +3,9 @@
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides/?06
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides.pdf/npfl122-06.pdf,PDF Slides
 #### Questions: #lecture_6_questions
+#### Lecture assignment: reinforce
+#### Lecture assignment: reinforce_baseline
+#### Lecture assignment: cart_pole_pixels
 
 - Policy Gradient Methods [Sections 13-13.1 of RLB]
 - Policy Gradient Theorem [Section 13.2 of RLB]
