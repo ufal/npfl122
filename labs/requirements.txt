@@ -1,5 +1,5 @@
 # See description of the requirements in "README.md".
-tensorflow==2.6.0
+tensorflow==2.6.2
 tensorflow_probability==0.14.1
 numpy==1.19.5
 gym==0.20.0
