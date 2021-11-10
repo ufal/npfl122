@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import sys
 
 import gym
@@ -13,6 +14,7 @@ class EvaluationEnv(gym.Wrapper):
         super().__init__(env)
         self._evaluate_for = evaluate_for
         self._report_each = report_each
+        self._report_verbose = os.getenv("VERBOSE") not in [None, "", "0"]
 
         self.seed(seed)
         self.action_space.seed(seed)
@@ -50,9 +52,10 @@ class EvaluationEnv(gym.Wrapper):
             self._episode_returns.append(self._episode_return)
 
             if self._report_each and self.episode % self._report_each == 0:
-                print("Episode {}, mean {}-episode return {:.2f} +-{:.2f}".format(
+                print("Episode {}, mean {}-episode return {:.2f} +-{:.2f}{}".format(
                     self.episode, self._evaluate_for, np.mean(self._episode_returns[-self._evaluate_for:]),
-                    np.std(self._episode_returns[-self._evaluate_for:])), file=sys.stderr)
+                    np.std(self._episode_returns[-self._evaluate_for:]), "" if not self._report_verbose else
+                    ", returns " + " ".join(map("{:g}".format, self._episode_returns[-self._report_each:]))), file=sys.stderr)
             if self._evaluating_from is not None and self.episode >= self._evaluating_from + self._evaluate_for:
                 print("The mean {}-episode return after evaluation {:.2f} +-{:.2f}".format(
                     self._evaluate_for, np.mean(self._episode_returns[-self._evaluate_for:]),
