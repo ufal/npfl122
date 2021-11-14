@@ -60,7 +60,7 @@ class EvaluationEnv(gym.Wrapper):
             if self._evaluating_from is not None and self.episode >= self._evaluating_from + self._evaluate_for:
                 print("The mean {}-episode return after evaluation {:.2f} +-{:.2f}".format(
                     self._evaluate_for, np.mean(self._episode_returns[-self._evaluate_for:]),
-                    np.std(self._episode_returns[-self._evaluate_for:])), file=sys.stderr, flush=True)
+                    np.std(self._episode_returns[-self._evaluate_for:])), flush=True)
                 self.close()
                 sys.exit(0)
 
