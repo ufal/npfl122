@@ -139,3 +139,32 @@
 - Explain the difference between a regular Actor-critic and Parallel Advantage
   Actor Critic algorithms. [5]
 
+#### Questions@:, Lecture 7 Questions
+- Explain the difference between a regular Actor-critic and Parallel Advantage
+  Actor Critic algorithms. [5]
+
+- Considering continuous actions modeled by a normal distribution with
+  diagonal covariance, describe how is the policy distribution computed
+  (network architecture, output activation functions) and how does the loss of
+  a simple REINFORCE algorithm look like. [5]
+
+- Formulate the deterministic policy gradient theorem for
+  $\nabla_{\boldsymbol\theta} v_\pi(s)$. [5]
+
+- Formulate the deterministic policy gradient theorem for
+  $\nabla_{\boldsymbol\theta} J(\boldsymbol\theta)$. [5]
+
+- Prove the part of the deterministic policy gradient theorem showing the value
+  of $\nabla_{\boldsymbol\theta} v_\pi(s)$. [10]
+
+- Write down the critic loss (or its derivative) and the actor policy loss (or
+  its derivative) of the Deep Determinisic Policy Gradients (DDPG) algorithm. Make
+  sure to distinguish the target networks from the ones being trained. [10]
+
+- How is the return in the Twin Delayed Deep Deterministic Policy
+  Gradient (TD3) algorithm estimated? [5]
+
+- Write down the critic loss (or its derivative) and the actor policy loss (or
+  its derivative) of the Twin Delayed Deep Deterministic Policy Gradient (TD3)
+  algorithm. Make sure to distinguish the target networks from the ones being
+  trained. [10]
