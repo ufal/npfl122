@@ -80,6 +80,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
 
     # Create the vectorized environment
     vector_env = gym.vector.AsyncVectorEnv([lambda: gym.make(env.spec.id)] * args.workers)
+    vector_env.seed(args.seed)
     states = vector_env.reset()
 
     training = True
