@@ -16,6 +16,7 @@ parser.add_argument("--render_each", default=0, type=int, help="Render some epis
 parser.add_argument("--seed", default=None, type=int, help="Random seed.")
 parser.add_argument("--threads", default=1, type=int, help="Maximum number of threads to use.")
 # For these and any other arguments you add, ReCodEx will keep your default value.
+parser.add_argument("--entropy_regularization", default=None, type=float, help="Entropy regularization weight.")
 parser.add_argument("--env", default="CartPole-v1", type=str, help="Environment.")
 parser.add_argument("--evaluate_each", default=100, type=int, help="Evaluate each number of batches.")
 parser.add_argument("--evaluate_for", default=10, type=int, help="Evaluate the given number of episodes.")
@@ -23,7 +24,6 @@ parser.add_argument("--gamma", default=None, type=float, help="Discounting facto
 parser.add_argument("--hidden_layer_size", default=None, type=int, help="Size of hidden layer.")
 parser.add_argument("--learning_rate", default=None, type=float, help="Learning rate.")
 parser.add_argument("--workers", default=None, type=int, help="Number of parallel workers.")
-parser.add_argument("--entropy_regularization", default=None, type=float, help="Entropy regularization weight.")
 
 class Network:
     def __init__(self, env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
@@ -43,6 +43,12 @@ class Network:
     def train(self, states: np.ndarray, actions: np.ndarray, returns: np.ndarray) -> None:
         # TODO: Train the policy network using policy gradient theorem
         # and the value network using MSE.
+        #
+        # The `args.entropy_regularization` might be used to include actor
+        # entropy regularization -- however, the assignment can be solved
+        # quite easily without it (my reference solution does not use it).
+        # In any case, `tfp.distributions.Categorical` is the suitable distribution;
+        # in PyTorch, it is `torch.distributions.categorical.Categorical`.
         raise NotImplementedError()
 
     @wrappers.typed_np_function(np.float32)
