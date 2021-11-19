@@ -23,6 +23,7 @@ parser.add_argument("--gamma", default=None, type=float, help="Discounting facto
 parser.add_argument("--hidden_layer_size", default=None, type=int, help="Size of hidden layer.")
 parser.add_argument("--learning_rate", default=None, type=float, help="Learning rate.")
 parser.add_argument("--workers", default=None, type=int, help="Number of parallel workers.")
+parser.add_argument("--entropy_regularization", default=None, type=float, help="Entropy regularization weight.")
 
 class Network:
     def __init__(self, env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
