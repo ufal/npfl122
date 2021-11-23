@@ -6,15 +6,10 @@ As an extension of the `walker` assignment, solve the
 [BipedalWalkerHardcore-v3 environment](https://gym.openai.com/envs/BipedalWalkerHardcore-v2)
 environment from the [OpenAI Gym](https://gym.openai.com/).
 
-The task is a _competition only_ and at most 10 points will be awarded according to
-relative ordering of your solution performances. In ReCodEx, your solution
-will be evaluated with two seeds, each for 100 episodes with a time limit of 10 minutes.
-If your average return is at least 0, ReCodEx shows the solution as correct.
-
 In ReCodEx, you are expected to submit an already trained model,
 which is evaluated with two seeds, each for 100 episodes with a time
 limit of 10 minutes. If your average return is at least 100, you obtain
-8 points. The task is also a [_competition_](https://ufal.mff.cuni.cz/courses/npfl122/2122-winter#competitions)
+6 points. The task is also a [_competition_](https://ufal.mff.cuni.cz/courses/npfl122/2122-winter#competitions)
 and at most 8 points will be awarded according to relative ordering of your
 solution performances.
 
