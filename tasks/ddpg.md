@@ -1,5 +1,5 @@
 ### Assignment: ddpg
-#### Date: Deadline: Nov 08, 23:59
+#### Date: Deadline: ~~Nov 28~~ Dec 05, 23:59
 #### Points: 6 points
 
 Solve the [Pendulum-v0 environment](https://gym.openai.com/envs/Pendulum-v0)

@@ -1,5 +1,5 @@
 ### Assignment: paac_continuous
-#### Date: Deadline: Nov 28, 23:59
+#### Date: Deadline: ~~Nov 28~~ Dec 05, 23:59
 #### Points: 5 points
 
 Solve the [MountainCarContinuous-v0 environment](https://gym.openai.com/envs/MountainCarContinuous-v0/)

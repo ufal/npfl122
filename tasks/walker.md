@@ -1,5 +1,5 @@
 ### Assignment: walker
-#### Date: Deadline: Dec 05, 23:59
+#### Date: Deadline: ~~Dec 05~~ Dec 12, 23:59
 #### Points: 5 points
 
 In this exercise exploring continuous robot control,

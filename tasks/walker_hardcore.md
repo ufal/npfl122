@@ -1,5 +1,5 @@
 ### Assignment: walker_hardcore
-#### Date: Deadline: Dec 05, 23:59
+#### Date: Deadline: ~~Dec 05~~ Dec 12, 23:59
 #### Points: 6 points + 8 bonus
 
 As an extension of the `walker` assignment, solve the
