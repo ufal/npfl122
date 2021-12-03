@@ -10,8 +10,9 @@ The environment is continuous, states and actions are described at
 
 In ReCodEx, you are expected to submit an already trained model,
 which is evaluated with two seeds, each for 100 episodes with a time
-limit of 10 minutes. If your average return is at least 100, you obtain
+limit of 10 minutes. If your average return is at least 200, you obtain
 5 points.
 
-The template with the SAC agent will be available, but you can also solve the
-assignment with DDPG/TD3.
+The [walker.py](https://github.com/ufal/npfl122/tree/master/labs/08/walker.py)
+template contains the skeleton for implementing the SAC agent, but you can
+also solve the assignment with DDPG/TD3.
