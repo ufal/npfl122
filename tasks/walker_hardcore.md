@@ -8,7 +8,7 @@ environment from the [OpenAI Gym](https://gym.openai.com/).
 
 **Note that the penalty of `-100` on crash can discourage or even stop training,
 so decreasing it substantially or even setting it to `0` makes the training easier
-(I could not surpass return 0 with neither TD3 nor SAC with the `-100` penalty.)**
+(I could not surpass return 0 with neither TD3 nor SAC with the `-100` penalty).**
 
 In ReCodEx, you are expected to submit an already trained model,
 which is evaluated with three seeds, each for 100 episodes with a time
