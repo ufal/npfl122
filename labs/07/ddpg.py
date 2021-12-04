@@ -38,10 +38,9 @@ class Network:
         #
         # - a target actor as the copy of the actor using `tf.keras.models.clone_model`.
         #
-        # - a critic, starting with given states and actions producing predicted
-        #   returns.  Usually, states are fed through a hidden layer first, and
-        #   then concatenated with action and fed through two more hidden
-        #   layers, before computing the returns.
+        # - a critic, starting with given states and actions, producing predicted
+        #   returns. The states and actions are usually concatenated and fed through
+        #   two more hidden layers, before computing the returns with the last output layer.
         #
         # - a target critic as the copy of the critic using `tf.keras.models.clone_model`.
         raise NotImplementedError()
