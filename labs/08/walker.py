@@ -165,7 +165,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
             evaluate_episode(True)
 
     # Create the asynchroneous vector environment for training.
-    venv = gym.vector.AsyncVectorEnv([lambda: gym.make(env.spec.id)] * args.envs)
+    venv = gym.vector.AsyncVectorEnv([lambda: gym.make(args.env)] * args.envs)
 
     # Replay memory; maxlen parameter can be passed to deque for a size limit,
     # which we however do not need in this simple task.
