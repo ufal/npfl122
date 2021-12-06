@@ -160,6 +160,49 @@ class DiscreteLunarLanderWrapper(DiscretizationWrapper):
         return initial_state, trajectory
 
 
+class BraxWrapper(gym.Wrapper):
+    def __init__(self, env, workers=None):
+       import brax.envs
+       super().__init__(brax.envs.create_gym_env(env, batch_size=workers))
+       self._viewer = None
+       self._render_html = None
+
+    def seed(self, seed=None):
+        if seed is None:
+            import random
+            seed = random.Random().randint(0, 1<<31)
+        super().seed(seed)
+
+    def reset(self):
+        self._render_html = None
+        return np.asarray(super().reset())
+
+    def step(self, action):
+        next_state, reward, done, info = super().step(np.asarray(action))
+        return np.asarray(next_state), np.asarray(reward), np.asarray(done), info
+
+    def render(self, mode="human", *, path=None):
+        if mode == "human":
+            image = super().render(mode="rgb_array")
+            if self._viewer is None:
+                from gym.envs.classic_control import rendering
+                self._viewer = rendering.SimpleImageViewer()
+            self._viewer.imshow(image)
+        elif mode == "html":
+            if path is None:
+                if self._render_html is None:
+                    self._render_html = self.env._env.sys, []
+                self._render_html[1].append(self.env._state.qp)
+            else:
+                if self._render_html is None:
+                    raise ValueError("Render 'html' used with 'path', but no previous steps were collected!")
+                import brax.io.html
+                brax.io.html.save_html(path, *self._render_html)
+                self._render_html = None
+        else:
+            return super().render(mode)
+
+
 ####################
 # Gym Environments #
 ####################
