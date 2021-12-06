@@ -30,6 +30,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
         rewards, state, done = 0, env.reset(start_evaluation), False
         while not done:
             if args.render_each and (env.episode + 1) % args.render_each == 0:
+                # Store the current state in the visualization buffer.
                 env.render("html")
 
             # TODO: Choose an action and perform a step
@@ -38,6 +39,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
             rewards += reward
 
         if args.render_each and env.episode % args.render_each == 0:
+            # Produce an HTML visualization using all the stored states.
             env.render("html", path="{}{}.html".format(args.env, env.episode))
         return rewards
 
