@@ -36,9 +36,8 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
                 action = None
                 state, reward, done, _ = env.step(action)
 
-    else:
-        # TODO: Perform training
-        raise NotImplementedError()
+    # TODO: Perform training
+    raise NotImplementedError()
 
 
 if __name__ == "__main__":
