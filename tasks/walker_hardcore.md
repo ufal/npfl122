@@ -7,7 +7,7 @@ As an extension of the `walker` assignment, solve the
 environment from the [OpenAI Gym](https://gym.openai.com/).
 
 **Note that the penalty of `-100` on crash can discourage or even stop training,
-so overriding the reward at the end of episode to `0` (or at least descresing it
+so overriding the reward at the end of episode to `0` (or descresing it
 substantially) makes the training considerably easier (I have not surpassed
 return `0` with neither TD3 nor SAC with the original `-100` penalty).**
 
