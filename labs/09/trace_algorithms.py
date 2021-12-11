@@ -70,14 +70,15 @@ def main(args: argparse.Namespace) -> np.ndarray:
 
             # TODO: Perform the update to the state value function `V`, using
             # a TD update with the following parameters:
-            # - `args.n`: use `args.n`-step method
-            # - `args.off_policy`:
-            #    - if False, the epsilon-greedy behaviour policy is also the target policy
-            #    - if True, the target policy is an epsilon/3-greedy policy; use
-            #      off-policy correction using importance sampling with control variates
+            # - `args.n`: use `args.n`-step estimated return
             # - if `args.trace_lambda` is not None, use eligibility traces
-            # - if `args.vtrace_clip` is not None, clip the individual importance sample
-            #   ratios with it
+            #   (the `args.n`-step truncated `args.trace_lambda`-return)
+            # - `args.off_policy`:
+            #   - if False, the `args.epsilon`-greedy behaviour policy is also the target policy
+            #   - if True, the target policy is an (`args.epsilon`/3)-greedy policy; use
+            #     off-policy correction using importance sampling with control variates
+            #     - if `args.vtrace_clip` is not None, clip the individual importance sample
+            #       ratios with it
             #
             # Perform the updates as soon as you can -- whenever you have all the information
             # to update `V[state]`, do it.
