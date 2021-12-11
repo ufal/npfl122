@@ -69,6 +69,8 @@ class Network:
                 #   In that case, sample from a normal distribution, pass the samples through the
                 #   `tanh` and suitable scaling, and then compute the log_prob by using log_prob
                 #   from the normal distribution and manually accounting for the `tanh` as shown in the slides.
+                #   However, the formula from the slides is not numerically stable, for a better variant see
+                #   https://github.com/tensorflow/probability/blob/ef1f64a434/tensorflow_probability/python/bijectors/tanh.py#L70-L81
                 # - Sample the actions by a `sample()` call.
                 # - Then, compute the log-probabilities of the sampled actions by using `log_prob()`
                 #   call. An action is actually a vector, so to be precise, compute for every batch
