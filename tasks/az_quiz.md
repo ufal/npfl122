@@ -2,30 +2,23 @@
 #### Date: Deadline: Jan 02, 23:59 (competition); Feb 13, 23:49 (regular points)
 #### Points: 10 points + 10 bonus
 
-**Note that the templates are currently from the previous year. They will be
-updated to (a) include an over-all template instead of just a link to the
-official pseudocode, and (b) to allow also (possibly multithreaded) C++
-implementation of the MCTS, which should provide significant speedup. This will
-probably change the API slightly, which is why the templates are currently
-in `previous_year` subdirectory.**
-
 In this competition assignment, use Monte Carlo Tree Search to learn
 an agent for a simplified version of [AZ-kvíz](https://cs.wikipedia.org/wiki/AZ-kv%C3%ADz).
 In our version, the agent does not have to answer questions and we assume
 that **all answers are correct**.
 
 The game itself is implemented in the
-[az_quiz.py](https://github.com/ufal/npfl122/tree/master/labs/10/previous_year/az_quiz.py)
+[az_quiz.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz.py)
 module, using `randomized=False` constructor argument.
 
 The evaluation in ReCodEx should be implemented by returning an object
 implementing a method `play`, which given an AZ-kvíz instance returns the chosen
 move. The illustration of the interface is in the
-[az_quiz_player_random.py](https://github.com/ufal/npfl122/tree/master/labs/10/previous_year/az_quiz_player_random.py)
+[az_quiz_player_random.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_random.py)
 module, which implements a random agent.
 
 Your solution in ReCodEx is automatically evaluated against a very simple heuristic
-[az_quiz_player_simple_heuristic.py](https://github.com/ufal/npfl122/tree/master/labs/10/previous_year/az_quiz_player_simple_heuristic.py),
+[az_quiz_player_simple_heuristic.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_simple_heuristic.py),
 playing 56 games as a starting player and 56 games as a non-starting player. The
 time limit for the games is 15 minutes and you should see the win rate directly in
 ReCodEx. If you achieve at least 80%, you will pass the assignment.
@@ -33,13 +26,15 @@ ReCodEx. If you achieve at least 80%, you will pass the assignment.
 The final competition evaluation will be performed after the deadline by
 a round-robin tournament.
 
-Note that [az_quiz_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/10/previous_year/az_quiz_evaluator.py)
+Note that [az_quiz_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_evaluator.py)
 can be used to evaluate any two given implementations and there are two
 interactive players available, 
-[az_quiz_player_interactive_mouse.py](https://github.com/ufal/npfl122/tree/master/labs/10/previous_year/az_quiz_player_interactive_mouse.py)
-and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/10/previous_year/az_quiz_player_interactive_keyboard.py).
+[az_quiz_player_interactive_mouse.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_mouse.py)
+and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_keyboard.py).
 
-For inspiration, use the [official pseudocode for AlphaZero](http://science.sciencemag.org/highwire/filestream/719481/field_highwire_adjunct_files/1/aar6404_DataS1.zip). However, note that there are some errors in it.
+The official template will appear soon. In the meantime, you can start from the
+[official pseudocode for AlphaZero](http://science.sciencemag.org/highwire/filestream/719481/field_highwire_adjunct_files/1/aar6404_DataS1.zip).
+However, note that there are some errors in it.
 - Below line 215, the following line should be inserted
   ```python
   root.visit_count = 1

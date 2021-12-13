@@ -24,11 +24,7 @@ class AZQuiz:
 
     @property
     def board(self):
-        board = np.zeros([self.N, self.N, self.C], dtype=np.bool)
-        for j in range(self.N):
-            for i in range(j + 1):
-                board[j, i] = self._REPRESENTATION[self._board[j, i]]
-        return board
+        return self._REPRESENTATION[self._board]
 
     @property
     def to_play(self):
