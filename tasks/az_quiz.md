@@ -33,7 +33,7 @@ interactive players available,
 and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_keyboard.py).
 
 The official template will appear soon. In the meantime, you can start from the
-[official pseudocode for AlphaZero](http://science.sciencemag.org/highwire/filestream/719481/field_highwire_adjunct_files/1/aar6404_DataS1.zip).
+[official pseudocode for AlphaZero](https://www.science.org/doi/suppl/10.1126/science.aar6404/suppl_file/aar6404_datas1.zip).
 However, note that there are some errors in it.
 - Below line 215, the following line should be inserted
   ```python
