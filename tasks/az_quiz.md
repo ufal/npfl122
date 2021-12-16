@@ -24,17 +24,20 @@ time limit for the games is 15 minutes and you should see the win rate directly 
 ReCodEx. If you achieve at least 80%, you will pass the assignment.
 
 The final competition evaluation will be performed after the deadline by
-a round-robin tournament.
+a round-robin tournament. In this tournament, we also consider games
+where the first move is chosen for the first player (`FirstChosen` label
+in ReCodEx, `--first_chosen` option of the evaluator).
 
-Note that [az_quiz_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_evaluator.py)
+The [az_quiz_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_evaluator.py)
 can be used to evaluate any two given implementations and there are two
-interactive players available, 
+interactive players available,
 [az_quiz_player_interactive_mouse.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_mouse.py)
 and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_keyboard.py).
 
-The official template will appear soon. In the meantime, you can start from the
-[official pseudocode for AlphaZero](https://www.science.org/doi/suppl/10.1126/science.aar6404/suppl_file/aar6404_datas1.zip).
-However, note that there are some errors in it.
+The starting template is available in the [az_quiz_agent.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_agent.py)
+module. Additionally, you might also want to read the
+[official pseudocode for AlphaZero](https://www.science.org/doi/suppl/10.1126/science.aar6404/suppl_file/aar6404_datas1.zip),
+which however contains several errors:
 - Below line 215, the following line should be inserted
   ```python
   root.visit_count = 1
