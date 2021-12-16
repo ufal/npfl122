@@ -7,7 +7,7 @@ import az_quiz
 
 import numpy as np
 
-def load_player(args, player):
+def load_player(args: argparse.Namespace, player: str):
     if player.endswith(".py"):
         player = player[:-3]
 
@@ -37,7 +37,7 @@ def load_player(args, player):
     else:
         return loader()
 
-def evaluate(players, games, randomized, first_fixed, render):
+def evaluate(players: list, games: int, randomized: bool, first_fixed: bool, render: bool = False, verbose: bool = False) -> float:
     wins = [0, 0]
     for i in range(games):
         for to_start in range(2):
@@ -54,8 +54,11 @@ def evaluate(players, games, randomized, first_fixed, render):
             if render:
                 time.sleep(1.0)
 
-        print("First player win rate after {} games: {:.2f}% ({:.2f}% and {:.2f}% when starting and not starting)".format(
-            2 * i + 2, 100 * (wins[0] + wins[1]) / (2 * i + 2), 100 * wins[0] / (i + 1), 100 * wins[1] / (i + 1)))
+        if verbose:
+            print("First player win rate after {} games: {:.2f}% ({:.2f}% and {:.2f}% when starting and not starting)".format(
+                2 * i + 2, 100 * (wins[0] + wins[1]) / (2 * i + 2), 100 * wins[0] / (i + 1), 100 * wins[1] / (i + 1)))
+
+    return (wins[0] + wins[1]) / (2 * games)
 
 
 if __name__ == "__main__":
@@ -78,4 +81,5 @@ if __name__ == "__main__":
         randomized=args.randomized,
         first_fixed=args.first_fixed,
         render=args.render,
+        verbose=True,
     )
