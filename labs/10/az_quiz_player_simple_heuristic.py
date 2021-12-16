@@ -32,5 +32,4 @@ class Player:
         return action
 
 def main(args):
-    if args.recodex:
-        return Player()
+    return Player()

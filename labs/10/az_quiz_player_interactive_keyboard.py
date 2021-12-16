@@ -18,5 +18,4 @@ class Player:
         return az_quiz.keyboard_input()
 
 def main(args):
-    if args.recodex:
-        return Player()
+    return Player()
