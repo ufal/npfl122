@@ -39,12 +39,15 @@ def load_player(args: argparse.Namespace, player: str):
     else:
         return loader()
 
-def evaluate(players: list, games: int, randomized: bool, first_fixed: bool, render: bool = False, verbose: bool = False) -> float:
+def evaluate(players: list, games: int, randomized: bool, first_chosen: bool, render: bool = False, verbose: bool = False) -> float:
+    assert first_chosen and games % az_quiz.AZQuiz.actions != 0, \
+        "If `first_chosen` is True, the number of games must be divisble by the number of actions"
+
     wins = [0, 0]
     for i in range(games):
         for to_start in range(2):
             game = az_quiz.AZQuiz(randomized)
-            if first_fixed:
+            if first_chosen:
                 game.move(i % game.actions)
             while game.winner is None:
                 game.move(players[to_start ^ game.to_play].play(game.clone()))
@@ -67,7 +70,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("player_1", type=str, help="First player module")
     parser.add_argument("player_2", type=str, help="Second player module")
-    parser.add_argument("--first_fixed", default=False, action="store_true", help="Choose first move randomly")
+    parser.add_argument("--first_chosen", default=False, action="store_true", help="The first move is chosen")
     parser.add_argument("--games", default=56, type=int, help="Number of alternating games to evaluate")
     parser.add_argument("--multiprocessing", default=False, action="store_true", help="Load players in separate processes")
     parser.add_argument("--randomized", default=False, action="store_true", help="Is answering allowed to fail and generate random results")
@@ -81,7 +84,7 @@ if __name__ == "__main__":
         [load_player(args, args.player_1), load_player(args, args.player_2)],
         games=args.games,
         randomized=args.randomized,
-        first_fixed=args.first_fixed,
+        first_chosen=args.first_chosen,
         render=args.render,
         verbose=True,
     )
