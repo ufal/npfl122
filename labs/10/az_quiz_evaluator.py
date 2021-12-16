@@ -8,12 +8,14 @@ import az_quiz
 import numpy as np
 
 def load_player(args: argparse.Namespace, player: str):
+    player, *player_args = player.split(":")
+
     if player.endswith(".py"):
         player = player[:-3]
 
     def loader():
         module = importlib.import_module(player)
-        args = module.parser.parse_args([])
+        args = module.parser.parse_args(player_args)
         args.recodex = True
         return module.main(args)
 
