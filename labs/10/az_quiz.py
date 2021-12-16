@@ -43,6 +43,9 @@ class AZQuiz:
         return self._winner is None and action >= 0 and action < self.actions \
             and self._board[self._ACTION_Y[action], self._ACTION_X[action]] < 2
 
+    def valid_actions(self):
+        return np.nonzero(self._board[self._ACTION_Y, self._ACTION_X] < 2)[0] if self._winner is None else []
+
     def move(self, action):
         return self._move(action, np.random.uniform() if self._randomized else 0)
 
