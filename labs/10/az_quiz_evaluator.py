@@ -40,7 +40,7 @@ def load_player(args: argparse.Namespace, player: str):
         return loader()
 
 def evaluate(players: list, games: int, randomized: bool, first_chosen: bool, render: bool = False, verbose: bool = False) -> float:
-    assert first_chosen and games % az_quiz.AZQuiz.actions != 0, \
+    assert not first_chosen or games % az_quiz.AZQuiz.actions == 0, \
         "If `first_chosen` is True, the number of games must be divisble by the number of actions"
 
     wins = [0, 0]
