@@ -20,7 +20,7 @@ module, which implements a random agent.
 Your solution in ReCodEx is automatically evaluated against a very simple heuristic
 [az_quiz_player_simple_heuristic.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_simple_heuristic.py),
 playing 56 games as a starting player and 56 games as a non-starting player. The
-time limit for the games is 15 minutes and you should see the win rate directly in
+time limit for the games is 10 minutes and you should see the win rate directly in
 ReCodEx. If you achieve at least 80%, you will pass the assignment.
 
 The final competition evaluation will be performed after the deadline by
