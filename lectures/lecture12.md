@@ -2,6 +2,8 @@
 #### Date: Dec 20
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides/?12
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides.pdf/npfl122-12.pdf,PDF Slides
+#### Lecture assignment: memory_game
+#### Lecture assignment: memory_game_rl
 
 - DreamerV2 [[D. Hafner et al.: Mastering Atari with Discrete World Models](https://arxiv.org/abs/2010.02193)]
 - _MERLIN model [[Greg Wayne et al.:Unsupervised Predictive Memory in a Goal-Directed Agent](https://arxiv.org/abs/1803.10760)]_
