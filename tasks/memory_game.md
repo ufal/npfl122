@@ -36,5 +36,5 @@ simulated once you pass `evaluating=True` to `env.reset` and your solution gets
 train the agent directly in ReCodEx (the time limit is 15 minutes),
 or submit a pre-trained one.
 
-A template [memory_game.py](https://github.com/ufal/npfl122/tree/past-2021/labs/13/memory_game.py)
+A template [memory_game.py](https://github.com/ufal/npfl122/tree/master/labs/13/memory_game.py)
 is available, commenting a possible use of memory augmented networks.
