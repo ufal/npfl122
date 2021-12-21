@@ -57,7 +57,7 @@ class MemoryGame(gym.Env):
         formatted.append("Last action: {}".format(self._last_action))
         print(" ".join(formatted))
 
-    def expert_episode(self) -> list[tuple[int, int], int]:
+    def expert_episode(self) -> list[tuple[int, int]]:
         if self._expert is None:
             self._expert = MemoryGame(self._cards)
             self._expert.seed(42)
