@@ -76,7 +76,7 @@ class Network:
         # Specifically, start with a batch of empty memories, and run the agent
         # sequentially as many times as necessary, using `targets` as gold labels.
         #
-        # Note that the sequences can be of different length, so you need to padd them
+        # Note that the sequences can be of different length, so you need to pad them
         # to same length and then somehow indicate the length of the individual episodes
         # (one possibility is to add another parameter to `_train`).
         raise NotImplementedError()
