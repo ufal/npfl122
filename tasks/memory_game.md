@@ -1,6 +1,6 @@
 ### Assignment: memory_game
 #### Date: Deadline: Feb 13, 23:59
-#### Points: 3 points
+#### Points: 3 points; any non-zero number counts as solved for passing the exam with grade 1 by solving all the assignments
 
 In this exercise we explore a partially observable environment.
 Consider a one-player variant of a memory game (pexeso), where a player repeatedly

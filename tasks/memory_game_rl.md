@@ -1,6 +1,6 @@
 ### Assignment: memory_game_rl
 #### Date: Deadline: Feb 13, 23:59
-#### Points: 5 points
+#### Points: 5 points; any non-zero number counts as solved for passing the exam with grade 1 by solving all the assignments
 
 This is a continuation of the `memory_game` assignment.
 
