@@ -19,9 +19,9 @@ parser.add_argument("--render_each", default=0, type=int, help="Render some epis
 parser.add_argument("--seed", default=None, type=int, help="Random seed.")
 parser.add_argument("--threads", default=1, type=int, help="Maximum number of threads to use.")
 # If you add more arguments, ReCodEx will keep them with your default values.
-parser.add_argument("--batch_size", default=None, type=int, help="Number of episodes to train on.")
-parser.add_argument("--gradient_clipping", default=None, type=float, help="Gradient clipping.")
-parser.add_argument("--entropy_regularization", default=None, type=float, help="Entropy regularization weight.")
+parser.add_argument("--batch_size", default=16, type=int, help="Number of episodes to train on.")
+parser.add_argument("--gradient_clipping", default=1.0, type=float, help="Gradient clipping.")
+parser.add_argument("--entropy_regularization", default=0.1, type=float, help="Entropy regularization weight.")
 parser.add_argument("--evaluate_each", default=None, type=int, help="Evaluate each number of episodes.")
 parser.add_argument("--evaluate_for", default=None, type=int, help="Evaluate for number of episodes.")
 parser.add_argument("--hidden_layer", default=None, type=int, help="Hidden layer size; default 8*`cards`")
@@ -85,7 +85,8 @@ class Network:
         # Use the REINFORCE algorithm, optionally with a baseline. Note that
         # I use a baseline, but not a baseline computed by a neural network;
         # instead, for every time step, I track exponential moving average of
-        # observed returns, with momentum 0.01.
+        # observed returns, with momentum 0.01. Furthermore, I use entropy regularization
+        # with coefficient `args.entropy_regularization`.
         #
         # Note that the sequences can be of different length, so you need to pad them
         # to same length and then somehow indicate the length of the individual episodes
