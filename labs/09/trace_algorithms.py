@@ -52,7 +52,7 @@ def main(args: argparse.Namespace) -> np.ndarray:
 
     # The target policy is either the behavior policy (if not `args.off_policy`),
     # or an epsilon/3-greedy policy (if `args.off_policy`).
-    def current_target_policy(V: np.ndarray) -> np.ndarray:
+    def compute_target_policy(V: np.ndarray) -> np.ndarray:
         epsilon = args.epsilon / 3 if args.off_policy else args.epsilon
         greedy_policy = np.eye(env.action_space.n)[argmax_with_tolerance(R + (1 - D) * args.gamma * V[N])]
         return (1 - epsilon) * greedy_policy + epsilon / env.action_space.n * np.ones_like(greedy_policy)
@@ -85,7 +85,7 @@ def main(args: argparse.Namespace) -> np.ndarray:
             #
             # When performing off-policy estimation, use `action_prob` at the time of
             # taking the `action` as the behaviour policy action probability, and the
-            # `current_target_policy(V)` as the target policy (everywhere in the update).
+            # `compute_target_policy(V)` with the current `V` as the target policy.
             #
             # Do not forget that when `done` is True, bootstrapping on the
             # `next_state` is not used.
@@ -93,7 +93,7 @@ def main(args: argparse.Namespace) -> np.ndarray:
             # Also note that when the episode ends and `args.n` > 1, there will
             # be several states that also need to be updated. Perform the updates
             # in the order in which you encountered the states in the trajectory
-            # and during these updates, use the `current_target_policy(V)` with
+            # and during these updates, use the `compute_target_policy(V)` with
             # the up-to-date value of `V`.
 
             state = next_state

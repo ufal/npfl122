@@ -41,7 +41,7 @@ def main(args: argparse.Namespace) -> np.ndarray:
 
     # The target policy is either the behavior policy (if not args.off_policy),
     # or the greedy policy (if args.off_policy).
-    def current_target_policy(Q: np.ndarray) -> np.ndarray:
+    def compute_target_policy(Q: np.ndarray) -> np.ndarray:
         target_policy = np.eye(env.action_space.n)[argmax_with_tolerance(Q, axis=-1)]
         if not args.off_policy:
             target_policy = (1 - args.epsilon) * target_policy + args.epsilon / env.action_space.n
@@ -74,9 +74,8 @@ def main(args: argparse.Namespace) -> np.ndarray:
             #
             # Perform the updates as soon as you can -- whenever you have all the information
             # to update `Q[state, action]`, do it. For each `action` use its corresponding
-            # `action_prob` at the time of taking the `action` as the behaviour policy action
-            # probability, and the `current_target_policy(Q)` as the target policy (everywhere
-            # in the update).
+            # `action_prob` at the time of taking the `action` as the behaviour policy probability,
+            # and the `compute_target_policy(Q)` with the current `Q` as the target policy.
             #
             # Do not forget that when `done` is True, bootstrapping on the
             # `next_state` is not used.
@@ -84,7 +83,7 @@ def main(args: argparse.Namespace) -> np.ndarray:
             # Also note that when the episode ends and `args.n` > 1, there will
             # be several state-action pairs that also need to be updated. Perform
             # the updates in the order in which you encountered the state-action
-            # pairs and during these updates, use the `current_target_policy(Q)`
+            # pairs and during these updates, use the `compute_target_policy(Q)`
             # with the up-to-date value of `Q`.
 
     return Q
