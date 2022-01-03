@@ -1,8 +1,8 @@
 ### Assignment: brax_cheetah
 #### Date: Deadline: Dec 19, 23:59
-#### Points: 4 bonus; not required for passing the exam with grade 1 by solving all assignments
+#### Points: 4 points; not required for passing the exam with grade 1 by solving all assignments
 
-In this bonus-only exercise, try using the DDPG/TD3/SAC algorithm to solve the
+In this optional exercise, try using the DDPG/TD3/SAC algorithm to solve the
 [HalfCheetah](https://gym.openai.com/envs/HalfCheetah-v2/) environment, but
 using the [Halfcheetah](https://github.com/google/brax/blob/main/brax/envs/halfcheetah.py)
 environment from the [Brax](https://github.com/google/brax) engine.
