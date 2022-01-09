@@ -161,20 +161,45 @@
   its derivative) of the Deep Determinisic Policy Gradients (DDPG) algorithm. Make
   sure to distinguish the target networks from the ones being trained. [10]
 
-- How is the return in the Twin Delayed Deep Deterministic Policy
-  Gradient (TD3) algorithm estimated? [5]
+- How is the return estimated in the Twin Delayed Deep Deterministic Policy
+  Gradient (TD3) algorithm? [5]
 
 - Write down the critic loss (or its derivative) and the actor policy loss (or
   its derivative) of the Twin Delayed Deep Deterministic Policy Gradient (TD3)
   algorithm. Make sure to distinguish the target networks from the ones being
   trained. [10]
 
-#### Questions@:, Lecture 9 Questions
+#### Questions@:, Lecture 8 Questions
+- Write down how is the reward augmented in Soft actor critic, and the
+  definitions of the soft action-value function and the soft (state-)value function.
+  Then, define the modified Bellman backup operator $\mathcal{T}_\pi$ (be sure
+  to indicate whether you are using the augmented or non-augmented reward),
+  whose repeated application converges to the soft actor-value function $q_\pi$,
+  and prove it. [10]
+
+- Considering soft policy improvement of a policy $\pi$, write down the update
+  formula for the improved policy $\pi'$, and prove that the soft action-value
+  function of the improved policy is greater or equal to the soft action-value
+  function of the original policy. [10]
+
+- Write down how are the critics and target critics updated in the Soft actor
+  critic algorithm. [5]
+
+- Write down how is the actor updated in the Soft actor critic algorithm,
+  including the policy reparametrization trick. [5]
+
+- Regarding the entropy penalty coefficient $\alpha$ in the Soft actor critic,
+  define what contrained optimization problem we are solving, what is the
+  corresponding Lagrangian (and whether we are minimizing/maximizing it
+  with respect to the policy and $\alpha$), and what does the $\alpha$ update
+  looks like. [5]
+
 - Define a one-step TD error and express the $n$-step return as a sum of them. [5]
 
 - Define a one-step TD error and express the $n$-step return with off-policy
-  correction as a sum of them. [5]
+  correction using control variates as a sum of TD errors. [5]
 
+#### Questions@:, Lecture 9 Questions
 - Define the $\lambda$-return. [5]
 
 - Define the $n$-step truncated $\lambda$-return. [5]
@@ -192,9 +217,9 @@
   truncation of all but the last importance sampling ratios. [10]
 
 - Write down the critic loss (or its derivative) and the actor policy loss (or
-  its derivative) of the IMPALA algorithm. [10]
+  its derivative) of the IMPALA algorithm, including the V-trace formula. [10]
 
-- Sketch the population based training used in the IMPALA algorithm. [10]
+- Sketch the population based training used in the IMPALA algorithm. [5]
 
 - In PopArt normalization, the value function is computed based on a normalized
   value predictor $n$ as $\sigma n + \mu$. Describe how to maintain $\sigma$ and
@@ -238,3 +263,7 @@
   when you reach a leaf during the tree search. [5]
 
 - How are the actions selected in AlphaZero self-play? [5]
+
+#### Questions@:, Lecture 11 Questions
+
+#### Questions@:, Lecture 12 Questions
