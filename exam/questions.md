@@ -265,5 +265,23 @@
 - How are the actions selected in AlphaZero self-play? [5]
 
 #### Questions@:, Lecture 11 Questions
+- Describe the three components of a MuZero model, and describe/draw how they
+  are used to traverse the MCTS tree. [5]
+
+- Describe the MCTS in MuZero – action selection (including the exact
+  action-values used), how are the three components of a MuZero model used
+  during the tree traversal and leaf evaluation, and the updates during
+  the backup phase. [10]
+
+- Assuming we already have a filled replay buffer, describe the MuZero
+  training – the losses and the target values used in them. [10]
+
+- Describe the components of a typical latent-space model in PlaNet
+  (the transition, observation and reward functions, the encoder)
+  and the components of a recurrent state-space model (RSSM). [5]
+
+- Derive the variational lower bound on $\log p(o_{1:T} | a_{1:T})$ used in
+  PlaNet (you can utilize the Jensen's inequality
+  $\log \mathbb{E} [x] \ge \mathbb{E} [\log x]$). [10]
 
 #### Questions@:, Lecture 12 Questions
