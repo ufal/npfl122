@@ -259,8 +259,8 @@
 - What does AlphaZero use to maintain exploration in a Monte-Carlo tree search?
   [5]
 
-- Describe the backup phase of Monte-Carlo tree search, i.e., the steps you perform
-  when you reach a leaf during the tree search. [5]
+- Describe the backup phase of Monte-Carlo tree search, i.e., the steps you
+  perform when you reach a leaf during the tree search. [5]
 
 - How are the actions selected in AlphaZero self-play? [5]
 
