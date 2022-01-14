@@ -139,7 +139,7 @@ def main(env, args):
 
         # TODO: Maybe evaluate the current performance, using
         # `evaluate_episode()` method returning the achieved return,
-        # and setting `training=False` when the performance is high enough.
+        # and setting `evaluating=True` when the performance is high enough.
 
     # Final evaluation
     while True:
