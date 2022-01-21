@@ -104,11 +104,11 @@
 - In Distributional RL, describe how is the distribution of rewards represented
   and how it is predicted using a neural network. [5]
 
-- Write down the Bellman update in Distributional RL (the mapping of atoms does
-  not need to be mathematically flawless, it is enough to describe how it should
-  be done). [5]
-
-- Formulate the loss used in Distributional RL. [5]
+- Write down the distributional Bellman equation, desctibe how are the atom
+  probabilities of a reward distribution modeled, and write down the loss used
+  to train a distributional Q network (including the mapping of atoms, which
+  does not need to be mathematically flawless -- it is enough to describe how it
+  should be done). [10]
 
 #### Questions@:, Lecture 6 Questions
 - Formulate the policy gradient theorem. [5]
