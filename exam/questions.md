@@ -92,7 +92,7 @@
 - Explain the difference between DQN and Double DQN. [5]
 
 - Describe prioritized replay (how are transitions sampled from the replay
-  buffer, how up-to-date the priorities [according to which we sample] are,
+  buffer, how up-to-date are the priorities [according to which we sample],
   how are unseen transitions boosted, how is importance sampling used to account
   for the change in the sampling distribution). [10]
 
