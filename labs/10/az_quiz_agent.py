@@ -171,6 +171,9 @@ def mcts(game: AZQuiz, agent: Agent, args: argparse.Namespace, explore: bool) ->
             # the `game` from its parent and performing a suitable action.
             game = None
             node.evaluate(game, agent)
+        else:
+            # We need to update `visit_count` in the node, so we append it to `path`.
+            path.append(node)
         # Get the value of the node.
         value = node.value()
 
