@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import importlib
+import os
 import time
 
 import az_quiz
@@ -17,7 +18,12 @@ def load_player(args: argparse.Namespace, player: str):
         module = importlib.import_module(player)
         args = module.parser.parse_args(player_args)
         args.recodex = True
-        return module.main(args)
+        try:
+            cwd = os.getcwd()
+            os.chdir(os.path.dirname(module.__file__))
+            return module.main(args)
+        finally:
+            os.chdir(cwd)
 
     if args.multiprocessing:
         import multiprocessing
