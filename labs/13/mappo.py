@@ -115,7 +115,8 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
     training = True
     while training:
         # Collect experience. Notably, we collect the following quantities
-        # as tensors with the first two dimensions [self.worker_steps, self.workers].
+        # as tensors with the first two dimensions `[self.worker_steps, self.workers]`,
+        # and the third dimension being `self.agents` for `action*`, `rewards`, `values`.
         states, actions, action_probs, rewards, dones, values = [], [], [], [], [], []
         for _ in range(args.worker_steps):
             # TODO: Choose `action`, which is a vector of `args.agents` actions for each worker,
