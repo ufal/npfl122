@@ -138,6 +138,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
             # function estimate) using lambda-return with coefficients `args.trace_lambda` and `args.gamma`.
             # You need to process episodes of individual workers independently, and note that
             # each worker might have generated multiple episodes, the last one probably unfinished.
+            advantages, returns = None, None
 
             # Train the agent `a` using the Keras API.
             # - The below code assumes that the first two dimensions of the used quantities are
