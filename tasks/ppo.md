@@ -14,7 +14,7 @@ The environment runs for 250 steps and it is considered solved if you obtain
 a return of at least 500.
 
 The [ppo.py](https://github.com/ufal/npfl122/tree/master/labs/13/ppo.py)
-template contains a skeleton implementation of the PPO algorithm.
+template contains a skeleton of the PPO algorithm implementation.
 Regarding the unspecified hyperparameters, I would consider the following ranges:
 - `batch_size` between 64 and 512
 - `clip_epsilon` between 0.1 and 0.2
