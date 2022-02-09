@@ -24,7 +24,7 @@ Regarding the unspecified hyperparameters, I would consider the following ranges
 - `workers` between 16 and 128
 - `worker_steps` between tens and hundreds
 
-My implementation trains in approximately a minute on a dual-core CPU.
+My implementation trains in approximately three minutes of CPU time.
 
 During evaluation in ReCodEx, two different random seeds will be employed, and
 you need to reach the average return of 450 on all of them. Time limit for each test
