@@ -207,7 +207,7 @@
 - Define a one-step TD error and express the $n$-step truncated $\lambda$-return
   as a sum of them. [5]
 
-- Define a one-step TD and express the $n$-step truncated $\lambda$-return with
+- Define a one-step TD error and express the $n$-step truncated $\lambda$-return with
   off-policy correction as a sum of them. [5]
 
 - Define the V-trace estimate and write down the policy to whose value function
