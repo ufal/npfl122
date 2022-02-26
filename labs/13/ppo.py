@@ -21,6 +21,7 @@ parser.add_argument("--batch_size", default=None, type=int, help="Batch size.")
 parser.add_argument("--clip_epsilon", default=None, type=float, help="Clipping epsilon.")
 parser.add_argument("--entropy_regularization", default=0.1, type=float, help="Entropy regularization weight.")
 parser.add_argument("--epochs", default=None, type=int, help="Epochs to train each iteration.")
+parser.add_argument("--evaluate_each", default=10, type=int, help="Evaluate each given number of iterations.")
 parser.add_argument("--evaluate_for", default=10, type=int, help="Evaluate the given number of episodes.")
 parser.add_argument("--gamma", default=None, type=float, help="Discounting factor.")
 parser.add_argument("--hidden_layer_size", default=50, type=int, help="Size of hidden layer.")
@@ -120,6 +121,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
     # Training
     state = venv.reset()
     training = True
+    iteration = 0
     while training:
         # Collect experience. Notably, we collect the following quantities
         # as tensors with the first two dimensions `[self.worker_steps, self.workers]`.
@@ -158,8 +160,10 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
         )
 
         # Periodic evaluation
-        for _ in range(args.evaluate_for):
-            evaluate_episode()
+        iteration += 1
+        if iteration % args.evaluate_each == 0:
+            for _ in range(args.evaluate_for):
+                evaluate_episode()
 
     # Final evaluation
     while True:
