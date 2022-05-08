@@ -2,7 +2,7 @@
 #### Date: Deadline: Nov 07, 23:59
 #### Points: 5 points
 
-Solve the [CartPole-v1 environment](https://gym.openai.com/envs/CartPole-v1)
+Solve the continuous [CartPole-v1 environment](https://gym.openai.com/envs/CartPole-v1)
 environment from the [OpenAI Gym](https://gym.openai.com/) using Q-learning
 with neural network as a function approximation.
 

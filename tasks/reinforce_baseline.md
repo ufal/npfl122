@@ -2,16 +2,16 @@
 #### Date: Deadline: Nov 21, 23:59
 #### Points: 4 points
 
-This is a continuation of `reinforce` assignment.
+This is a continuation of the `reinforce` assignment.
 
 Using the [reinforce_baseline.py](https://github.com/ufal/npfl122/tree/master/labs/06/reinforce_baseline.py)
-template, solve the [CartPole-v1 environment](https://gym.openai.com/envs/CartPole-v1)
+template, solve the continuous [CartPole-v1 environment](https://gym.openai.com/envs/CartPole-v1)
 environment using the REINFORCE with baseline algorithm.
 
 Using a baseline lowers the variance of the value function gradient estimator,
 which allows faster training and decreases sensitivity to hyperparameter values.
 To reflect this effect in ReCodEx, note that the evaluation phase will
-_automatically start after 200 episodes_. Using only 200 episodes for training
+**automatically start after 200 episodes**. Using only 200 episodes for training
 in this setting is probably too little for the REINFORCE algorithm, but
 suffices for the variant with a baseline. **In this assignment, you must train
 your agent in ReCodEx using the provided environment only.**

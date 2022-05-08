@@ -2,7 +2,7 @@
 #### Date: Deadline: Oct 17, 23:59
 #### Points: 5 points
 
-Solve the [CartPole-v1 environment](https://gym.openai.com/envs/CartPole-v1)
+Solve the discretized [CartPole-v1 environment](https://gym.openai.com/envs/CartPole-v1)
 environment from the [OpenAI Gym](https://gym.openai.com/) using the Monte Carlo
 reinforcement learning algorithm. The `gym` environments have the followng
 methods and properties:
