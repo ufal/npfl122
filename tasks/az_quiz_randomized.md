@@ -7,7 +7,7 @@ answers. Therefore, when choosing a field, the agent might answer
 incorrectly.
 
 To instantiate this randomized game variant, pass `randomized=True`
-to the `AZQuiz` class of [az_quiz.py](https://github.com/ufal/npfl122/tree/master/labs/10/previous_year/az_quiz.py).
+to the `AZQuiz` class of [az_quiz.py](https://github.com/ufal/npfl122/tree/past-2122/labs/10/previous_year/az_quiz.py).
 
 The Monte Carlo Tree Search has to be slightly modified to handle stochastic
 MDP. The information about distribution of possible next states is provided

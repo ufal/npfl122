@@ -6,7 +6,7 @@ Solve the continuous [CartPole-v1 environment](https://gym.openai.com/envs/CartP
 environment from the [OpenAI Gym](https://gym.openai.com/) using Q-learning
 with neural network as a function approximation.
 
-You can start with the [q_network.py](https://github.com/ufal/npfl122/tree/master/labs/04/q_network.py)
+You can start with the [q_network.py](https://github.com/ufal/npfl122/tree/past-2122/labs/04/q_network.py)
 template, which provides a simple network implementation in TensorFlow. Feel
 free to use PyTorch instead, if you like.
 

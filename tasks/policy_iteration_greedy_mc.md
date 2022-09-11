@@ -3,7 +3,7 @@
 #### Points: 2 points
 #### Tests: policy_iteration_greedy_mc_tests
 
-Starting with [policy_iteration_greedy_mc.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration_greedy_mc.py),
+Starting with [policy_iteration_greedy_mc.py](https://github.com/ufal/npfl122/tree/past-2122/labs/02/policy_iteration_greedy_mc.py),
 extend the `policy_iteration_exploring_mc` assignment to perform policy
 evaluation by using $ε$-greedy Monte Carlo estimation. Specifically,
 we update the action-value function $q_\pi(s, a)$ by running a

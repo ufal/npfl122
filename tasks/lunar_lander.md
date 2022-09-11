@@ -22,6 +22,6 @@ The task is additionally a [_competition_](https://ufal.mff.cuni.cz/courses/npfl
 and at most 7 points will be awarded according to relative ordering of your
 solution performances.
 
-You can start with the [lunar_lander.py](https://github.com/ufal/npfl122/tree/master/labs/03/lunar_lander.py)
+You can start with the [lunar_lander.py](https://github.com/ufal/npfl122/tree/past-2122/labs/03/lunar_lander.py)
 template, which parses several useful parameters, creates the environment
 and illustrates the overall usage.

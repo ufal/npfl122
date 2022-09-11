@@ -8,17 +8,17 @@ In our version, the agent does not have to answer questions and we assume
 that **all answers are correct**.
 
 The game itself is implemented in the
-[az_quiz.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz.py)
+[az_quiz.py](https://github.com/ufal/npfl122/tree/past-2122/labs/10/az_quiz.py)
 module, using `randomized=False` constructor argument.
 
 The evaluation in ReCodEx should be implemented by returning an object
 implementing a method `play`, which given an AZ-kvíz instance returns the chosen
 move. The illustration of the interface is in the
-[az_quiz_player_random.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_random.py)
+[az_quiz_player_random.py](https://github.com/ufal/npfl122/tree/past-2122/labs/10/az_quiz_player_random.py)
 module, which implements a random agent.
 
 Your solution in ReCodEx is automatically evaluated against a very simple heuristic
-[az_quiz_player_simple_heuristic.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_simple_heuristic.py),
+[az_quiz_player_simple_heuristic.py](https://github.com/ufal/npfl122/tree/past-2122/labs/10/az_quiz_player_simple_heuristic.py),
 playing 56 games as a starting player and 56 games as a non-starting player. The
 time limit for the games is 10 minutes and you should see the win rate directly in
 ReCodEx. If you achieve at least 80%, you will pass the assignment.
@@ -28,13 +28,13 @@ a round-robin tournament. In this tournament, we also consider games
 where the first move is chosen for the first player (`FirstChosen` label
 in ReCodEx, `--first_chosen` option of the evaluator).
 
-The [az_quiz_evaluator.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_evaluator.py)
+The [az_quiz_evaluator.py](https://github.com/ufal/npfl122/tree/past-2122/labs/10/az_quiz_evaluator.py)
 can be used to evaluate any two given implementations and there are two
 interactive players available,
-[az_quiz_player_interactive_mouse.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_mouse.py)
-and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_keyboard.py).
+[az_quiz_player_interactive_mouse.py](https://github.com/ufal/npfl122/tree/past-2122/labs/10/az_quiz_player_interactive_mouse.py)
+and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/past-2122/labs/10/az_quiz_player_interactive_keyboard.py).
 
-The starting template is available in the [az_quiz_agent.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_agent.py)
+The starting template is available in the [az_quiz_agent.py](https://github.com/ufal/npfl122/tree/past-2122/labs/10/az_quiz_agent.py)
 module. Additionally, you might also want to read the
 [official pseudocode for AlphaZero](https://www.science.org/doi/suppl/10.1126/science.aar6404/suppl_file/aar6404_datas1.zip),
 which however contains several errors:

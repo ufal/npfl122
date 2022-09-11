@@ -14,7 +14,7 @@ Unfortunately, the binary packages are available only for Linux and OS X;
 the Windows users should use Windows Subsystem for Linux according to the
 [JAX installation instructions](https://github.com/google/jax#installation).
 
-The template [brax_cheetah.py](https://github.com/ufal/npfl122/tree/master/labs/09/brax_cheetah.py)
+The template [brax_cheetah.py](https://github.com/ufal/npfl122/tree/past-2122/labs/09/brax_cheetah.py)
 shows how to
 - create a single Brax environment
 - create a vectorized Brax environment

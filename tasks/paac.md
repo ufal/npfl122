@@ -8,7 +8,7 @@ environment described in `car_racing` assignment.
 
 Your goal is to reach an average return of 450 during 100 evaluation episodes.
 
-Start with the [paac.py](https://github.com/ufal/npfl122/tree/master/labs/07/paac.py)
+Start with the [paac.py](https://github.com/ufal/npfl122/tree/past-2122/labs/07/paac.py)
 template, which provides a simple network implementation in TensorFlow. Feel
 free to use PyTorch instead, if you like.
 

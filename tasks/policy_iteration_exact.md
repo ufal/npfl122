@@ -3,7 +3,7 @@
 #### Points: 2 points
 #### Tests: policy_iteration_exact_tests
 
-Starting with [policy_iteration_exact.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration_exact.py),
+Starting with [policy_iteration_exact.py](https://github.com/ufal/npfl122/tree/past-2122/labs/02/policy_iteration_exact.py),
 extend the `policy_iteration` assignment to perform policy evaluation
 exactly by solving a system of linear equations.
 

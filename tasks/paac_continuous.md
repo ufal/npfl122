@@ -13,7 +13,7 @@ as `env.observation_space`, offering:
 
 Your goal is to reach an average return of 90 during 100 evaluation episodes.
 
-Start with the [paac_continuous.py](https://github.com/ufal/npfl122/tree/master/labs/07/paac_continuous.py)
+Start with the [paac_continuous.py](https://github.com/ufal/npfl122/tree/past-2122/labs/07/paac_continuous.py)
 template, which provides a simple network implementation in TensorFlow. Feel
 free to use PyTorch instead, if you like.
 

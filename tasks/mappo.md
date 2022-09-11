@@ -4,7 +4,7 @@
 
 Implement MAPPO in a multi-agent settings. Notably, solve a multi-agent
 extension of `SingleCollect` with 2 agents, the `MultiCollect2` environment
-implemented again by the [multi_collect_environment.py](https://github.com/ufal/npfl122/tree/master/labs/13/multi_collect_environment.py)
+implemented again by the [multi_collect_environment.py](https://github.com/ufal/npfl122/tree/past-2122/labs/13/multi_collect_environment.py)
 module (you can [watch the trained agents](https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/videos/multi_collect.mp4)).
 The environment is a generalization of `SingleCollect`. If there are
 $A$ agents, there are also $A$ target places, and each place rewards
@@ -14,7 +14,7 @@ rewards (to keep the rewards less dependent on the number of agents).
 Again, the environment runs for 250 steps and is considered solved
 when reaching return of at least 500.
 
-The [mappo.py](https://github.com/ufal/npfl122/tree/master/labs/13/mappo.py)
+The [mappo.py](https://github.com/ufal/npfl122/tree/past-2122/labs/13/mappo.py)
 template contains a skeleton of the MAPPO algorithm implementation.
 I use hyperparameter values quite similar to the `ppo` assignment, with
 a notable exception of a smaller `learning_rate=3e-4`, which is already

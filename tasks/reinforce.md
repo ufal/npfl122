@@ -8,7 +8,7 @@ algorithm.
 
 Your goal is to reach an average return of 490 during 100 evaluation episodes.
 
-Start with the [reinforce.py](https://github.com/ufal/npfl122/tree/master/labs/06/reinforce.py)
+Start with the [reinforce.py](https://github.com/ufal/npfl122/tree/past-2122/labs/06/reinforce.py)
 template, which provides a simple network implementation in TensorFlow. Feel
 free to use PyTorch instead, if you like.
 

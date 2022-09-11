@@ -18,8 +18,8 @@ limit of 10 minutes. If your average return is at least 100, you obtain
 and at most 8 points will be awarded according to relative ordering of your
 solution performances.
 
-The [walker_hardcore.py](https://github.com/ufal/npfl122/tree/master/labs/08/walker_hardcore.py)
+The [walker_hardcore.py](https://github.com/ufal/npfl122/tree/past-2122/labs/08/walker_hardcore.py)
 template shows a basic structure of evaluaton in ReCodEx, but
-you most likely want to start either with [ddpg.py](https://github.com/ufal/npfl122/tree/master/labs/07/ddpg.py).
-or with [walker.py](https://github.com/ufal/npfl122/tree/master/labs/08/walker.py)
+you most likely want to start either with [ddpg.py](https://github.com/ufal/npfl122/tree/past-2122/labs/07/ddpg.py).
+or with [walker.py](https://github.com/ufal/npfl122/tree/past-2122/labs/08/walker.py)
 and just change the `env` argument to `BipedalWalkerHardcore-v3`.
