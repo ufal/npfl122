@@ -41,7 +41,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace):
 
             state = next_state
 
-        # TODO: Compute returns from the recieved rewards and update Q and C.
+        # TODO: Compute returns from the received rewards and update Q and C.
 
     # Final evaluation
     while True:
