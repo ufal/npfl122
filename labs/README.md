@@ -2,7 +2,7 @@ The tasks are evaluated automatically using the
 [ReCodEx Code Examiner](https://recodex.mff.cuni.cz/).
 
 The evaluation is performed using Python 3.9, TensorFlow 2.10.0,
-TensorFlow Probability 0.18.0, NumPy 1.23.3 and OpenAI Gym 0.26.0.
+TensorFlow Probability 0.18.0, NumPy 1.23.3 and OpenAI Gym 0.26.1.
 You should [install the exact version of these packages yourselves](#faq_install).
 For those using PyTorch, 1.12.1 is also available.
 

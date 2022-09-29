@@ -2,7 +2,7 @@
 tensorflow==2.10.0
 tensorflow_probability==0.18.0
 numpy==1.23.3
-gym==0.26.0
+gym==0.26.1
 pygame==2.1.2
 mujoco==2.2.2
 ufal.pybox2d==2.3.10.2
