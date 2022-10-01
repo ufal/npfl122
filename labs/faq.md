@@ -5,14 +5,14 @@
 - _Installing to central user packages repository_
 
   You can install all required packages to central user packages repository using
- `pip3 install --user tensorflow==2.10.0 tensorflow_addons==0.18.0 tensorflow_probability==0.18.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2`.
+ `pip3 install --user tensorflow==2.8.3 tensorflow_addons==0.16.1 tensorflow_probability==0.16.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2`.
 
 - _Installing to a virtual environment_
 
   Python supports virtual environments, which are directories containing
   independent sets of installed packages. You can create a virtual environment
   by running `python3 -m venv VENV_DIR` followed by
-  `VENV_DIR/bin/pip3 install tensorflow==2.10.0 tensorflow_addons==0.18.0 tensorflow_probability==0.18.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2`.
+  `VENV_DIR/bin/pip3 install tensorflow==2.8.3 tensorflow_addons==0.16.1 tensorflow_probability==0.16.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2`.
   (or `VENV_DIR/Scripts/pip3` on Windows).
 
 - _**Windows** installation_
@@ -36,8 +36,8 @@
 
   - With an **Intel** processor, you should not need anything special.
 
-  - If you have **Apple Silicon**, use the package `tensorflow-macos` instead of
-    `tensorflow`. As of Sep 11, the dependency package `grpcio` needs to be
+  - If you have **Apple Silicon**, use `tensorflow-macos==2.8.0 protobuf==3.19.6` instead of
+    `tensorflow`. As of Oct 1, the dependency package `grpcio` needs to be
     compiled during the installation (automatically, but you need working Xcode);
     the installation worked fine on my testing macOS. Furthermore, according to
     [this issue](https://github.com/grpc/grpc/issues/29262), a binary wheel for
@@ -45,7 +45,7 @@
 
 - _**GPU** support on Linux and Windows_
 
-  TensorFlow 2.10 supports NVIDIA GPU out of the box, but you need to install
+  TensorFlow 2.8 supports NVIDIA GPU out of the box, but you need to install
   CUDA 11.2 and cuDNN 8.1 libraries yourself.
 
 - _**GPU** support on macOS_
@@ -53,7 +53,7 @@
   The AMD and Apple Silicon GPUs can be used by installing a plugin providing
   the GPU acceleration using:
   ```
-  python -m pip install tensorflow-metal
+  python -m pip install tensorflow-metal==0.5.1
   ```
 
 - _Errors when running with a GPU_
@@ -97,7 +97,7 @@
     ```
     module add python/python-3.10.4-gcc-8.3.0-ovkjwzd cuda/cuda-11.2.0-intel-19.0.4-tn4edsz cudnn/cudnn-8.1.0.77-11.2-linux-x64-intel-19.0.4-wx22b5t
     python3 -m venv CHOSEN_VENV_DIR
-    CHOSEN_VENV_DIR/bin/pip install --no-cache-dir tensorflow==2.10.0 tensorflow_addons==0.18.0 tensorflow_probability==0.18.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2
+    CHOSEN_VENV_DIR/bin/pip install --no-cache-dir tensorflow==2.8.3 tensorflow_addons==0.16.1 tensorflow_probability==0.16.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2
     ```
 
 - _How to run a GPU computation on MetaCentrum?_
