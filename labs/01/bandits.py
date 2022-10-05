@@ -43,7 +43,7 @@ def main(env: MultiArmedBandits, args: argparse.Namespace):
     for step in range(args.episode_length):
         # TODO: Select either a greedy action (if `env.greedy(args.epsilon)` is True)
         # or uniformly random action (otherwise).
-        action = None
+        action = ...
 
         # Perform the action.
         reward = env.step(action)

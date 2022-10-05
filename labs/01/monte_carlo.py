@@ -32,7 +32,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace):
         state, done = env.reset()[0], False
         while not done:
             # TODO: Compute `action` using epsilon-greedy policy.
-            action = None
+            action = ...
 
             # Perform the action.
             next_state, reward, terminated, truncated, _ = env.step(action)
@@ -47,7 +47,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace):
         state, done = env.reset(start_evaluation=True)[0], False
         while not done:
             # TODO: Choose a greedy action
-            action = None
+            action = ...
             state, reward, terminated, truncated, _ = env.step(action)
             done = terminated or truncated
 
