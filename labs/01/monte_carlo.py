@@ -16,7 +16,7 @@ parser.add_argument("--episodes", default=None, type=int, help="Training episode
 parser.add_argument("--epsilon", default=None, type=float, help="Exploration factor.")
 
 
-def main(env: wrappers.EvaluationEnv, args: argparse.Namespace):
+def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
     # Set random seed
     np.random.seed(args.seed)
 

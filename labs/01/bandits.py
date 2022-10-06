@@ -7,19 +7,19 @@ import numpy as np
 # A class providing MultiArmedBandits environment.
 # You should not modify it or access its private attributes.
 class MultiArmedBandits():
-    def __init__(self, bandits: int, seed: int):
+    def __init__(self, bandits: int, seed: int) -> None:
         self.__generator = np.random.RandomState(seed)
         self.__bandits = [None] * bandits
         self.reset()
 
-    def reset(self):
+    def reset(self) -> None:
         for i in range(len(self.__bandits)):
             self.__bandits[i] = self.__generator.normal(0., 1.)
 
-    def step(self, action: int):
+    def step(self, action: int) -> float:
         return self.__generator.normal(self.__bandits[action], 1.)
 
-    def greedy(self, epsilon: float):
+    def greedy(self, epsilon: float) -> bool:
         return self.__generator.uniform() >= epsilon
 
 
@@ -36,7 +36,7 @@ parser.add_argument("--seed", default=42, type=int, help="Random seed.")
 # If you add more arguments, ReCodEx will keep them with your default values.
 
 
-def main(env: MultiArmedBandits, args: argparse.Namespace):
+def main(env: MultiArmedBandits, args: argparse.Namespace) -> float:
     # TODO: Initialize the estimates for all bandits, to `args.initial`.
 
     rewards = 0
