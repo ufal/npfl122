@@ -57,4 +57,10 @@ _Note that your results may be slightly different, depending on your CPU type an
    13.14↓            10.60←   10.42←
    14.01→   15.04→   16.03→   16.71↓
 ```
+- `python3 policy_iteration_exact.py --gamma=0.9999 --steps=5`
+```
+ 7385.23↓ 7392.62→ 7407.40↓ 7400.00↑
+ 7421.37↓          7411.10← 7413.16↓
+ 7422.30→ 7423.34→ 7424.27→ 7425.84↓
+```
 #### Tests End:
