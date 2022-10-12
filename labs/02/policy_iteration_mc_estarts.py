@@ -30,11 +30,6 @@ class GridWorld:
         else:
             return self._step(state, (action + 3) % 4)
 
-    def epsilon_greedy(self, epsilon: float, greedy_action: int) -> int:
-        if self._generator.uniform() < epsilon:
-            return self._generator.randint(len(self.actions))
-        return greedy_action
-
     @staticmethod
     def _step(state: int, action: int) -> tuple[float, int]:
         state += (state >= 5)
