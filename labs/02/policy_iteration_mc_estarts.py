@@ -71,12 +71,12 @@ def main(args: argparse.Namespace) -> tuple[list[float], list[int]]:
     # evaluation, estimate action-value function by Monte Carlo simulation:
     # - for start_state in range(env.states):
     #   - for start_action in range(len(env.actions)):
-    #     - start in the given start_state-start_action pair
-    #     - perform `args.mc_length` Monte Carlo steps, utilizing greedy
-    #       action with respect to the policy (apart from the first step,
-    #       where the action is pre-definted)
+    #     - start in the given `(start_state, start_action)` pair
+    #     - perform `args.mc_length` Monte Carlo steps, utilizing the action
+    #       from the policy (apart from the first step, where the action is
+    #       pre-definted)
     #     - compute the return of the whole simulation
-    #     - update the action-value function at the (start_state, start_action)
+    #     - update the action-value function at the `(start_state, start_action)`
     #       pair, considering the simulation return as its estimate, by averaging
     #       all estimates from this and previous steps of policy evaluation.
     #
