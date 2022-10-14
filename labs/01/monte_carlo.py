@@ -6,6 +6,7 @@ import numpy as np
 
 import wrappers
 
+
 parser = argparse.ArgumentParser()
 # These arguments will be set appropriately by ReCodEx, even if you change them.
 parser.add_argument("--recodex", default=False, action="store_true", help="Running in ReCodEx")
