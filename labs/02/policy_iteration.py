@@ -3,6 +3,14 @@ import argparse
 
 import numpy as np
 
+parser = argparse.ArgumentParser()
+# These arguments will be set appropriately by ReCodEx, even if you change them.
+parser.add_argument("--gamma", default=1.0, type=float, help="Discount factor.")
+parser.add_argument("--iterations", default=1, type=int, help="Number of iterations in policy evaluation step.")
+parser.add_argument("--recodex", default=False, action="store_true", help="Running in ReCodEx")
+parser.add_argument("--steps", default=10, type=int, help="Number of policy evaluation/improvements to perform.")
+# If you add more arguments, ReCodEx will keep them with your default values.
+
 
 class GridWorld:
     # States in the gridworld are the following:
@@ -35,15 +43,6 @@ class GridWorld:
             state = new_x + 4 * new_y
         state -= (state >= 5)
         return (probability, +1 if state == 10 else -100 if state == 6 else 0, state)
-
-
-parser = argparse.ArgumentParser()
-# These arguments will be set appropriately by ReCodEx, even if you change them.
-parser.add_argument("--gamma", default=1.0, type=float, help="Discount factor.")
-parser.add_argument("--iterations", default=1, type=int, help="Number of iterations in policy evaluation step.")
-parser.add_argument("--recodex", default=False, action="store_true", help="Running in ReCodEx")
-parser.add_argument("--steps", default=10, type=int, help="Number of policy evaluation/improvements to perform.")
-# If you add more arguments, ReCodEx will keep them with your default values.
 
 
 def argmax_with_tolerance(x: np.ndarray, axis: int = -1) -> np.ndarray:

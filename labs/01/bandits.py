@@ -3,9 +3,20 @@ import argparse
 
 import numpy as np
 
+parser = argparse.ArgumentParser()
+# These arguments will be set appropriately by ReCodEx, even if you change them.
+parser.add_argument("--alpha", default=0, type=float, help="Learning rate to use or 0 for averaging.")
+parser.add_argument("--bandits", default=10, type=int, help="Number of bandits.")
+parser.add_argument("--episode_length", default=1000, type=int, help="Number of trials per episode.")
+parser.add_argument("--episodes", default=100, type=int, help="Episodes to perform.")
+parser.add_argument("--epsilon", default=0.1, type=float, help="Exploration factor (if applicable).")
+parser.add_argument("--initial", default=0, type=float, help="Initial estimation of values.")
+parser.add_argument("--recodex", default=False, action="store_true", help="Running in ReCodEx")
+parser.add_argument("--seed", default=42, type=int, help="Random seed.")
+# If you add more arguments, ReCodEx will keep them with your default values.
+
 
 # A class providing MultiArmedBandits environment.
-# You should not modify it or access its private attributes.
 class MultiArmedBandits():
     def __init__(self, bandits: int, seed: int) -> None:
         self.__generator = np.random.RandomState(seed)
@@ -21,19 +32,6 @@ class MultiArmedBandits():
 
     def greedy(self, epsilon: float) -> bool:
         return self.__generator.uniform() >= epsilon
-
-
-parser = argparse.ArgumentParser()
-# These arguments will be set appropriately by ReCodEx, even if you change them.
-parser.add_argument("--alpha", default=0, type=float, help="Learning rate to use or 0 for averaging.")
-parser.add_argument("--bandits", default=10, type=int, help="Number of bandits.")
-parser.add_argument("--episode_length", default=1000, type=int, help="Number of trials per episode.")
-parser.add_argument("--episodes", default=100, type=int, help="Episodes to perform.")
-parser.add_argument("--epsilon", default=0.1, type=float, help="Exploration factor (if applicable).")
-parser.add_argument("--initial", default=0, type=float, help="Initial estimation of values.")
-parser.add_argument("--recodex", default=False, action="store_true", help="Running in ReCodEx")
-parser.add_argument("--seed", default=42, type=int, help="Random seed.")
-# If you add more arguments, ReCodEx will keep them with your default values.
 
 
 def main(env: MultiArmedBandits, args: argparse.Namespace) -> float:
