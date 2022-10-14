@@ -14,9 +14,10 @@ class GridWorld:
 
     # Actions are ↑ → ↓ ←; with probability 80% they are performed as requested,
     # with 10% move 90° CCW is performed, with 10% move 90° CW is performed.
-    states: int = 11
+    states: list[int] = list(range(11))
 
-    actions: list[str] = ["↑", "→", "↓", "←"]
+    actions_str: list[str] = ["↑", "→", "↓", "←"]
+    actions: list[int] = [i for i, _ in enumerate(actions_str)]
 
     @staticmethod
     def step(state: int, action: int) -> list[tuple[float, float, int]]:
@@ -54,8 +55,8 @@ def argmax_with_tolerance(x: np.ndarray, axis: int = -1) -> np.ndarray:
 
 def main(args: argparse.Namespace) -> tuple[list[float], list[int]]:
     # Start with zero value function and "go North" policy
-    value_function = [0.0] * GridWorld.states
-    policy = [0] * GridWorld.states
+    value_function = [0.0] * len(GridWorld.states)
+    policy = [0] * len(GridWorld.states)
 
     # TODO: Implement policy iteration algorithm, with `args.steps` steps of
     # policy evaluation/policy improvement. During policy evaluation, use the
@@ -78,5 +79,5 @@ if __name__ == "__main__":
             state = 4 * r + c
             state -= (state >= 5)
             print("        " if r == 1 and c == 1 else "{:-8.2f}".format(value_function[state]), end="")
-            print(" " if r == 1 and c == 1 else GridWorld.actions[policy[state]], end="")
+            print(" " if r == 1 and c == 1 else GridWorld.actions_str[policy[state]], end="")
         print()
