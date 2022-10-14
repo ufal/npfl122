@@ -3,7 +3,7 @@
 #### Points: 5 points
 
 Solve the discretized [CartPole-v1 environment](https://www.gymlibrary.dev/environments/classic_control/cart_pole/)
-environment from the [Gym library](https://www.gymlibrary.dev/) using the Monte Carlo
+from the [Gym library](https://www.gymlibrary.dev/) using the Monte Carlo
 reinforcement learning algorithm. The `gym` environments have the followng
 methods and properties:
 - `observation_space`: the description of environment observations
