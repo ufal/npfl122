@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+from typing import Union
 
 import numpy as np
 
@@ -64,7 +65,7 @@ def argmax_with_tolerance(x: np.ndarray, axis: int = -1) -> np.ndarray:
     return np.argmax(x + 1e-6 >= np.max(x, axis=axis, keepdims=True), axis=axis)
 
 
-def main(args: argparse.Namespace) -> tuple[list[float], list[int]]:
+def main(args: argparse.Namespace) -> tuple[Union[list[float], np.ndarray], Union[list[int], np.ndarray]]:
     env = GridWorld(args.seed)
 
     # Start with zero action-value function and "go North" policy
