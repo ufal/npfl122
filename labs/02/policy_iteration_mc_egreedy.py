@@ -72,6 +72,9 @@ def main(args: argparse.Namespace) -> tuple[Union[list[float], np.ndarray], Unio
     action_value_function = np.zeros((env.states, len(env.actions)))
     policy = np.zeros(env.states, np.int32)
 
+    # Note that this assignment is an extension of policy_iteration_mc_estarts,
+    # so it is probably easier to implement it first.
+
     # TODO: Implement a variant of policy iteration algorithm, with
     # `args.steps` steps of policy evaluation/policy improvement. During policy
     # evaluation, estimate action-value function by Monte Carlo simulation:
