@@ -5,7 +5,7 @@
 
 Consider the following gridworld:
 
-![Gridworld example](//ufal.mff.cuni.cz/~straka/courses/npfl122/2122/tasks/figures/policy_iteration.svgz)
+![Gridworld example](//ufal.mff.cuni.cz/~straka/courses/npfl122/2223/tasks/figures/policy_iteration.svgz)
 
 Start with [policy_iteration.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration.py),
 which implements the gridworld mechanics, by providing the following methods:
