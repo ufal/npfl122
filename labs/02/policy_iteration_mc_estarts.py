@@ -74,7 +74,7 @@ def main(args: argparse.Namespace) -> tuple[Union[list[float], np.ndarray], Unio
     #     - start in the given `(start_state, start_action)` pair
     #     - perform `args.mc_length` Monte Carlo steps, utilizing the action
     #       from the policy (apart from the first step, where the action is
-    #       pre-definted)
+    #       pre-defined)
     #     - compute the return of the whole simulation
     #     - update the action-value function at the `(start_state, start_action)`
     #       pair, considering the simulation return as its estimate, by averaging
