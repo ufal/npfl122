@@ -1,5 +1,5 @@
 ### Assignment: td_algorithms
-#### Date: Deadline: Oct 31, 7:59 a.m.
+#### Date: Deadline: Nov 07, 7:59 a.m.
 #### Points: 4 points
 #### Examples: td_algorithms_examples
 #### Tests: td_algorithms_tests
