@@ -8,9 +8,9 @@ does not require TensorFlow.
 
 The environment methods and properties are described in the `monte_carlo` assignment,
 but include one additional method:
-- `expert_trajectory() → initial_state, trajectory` This method generates
-  one expert trajectory and returns a pair of `initial_state` and `trajectory`,
-  where `trajectory` is a list of the tripples _(action, reward, next_state)_.
+- `expert_trajectory() → trajectory` This method generates
+  one expert trajectory, where `trajectory` is a list of the tripples _(state, action, reward)_,
+  where the _action_ and _reward_ is `None` when reaching the terminal state.
   You can use this method only during training, **not during evaluation**.
 
 To pass the task, you need to reach an average return of 0 during 1000 evaluation episodes.
