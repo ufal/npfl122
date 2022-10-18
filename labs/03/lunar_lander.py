@@ -21,29 +21,32 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
     # Set random seed
     np.random.seed(args.seed)
 
-    # TODO: Implement a suitable RL algorithm.
+    # Assuming you have pre-trained your agent locally, perform only evaluation in ReCodEx
+    if args.recodex:
+        # TODO: Load the agent
 
+        # Final evaluation
+        while True:
+            state, done = env.reset(start_evaluation=True)[0], False
+            while not done:
+                # TODO: Choose a greedy action
+                action = ...
+                state, reward, terminated, truncated, _ = env.step(action)
+                done = terminated or truncated
+
+    # TODO: Implement a suitable RL algorithm and train the agent.
     training = True
     while training:
-        # To generate expert trajectory, you can use the following:
+        # To generate an expert trajectory, you can use the following:
         #   trajectory = env.expert_trajectory()
 
-        # TODO: Perform a training episode, by filling or updating the following skeleton:
+        # Otherwise, you can generate a training episode the usual way:
         state, done = env.reset()[0], False
         while not done:
             action = ...
             state, reward, terminated, truncated, _ = env.step(action)
             done = terminated or truncated
             ...
-
-    # Final evaluation
-    while True:
-        state, done = env.reset(start_evaluation=True)[0], False
-        while not done:
-            # TODO: Choose (greedy) action
-            action = ...
-            state, reward, terminated, truncated, _ = env.step(action)
-            done = terminated or truncated
 
 
 if __name__ == "__main__":
