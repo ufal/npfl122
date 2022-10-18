@@ -41,8 +41,8 @@ def main(args: argparse.Namespace) -> np.ndarray:
         next_action = greedy_action if generator.uniform() >= args.epsilon else env.action_space.sample()
         return next_action, args.epsilon / env.action_space.n + (1 - args.epsilon) * (greedy_action == next_action)
 
-    # The target policy is either the behavior policy (if not args.off_policy),
-    # or the greedy policy (if args.off_policy).
+    # The target policy is either the behavior policy (if not `args.off_policy`),
+    # or the greedy policy (if `args.off_policy`).
     def compute_target_policy(Q: np.ndarray) -> np.ndarray:
         target_policy = np.eye(env.action_space.n)[argmax_with_tolerance(Q, axis=-1)]
         if not args.off_policy:
