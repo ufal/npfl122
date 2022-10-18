@@ -42,7 +42,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
     while True:
         state, done = env.reset(start_evaluation=True)[0], False
         while not done:
-            # TODO: Choose (greedy) action
+            # TODO: Choose a greedy action
             action = ...
             state, reward, terminated, truncated, _ = env.step(action)
             done = terminated or truncated
