@@ -9,7 +9,7 @@ does not require TensorFlow.
 The environment methods and properties are described in the `monte_carlo` assignment,
 but include one additional method:
 - `expert_trajectory() → trajectory` This method generates
-  one expert trajectory, where `trajectory` is a list of the tripples _(state, action, reward)_,
+  one expert trajectory, where `trajectory` is a list of triples _(state, action, reward)_,
   where the _action_ and _reward_ is `None` when reaching the terminal state.
   You can use this method only during training, **not during evaluation**.
 
