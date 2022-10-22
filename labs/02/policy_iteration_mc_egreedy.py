@@ -83,7 +83,7 @@ def main(args: argparse.Namespace) -> tuple[Union[list[float], np.ndarray], Unio
     #   - perform `args.mc_length` Monte Carlo steps, utilizing
     #     epsilon-greedy actions with respect to the policy, using
     #     `env.epsilon_greedy(args.epsilon, policy[current_state])`
-    #     - this metod returns a random action with probability `args.epsilon`
+    #     - this method returns a random action with probability `args.epsilon`
     #     - otherwise it returns the passed `policy[current_state]` action
     #     - for replicability, make sure to call it exactly `args.mc_length`
     #       times in every simulation
