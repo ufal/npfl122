@@ -9,8 +9,8 @@ Consider the following gridworld:
 
 Start with [policy_iteration.py](https://github.com/ufal/npfl122/tree/master/labs/02/policy_iteration.py),
 which implements the gridworld mechanics, by providing the following methods:
-- `GridWorld.states`: return number of states (`11`)
-- `GridWorld.actions`: return lists with labels of the actions (`["↑", "→", "↓", "←"]`)
+- `GridWorld.states`: return a number of states (`11`)
+- `GridWorld.actions`: return a list with labels of the actions (`["↑", "→", "↓", "←"]`)
 - `GridWorld.step(state, action)`: return possible outcomes of performing the
   `action` in a given `state`, as a list of triples containing
   - `probability`: probability of the outcome
