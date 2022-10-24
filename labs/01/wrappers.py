@@ -39,7 +39,7 @@ class EvaluationEnv(gym.Wrapper):
         if start_evaluation and self._evaluating_from is None:
             self._evaluating_from = self.episode
 
-        if self._render_each and self.episode % self._render_each == 0:
+        if logging and self._render_each and self.episode % self._render_each == 0:
             self.unwrapped.render_mode = "human"
         else:
             self.unwrapped.render_mode = self._orignal_render_mode
