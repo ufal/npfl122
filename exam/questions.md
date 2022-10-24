@@ -64,3 +64,26 @@
 
 - Write down the update of $n$-step Tree-backup algorithm (assuming you already
   have $n$ previous steps, actions and rewards). [10]
+
+#### Questions@:, Lecture 4 Questions
+- Assuming function approximation, define Mean squared value error. [5]
+
+- Write down the gradient Monte-Carlo on-policy every-visit $\epsilon$-soft algorithm. [10]
+
+- Write down the semi-gradient $\epsilon$-greedy Sarsa algorithm. [10]
+
+- Prove that semi-gradient TD update is not an SGD update of any loss. [10]
+
+- What are the three elements causing off-policy divergence with function
+  approximation? Write down the Baird's counterexample. [10]
+
+- Explain the role of a replay buffer in Deep Q Networks. [5]
+
+- How is the target network used and updated in Deep Q Networks? [5]
+
+- Explain how is reward clipping used in Deep Q Networks. What other
+  clipping is used? [5]
+
+- Formulate the loss used in Deep Q Networks. [5]
+
+- Write down the Deep Q Networks training algorithm. [10]
