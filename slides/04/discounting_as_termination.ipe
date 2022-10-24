@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.23">
-<info created="D:20211025001013" modified="D:20211025001013"/>
+<info created="D:20211025001013" modified="D:20221024164000"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -355,8 +355,8 @@ h
 172 608 l
 </path>
 <text matrix="1 0 0 1 0.851904 -3.1481" transformations="translations" pos="80 608" stroke="black" type="label" width="23.523" height="6.808" depth="0" valign="baseline">MDP</text>
-<text matrix="1 0 0 1 0 -5.77079" transformations="translations" pos="128 628" stroke="black" type="label" width="5.711" height="4.297" depth="1.93" valign="baseline" style="math">\gamma</text>
-<text matrix="1 0 0 1 0.664047 -37.1225" transformations="translations" pos="128 628" stroke="black" type="label" width="5.711" height="4.297" depth="1.93" valign="baseline" style="math">\gamma</text>
-<text matrix="1 0 0 1 -12.1704 -16.6815" transformations="translations" pos="128 628" stroke="black" type="label" width="5.711" height="4.297" depth="1.93" valign="baseline" style="math">\gamma</text>
+<text matrix="1 0 0 1 -6.58608 -5.95183" transformations="translations" pos="128 628" stroke="black" type="label" width="18.071" height="5.782" depth="1.74" valign="baseline" size="small" style="math">1\!-\!\gamma</text>
+<text matrix="1 0 0 1 -24.5084 -16.4519" transformations="translations" pos="128 628" stroke="black" type="label" width="18.071" height="5.782" depth="1.74" valign="baseline" size="small" style="math">1\!-\!\gamma</text>
+<text matrix="1 0 0 1 -5.31866 -38.7197" transformations="translations" pos="128 628" stroke="black" type="label" width="18.071" height="5.782" depth="1.74" valign="baseline" size="small" style="math">1\!-\!\gamma</text>
 </page>
 </ipe>
