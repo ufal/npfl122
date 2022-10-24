@@ -91,7 +91,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
             # TODO: Choose an action.
             # You can compute the q_values of a given state by
             #   q_values = network.predict([state])[0]
-            action = None
+            action = ...
 
             next_state, reward, terminated, truncated, _ = env.step(action)
             done = terminated or truncated
@@ -115,7 +115,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
         state, done = env.reset(start_evaluation=True)[0], False
         while not done:
             # TODO: Choose (greedy) action
-            action = None
+            action = ...
             state, reward, terminated, truncated, _ = env.step(action)
             done = terminated or truncated
 
