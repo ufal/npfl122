@@ -97,7 +97,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
             done = terminated or truncated
 
             # Append state, action, reward, done and next_state to replay_buffer
-            replay_buffer.append(Transition(state, action, reward, terminated, next_state))
+            replay_buffer.append(Transition(state, action, reward, done, next_state))
 
             # TODO: If the replay_buffer is large enough, preform a training batch
             # from `args.batch_size` uniformly randomly chosen transitions.
