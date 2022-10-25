@@ -8,7 +8,8 @@ with neural network as a function approximation.
 
 You can start with the [q_network.py](https://github.com/ufal/npfl122/tree/master/labs/04/q_network.py)
 template, which provides a simple network implementation in TensorFlow. Feel
-free to use PyTorch or JAX instead, if you like.
+free to use PyTorch ([q_network.torch.py](https://github.com/ufal/npfl122/tree/master/labs/04/q_network.torch.py))
+or JAX instead, if you like.
 
 The continuous environment is very similar to a discrete one, except
 that the states are vectors of real-valued observations with shape
