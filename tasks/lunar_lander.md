@@ -8,11 +8,9 @@ does not require TensorFlow.
 
 The environment methods and properties are described in the `monte_carlo` assignment,
 but include one additional method:
-- `expert_trajectory(seed=None) → trajectory`
-
-  This method generates one expert trajectory, where `trajectory` is a list of
-  triples _(state, action, reward)_, where the _action_ and _reward_ is `None`
-  when reaching the terminal state.
+- `expert_trajectory(seed=None) → trajectory`: This method generates one expert
+  trajectory, where `trajectory` is a list of triples _(state, action, reward)_,
+  where the _action_ and _reward_ is `None` when reaching the terminal state.
 
   You **cannot** change the implementation of this method or use its internals in
   any way other way than just calling `expert_trajectory()`. Furthermore,
