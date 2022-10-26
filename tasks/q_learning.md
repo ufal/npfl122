@@ -15,8 +15,8 @@ evaluation episodes.
 You can start with the [q_learning.py](https://github.com/ufal/npfl122/tree/master/labs/03/q_learning.py)
 template, which parses several useful parameters, creates the environment
 and illustrates the overall usage. Note that setting hyperparameters of
-Q-learning is a bit tricky – I usualy start with a larger value of $ε$ (like 0.2
-or even 0.5) an then gradually decrease it to almost zero.
+Q-learning is a bit tricky – I usually start with a larger value of $ε$ (like 0.2
+or even 0.5) and then gradually decrease it to almost zero.
 
 During evaluation in ReCodEx, three different random seeds will be employed, and
 you need to reach the required return on all of them. The time limit for each
