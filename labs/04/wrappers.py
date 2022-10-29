@@ -25,7 +25,7 @@ class EvaluationEnv(gym.Wrapper):
         self._episode_running = False
         self._episode_returns = []
         self._evaluating_from = None
-        self._orignal_render_mode = env.render_mode
+        self._original_render_mode = env.render_mode
 
     @property
     def episode(self):
@@ -41,8 +41,8 @@ class EvaluationEnv(gym.Wrapper):
 
         if logging and self._render_each and (self.episode + 1) % self._render_each == 0:
             self.unwrapped.render_mode = "human"
-        else:
-            self.unwrapped.render_mode = self._orignal_render_mode
+        elif self._render_each:
+            self.unwrapped.render_mode = self._original_render_mode
         self._episode_running = True
         self._episode_return = 0 if logging or self._evaluating_from is not None else None
         return super().reset(options=options)
