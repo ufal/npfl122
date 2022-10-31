@@ -4,6 +4,7 @@
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-05.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-05.mp4, Lecture
 #### Questions: #lecture_5_questions
+#### Lecture assignment: car_racing
 
 - Double Deep Q Network (DDQN) [[Hado van Hasselt et al.: Deep Reinforcement Learning with Double Q-learning](https://arxiv.org/abs/1509.06461)]
 - Prioritized Experience Replay [[Tom Schaul et al.: Prioritized Experience Replay](https://arxiv.org/abs/1511.05952)]
