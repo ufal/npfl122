@@ -7,7 +7,7 @@ Improve the `q_learning` task performance on the
 using linear function approximation with tile coding.
 Your goal is to reach an average reward of -110 during 100 evaluation episodes.
 
-The environment methods are described in the `q_learning` assignments, with
+The environment methods are described in the `q_learning` assignment, with
 the following changes:
 - The `state` returned by the `env.step` method is a _list_ containing weight
   indices of the current state (i.e., the feature vector of the state consists
