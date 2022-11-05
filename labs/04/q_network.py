@@ -90,7 +90,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
         while not done:
             # TODO: Choose an action.
             # You can compute the q_values of a given state by
-            #   q_values = network.predict([state])[0]
+            #   q_values = network.predict(state[np.newaxis])[0]
             action = ...
 
             next_state, reward, terminated, truncated, _ = env.step(action)
