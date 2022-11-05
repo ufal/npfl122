@@ -84,11 +84,7 @@ class Network:
     # If you want to use target network, the following method copies weights from
     # a given Network to the current one.
     def copy_weights_from(self, other: Network) -> None:
-        params = dict(self._model.named_parameters())
-        params_other = dict(other._model.named_parameters())
-        with torch.no_grad():
-            for name, value in params_other.items():
-                params[name].data.copy_(value.data)
+        self._model.load_state_dict(other._model.state_dict())
 
 
 def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
@@ -115,7 +111,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
         while not done:
             # TODO: Choose an action.
             # You can compute the q_values of a given state by
-            #   q_values = network.predict([state])[0]
+            #   q_values = network.predict(state.reshape(1, -1))[0]
             action = ...
 
             next_state, reward, terminated, truncated, _ = env.step(action)
