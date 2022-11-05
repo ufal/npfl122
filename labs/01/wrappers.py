@@ -106,7 +106,8 @@ class DiscretizationWrapper(gym.ObservationWrapper):
         if self._tiles is None:
             return state
         else:
-            states = [state]
+            states = np.empty(self._tiles, dtype=np.int64)
+            states[0] = state
             for t in range(1, self._tiles):
                 state = 0
                 for i in range(len(self._separators)):
@@ -116,7 +117,7 @@ class DiscretizationWrapper(gym.ObservationWrapper):
                         state += 1 + len(self._separators[i])
                     else:
                         state += np.digitize(value, self._separators[i])
-                states.append(self._first_tile_states + (t - 1) * self._rest_tiles_states + state)
+                states[t] = state
             return states
 
 
