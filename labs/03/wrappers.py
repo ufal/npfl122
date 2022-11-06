@@ -117,7 +117,7 @@ class DiscretizationWrapper(gym.ObservationWrapper):
                         state += 1 + len(self._separators[i])
                     else:
                         state += np.digitize(value, self._separators[i])
-                states[t] = state
+                states[t] = self._first_tile_states + (t - 1) * self._rest_tiles_states + state
             return states
 
 
