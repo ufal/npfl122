@@ -98,14 +98,14 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
 
             # Append state, action, reward, done and next_state to replay_buffer
             replay_buffer.append(Transition(state, action, reward, done, next_state))
-
-            # TODO: If the replay_buffer is large enough, perform a training batch
-            # from `args.batch_size` uniformly randomly chosen transitions.
-            #
-            # After you choose `states` and suitable targets, you can train the network as
-            #   network.train(states, ...)
-
+            
             state = next_state
+
+        # TODO: If the replay_buffer is large enough, perform a training batch
+        # from `args.batch_size` uniformly randomly chosen transitions.
+        #
+        # After you choose `states` and suitable targets, you can train the network as
+        #   network.train(states, ...)    
 
         if args.epsilon_final_at:
             epsilon = np.interp(env.episode + 1, [0, args.epsilon_final_at], [args.epsilon, args.epsilon_final])
