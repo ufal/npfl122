@@ -47,6 +47,6 @@ if __name__ == "__main__":
     args = parser.parse_args([] if "__file__" not in globals() else None)
 
     # Create the environment
-    env = wrappers.EvaluationEnv(gym.make("CartPole-v1"), args.seed, args.render_each)
+    env = wrappers.EvaluationEnv(gym.make("CartPolePixels-v1"), args.seed, args.render_each)
 
     main(env, args)
