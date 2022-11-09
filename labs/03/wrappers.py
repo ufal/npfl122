@@ -26,6 +26,7 @@ class EvaluationEnv(gym.Wrapper):
         self._episode_returns = []
         self._evaluating_from = None
         self._original_render_mode = env.render_mode
+        self._pygame = __import__("pygame") if self._render_each else None
 
     @property
     def episode(self):
@@ -72,6 +73,10 @@ class EvaluationEnv(gym.Wrapper):
                     np.std(self._episode_returns[-self._evaluate_for:])), flush=True)
                 self.close()
                 sys.exit(0)
+
+        if self._pygame and self.unwrapped.render_mode == "human" and self._pygame.get_init():
+            if self._pygame.event.get(self._pygame.QUIT):
+                self.unwrapped.render_mode = self._original_render_mode
 
         return observation, reward, terminated, truncated, info
 
