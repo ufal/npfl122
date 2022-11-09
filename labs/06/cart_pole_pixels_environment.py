@@ -12,40 +12,48 @@ class CartPolePixels(gym.envs.classic_control.CartPoleEnv):
 
     metadata = {
         "render_modes": ["human", "rgb_array"],
-        "render_fps": 10,
+        "render_fps": 50,
     }
 
     def __init__(self, render_mode=None):
         super().__init__()
 
+        self.render_mode = render_mode
         self._images = 3
         self._image = np.zeros([self.H, self.W, self._images], dtype=np.uint8)
-        self._render_mode = render_mode
         self._screen = None
 
         self.observation_space = gym.spaces.Box(low=0, high=255, shape=[self.H, self.W, self._images], dtype=np.uint8)
 
     def reset(self, seed=None, options=None):
+        render_mode = self.render_mode
+        self.render_mode = None
         state, info = super().reset(seed=seed, options=options)
+        self.render_mode = render_mode
+
         for step in range(self._images):
             observation = self._draw(state)
 
-        if self._render_mode == "human":
+        if self.render_mode == "human":
             self.render()
         return observation, info
 
     def step(self, action):
+        render_mode = self.render_mode
+        self.render_mode = None
         state, reward, termination, truncation, info = super().step(action)
+        self.render_mode = render_mode
+
         observation = self._draw(state)
 
-        if self._render_mode == "human":
+        if self.render_mode == "human":
             self.render()
         return observation, reward, termination, truncation, info
 
     def render(self):
-        assert self._render_mode in self.metadata["render_modes"]
+        assert self.render_mode in self.metadata["render_modes"]
 
-        if self._render_mode == "rgb_array":
+        if self.render_mode == "rgb_array":
             return np.copy(self._image)
 
         if self._screen is None:
@@ -140,6 +148,7 @@ gym.envs.register(
 # Allow running the environment and controlling it with arrows
 if __name__ == "__main__":
     env = CartPolePixels(render_mode="human")
+    env.metadata["render_fps"] = 10
 
     quit = False
     while not quit:
