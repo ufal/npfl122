@@ -20,7 +20,7 @@ required representation before the `step` call. The smallest set is probably
 left, right, gas, brake and no-op, but you can use a more fine-grained one if
 you like.
 
-The environment also support frame skipping, which improves its performance (only
+The environment also supports frame skipping, which improves its performance (only
 some frames need to be rendered).
 
 In ReCodEx, you are expected to submit an already trained model,
@@ -28,7 +28,7 @@ which is evaluated on 15 different tracks with a total time
 limit of 15 minutes. If your average return is at least 300, you obtain
 8 points. The task is also a [_competition_](https://ufal.mff.cuni.cz/courses/npfl122/2223-winter#competitions)
 and at most 8 points will be awarded according to relative ordering of your
-solution performances.
+solution performance.
 
 The [car_racing.py](https://github.com/ufal/npfl122/tree/master/labs/05/car_racing.py)
 template parses several useful parameters and creates the environment.
