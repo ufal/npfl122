@@ -4,7 +4,7 @@
 
 The supplied [cart_pole_pixels_environment.py](https://github.com/ufal/npfl122/tree/master/labs/06/cart_pole_pixels_environment.py)
 generates a pixel representation of the `CartPole` environment
-as an $80×80$ image with three channels, with each channel representing one time step
+as an $80×80$ `np.uint8` image with three channels, with each channel representing one time step
 (i.e., the current observation and the two previous ones).
 
 During evaluation in ReCodEx, three different random seeds will be employed,

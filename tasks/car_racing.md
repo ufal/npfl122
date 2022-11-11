@@ -7,7 +7,7 @@ on a more real-world [CarRacing-v2 environment](https://www.gymlibrary.dev/envir
 from the [Gym library](https://www.gymlibrary.dev/).
 
 The supplied [car_racing_environment.py](https://github.com/ufal/npfl122/tree/master/labs/05/car_racing_environment.py)
-provides the environment. It is continuous and states are RGB images of size
+provides the environment. The states are RGB `np.uint8` images of size
 $96×96×3$, but you can downsample them even more. The actions
 are also continuous and consist of an array with the following three elements:
 - `steer` in range [-1, 1]
