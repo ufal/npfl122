@@ -1,5 +1,5 @@
 ### Assignment: cart_pole_pixels
-#### Date: Deadline: Nov 21, 23:59
+#### Date: Deadline: Nov 21, 7:59 a.m.
 #### Points: 4 points + 5 bonus
 
 The supplied [cart_pole_pixels_environment.py](https://github.com/ufal/npfl122/tree/master/labs/06/cart_pole_pixels_environment.py)
