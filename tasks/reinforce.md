@@ -10,7 +10,8 @@ Your goal is to reach an average return of 490 during 100 evaluation episodes.
 
 Start with the [reinforce.py](https://github.com/ufal/npfl122/tree/master/labs/06/reinforce.py)
 template, which provides a simple network implementation in TensorFlow. Feel
-free to use PyTorch (template will be provided) or JAX instead, if you like.
+free to use PyTorch ([reinforce.torch.py](https://github.com/ufal/npfl122/tree/master/labs/06/reinforce.torch.py))
+or JAX instead, if you like.
 
 During evaluation in ReCodEx, two different random seeds will be employed, and
 you need to reach the required return on all of them. Time limit for each test
