@@ -56,15 +56,15 @@ class Network:
     @wrappers.raw_tf_function(dynamic_dims=1)
     def train(self, states: np.ndarray, actions: np.ndarray, returns: np.ndarray) -> None:
         # TODO: Run the model on given `states` and compute
-        # sds, mus and predicted values. Then create `action_distribution` using
-        # `tfp.distributions.Normal` class and computed mus and sds.
-        # In PyTorch, the corresponding class is `torch.distributions.normal.Normal`.
+        # `sds`, `mus` and predicted values. Then create `action_distribution` using
+        # `tfp.distributions.Normal` class and the computed `mus` and `sds`.
+        # In PyTorch, the corresponding class is `torch.distributions.Normal`.
         #
         # TODO: Train the actor using the sum of the following two losses:
-        # - negative log likelihood of the `actions` in the `action_distribution`
-        #   (using the `log_prob` method). You then need to sum the log probabilities
-        #   of actions in a single batch example (using `tf.math.reduce_sum` with `axis=1`).
-        #   Finally multiply the resulting vector by (returns - predicted values)
+        # - REINFORCE loss, i.e., the negative log likelihood of the `actions` in the
+        #   `action_distribution` (using the `log_prob` method). You then need to sum
+        #   the log probabilities of the action components in a single batch example.
+        #   Finally, multiply the resulting vector by `(returns - predicted values)`
         #   and compute its mean. Note that the gradient must not flow through
         #   the predicted values (you can use `tf.stop_gradient` if necessary).
         # - negative value of the distribution entropy (use `entropy` method of
@@ -75,7 +75,7 @@ class Network:
 
     @wrappers.typed_np_function(np.float32)
     @wrappers.raw_tf_function(dynamic_dims=1)
-    def predict_actions(self, states: np.ndarray) -> np.ndarray:
+    def predict_actions(self, states: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
         # TODO: Return predicted action distributions (mus and sds).
         raise NotImplementedError()
 
