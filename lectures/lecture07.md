@@ -2,6 +2,7 @@
 #### Date: Nov 14
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides/?07
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-07.pdf,PDF Slides
+#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-07.mp4, Lecture
 #### Questions: #lecture_7_questions
 
 - PAAC [[Alfredo V. Clemente et al.: Efficient Parallel Methods for Deep Reinforcement Learning](https://arxiv.org/abs/1705.04862)]
