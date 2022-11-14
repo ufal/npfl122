@@ -858,8 +858,7 @@ class CarRacingFS(gym.Env, EzPickle):
             self, self.lap_complete_percent
         )
         self.world.contactListener = self.world.contactListener_bug_workaround
-        self.reward = 0.0
-        self.prev_reward = 0.0
+        self.reward = 0.1  # will be decreased by `step(None)`
         self.tile_visited_count = 0
         self.t = 0.0
         self.new_lap = False
@@ -913,7 +912,7 @@ class CarRacingFS(gym.Env, EzPickle):
             self.world.Step(1.0 / FPS, 6 * 30, 2 * 30)
             self.t += 1.0 / FPS
 
-            if action is not None:  # First step without action, called from reset()
+            if True: #action is not None:  # First step without action, called from reset()
                 self.reward -= 0.1
                 # We actually don't want to count fuel spent, we want car to be faster.
                 # self.reward -=  10 * self.car.fuel_spent / ENGINE_POWER
