@@ -40,7 +40,6 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
                 state, reward, terminated, truncated, _ = env.step(action)
                 done = terminated or truncated
 
-
     # TODO: Implement a suitable RL algorithm and train the agent.
     #
     # If you want to create N multiprocessing parallel environments, use
