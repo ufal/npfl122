@@ -16,9 +16,9 @@ parser.add_argument("--recodex", default=False, action="store_true", help="Runni
 parser.add_argument("--render_each", default=0, type=int, help="Render some episodes.")
 parser.add_argument("--seed", default=None, type=int, help="Random seed.")
 parser.add_argument("--threads", default=1, type=int, help="Maximum number of threads to use.")
+parser.add_argument("--env", default="Pendulum-v1", type=str, help="Environment.")
 # For these and any other arguments you add, ReCodEx will keep your default value.
 parser.add_argument("--batch_size", default=None, type=int, help="Batch size.")
-parser.add_argument("--env", default="Pendulum-v1", type=str, help="Environment.")
 parser.add_argument("--evaluate_each", default=50, type=int, help="Evaluate each number of episodes.")
 parser.add_argument("--evaluate_for", default=50, type=int, help="Evaluate the given number of episodes.")
 parser.add_argument("--gamma", default=None, type=float, help="Discounting factor.")
