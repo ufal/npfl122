@@ -18,13 +18,13 @@ parser.add_argument("--seed", default=None, type=int, help="Random seed.")
 parser.add_argument("--threads", default=1, type=int, help="Maximum number of threads to use.")
 # For these and any other arguments you add, ReCodEx will keep your default value.
 parser.add_argument("--entropy_regularization", default=None, type=float, help="Entropy regularization weight.")
+parser.add_argument("--envs", default=None, type=int, help="Number of parallel environments.")
 parser.add_argument("--evaluate_each", default=100, type=int, help="Evaluate each number of batches.")
 parser.add_argument("--evaluate_for", default=10, type=int, help="Evaluate the given number of episodes.")
 parser.add_argument("--gamma", default=None, type=float, help="Discounting factor.")
 parser.add_argument("--hidden_layer_size", default=None, type=int, help="Size of hidden layer.")
 parser.add_argument("--learning_rate", default=None, type=float, help="Learning rate.")
 parser.add_argument("--tiles", default=None, type=int, help="Tiles to use.")
-parser.add_argument("--workers", default=None, type=int, help="Number of parallel workers.")
 
 
 class Network:
@@ -107,7 +107,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
         return rewards
 
     # Create the vectorized environment
-    vector_env = gym.vector.make("MountainCarContinuous-v0", args.workers, asynchronous=True,
+    vector_env = gym.vector.make("MountainCarContinuous-v0", args.envs, asynchronous=True,
                                  wrappers=lambda env: wrappers.DiscreteMountainCarWrapper(env, tiles=args.tiles))
     states = vector_env.reset(seed=args.seed)[0]
 
