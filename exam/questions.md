@@ -163,7 +163,7 @@
   of $\nabla_{\boldsymbol\theta} v_\pi(s)$. [10]
 
 - Write down the critic loss (or its derivative) and the actor policy loss (or
-  its derivative) of the Deep Determinisic Policy Gradients (DDPG) algorithm. Make
+  its derivative) of the Deep Deterministic Policy Gradients (DDPG) algorithm. Make
   sure to distinguish the target networks from the ones being trained. [10]
 
 - How is the return estimated in the Twin Delayed Deep Deterministic Policy
