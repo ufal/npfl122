@@ -94,6 +94,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
         torch.manual_seed(args.seed)
         torch.use_deterministic_algorithms(True)
     torch.set_num_threads(args.threads)
+    torch.set_num_interop_threads(args.threads)
 
     # Construct the network
     network = Network(env, args)
