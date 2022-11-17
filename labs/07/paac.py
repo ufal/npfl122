@@ -99,7 +99,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
 
             # Perform steps in the vectorized environment
             next_states, rewards, terminated, truncated, _ = vector_env.step(actions)
-            dones = np.logical_or(terminated, truncated)
+            dones = terminated | truncated
 
             # TODO: Compute estimates of returns by one-step bootstrapping
 
