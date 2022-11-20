@@ -35,7 +35,7 @@ class Network:
         #
         # The given states are tile encoded, so they are integral indices of
         # tiles intersecting the state. Therefore, you should convert them
-        # to dense encoding (one-hot-like, with with `args.tiles` ones).
+        # to dense encoding (one-hot-like, with `args.tiles` ones).
         # (Or you can even use embeddings for better efficiency.)
         #
         # The actor computes `mus` and `sds`, each of shape `[batch_size, actions]`.
