@@ -46,9 +46,9 @@ class Network:
         # - a target critic as the copy of the critic using `tf.keras.models.clone_model`.
         raise NotImplementedError()
 
-    @wrappers.typed_np_function(np.float32, np.float32, np.float32)
+    @wrappers.typed_np_function(np.float32, np.float32, np.float32, np.float32)
     @wrappers.raw_tf_function(dynamic_dims=1)
-    def train(self, states: np.ndarray, actions: np.ndarray, returns: np.ndarray) -> None:
+    def train(self, states: np.ndarray, actions: np.ndarray, returns: np.ndarray, next_states: np.ndarray) -> None:
         # TODO: Separately train:
         # - the actor using the DPG loss,
         # - the critic using MSE loss.
