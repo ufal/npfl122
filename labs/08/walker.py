@@ -42,9 +42,9 @@ class Network:
                 super().__init__()
                 # TODO: Create
                 # - two hidden layers with `hidden_layer_size` and ReLU activation
-                # - a layer for generaing means with `env.action_space.shape[0]` units and no activation
-                # - a layer for generaing sds with `env.action_space.shape[0]` units and `tf.math.exp` activation
-                # - finally, create a variable represeting a logarithm of alpha, using for example the following:
+                # - a layer for generating means with `env.action_space.shape[0]` units and no activation
+                # - a layer for generating sds with `env.action_space.shape[0]` units and `tf.math.exp` activation
+                # - finally, create a variable representing a logarithm of alpha, using for example the following:
                 self._log_alpha = tf.Variable(np.log(0.1), dtype=tf.float32)
 
             def call(self, inputs: tf.Tensor, sample: bool):
@@ -80,7 +80,7 @@ class Network:
                 #   call. An action is actually a vector, so to be precise, compute for every batch
                 #   element a scalar, an average of the log-probabilities of individual action components.
                 # - Finally, compute `alpha` as exponentiation of `self._log_alpha`.
-                # - Return actions, log_probs and alpha.
+                # - Return actions, log_prob, and alpha.
                 raise NotImplementedError()
 
         # TODO: Instantiate the actor as `self._actor` and compile it.
