@@ -2,8 +2,8 @@
 #### Date: Deadline: Dec 05, 7:59 a.m.
 #### Points: 5 points
 
-In this exercise exploring continuous robot control,
-try solving the continuous [BipedalWalker-v3 environment](https://www.gymlibrary.dev/environments/box2d/bipedal_walker/)
+In this exercise we explore continuous robot control
+by trying to solve the continuous [BipedalWalker-v3 environment](https://www.gymlibrary.dev/environments/box2d/bipedal_walker/)
 from the [Gym library](https://www.gymlibrary.dev/).
 
 **Note that the penalty of `-100` on crash makes the training considerably slower.
