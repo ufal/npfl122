@@ -194,7 +194,7 @@
   including the policy reparametrization trick. [5]
 
 - Regarding the entropy penalty coefficient $\alpha$ in the Soft actor critic,
-  define what contrained optimization problem we are solving, what is the
+  define what constrained optimization problem we are solving, what is the
   corresponding Lagrangian (and whether we are minimizing/maximizing it
   with respect to the policy and $\alpha$), and what does the $\alpha$ update
   looks like. [5]
