@@ -34,6 +34,9 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
             state, done = env.reset(start_evaluation=True)[0], False
             while not done:
                 # TODO: Predict the action using the greedy policy.
+                action = ...
+                state, reward, terminated, truncated, _ = env.step(action)
+                done = terminated or truncated
 
     # TODO: Perform training
     raise NotImplementedError()
