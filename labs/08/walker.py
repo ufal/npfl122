@@ -197,7 +197,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
                 # Note that until now we used `np.random.choice` with `replace=False` to generate
                 # batch indices. However, this call is extremely slow for large buffers, because
                 # it generates a whole permutation. With `np.random.randint`, indices may repeat,
-                # but once the buffer is large, it happend with little probability.
+                # but once the buffer is large, it happens with little probability.
                 batch = np.random.randint(len(replay_buffer), size=args.batch_size)
                 states, actions, rewards, dones, next_states = map(np.array, zip(*[replay_buffer[i] for i in batch]))
                 # TODO: Perform the training
