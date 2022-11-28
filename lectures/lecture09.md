@@ -4,6 +4,7 @@
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-09.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-09.mp4, Lecture
 #### Questions: #lecture_9_questions
+#### Lecture assignment: trace_algorithms
 
 - Eligibility traces [Sections 12, 12.1, 12.3, 12.8, 12.9 of RLB]
 - TD(λ) [Section 12.2 of RLB]
