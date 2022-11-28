@@ -5,6 +5,9 @@
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-09.mp4, Lecture
 #### Questions: #lecture_9_questions
 #### Lecture assignment: trace_algorithms
+#### Lecture assignment: cheetah
+#### Lecture assignment: humanoid
+#### Lecture assignment: humanoid_standup
 
 - Eligibility traces [Sections 12, 12.1, 12.3, 12.8, 12.9 of RLB]
 - TD(λ) [Section 12.2 of RLB]
