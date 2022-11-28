@@ -10,4 +10,4 @@ only creates the environment and shows the evaluation in ReCodEx.
 
 In ReCodEx, you are expected to submit an already trained model, which is
 evaluated with two seeds, each for 100 episodes with a time limit of 10 minutes.
-If your average return is at least 9000 on all of them, you obtain 2 points.
+If your average return is at least 8000 on all of them, you obtain 2 points.
