@@ -5,14 +5,14 @@
 - _Installing to central user packages repository_
 
   You can install all required packages to central user packages repository using
- `pip3 install --user tensorflow==2.8.3 tensorflow_addons==0.16.1 tensorflow_probability==0.16.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2`.
+ `pip3 install --user tensorflow==2.8.3 tensorflow_addons==0.16.1 tensorflow_probability==0.16.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2 imageio`.
 
 - _Installing to a virtual environment_
 
   Python supports virtual environments, which are directories containing
   independent sets of installed packages. You can create a virtual environment
   by running `python3 -m venv VENV_DIR` followed by
-  `VENV_DIR/bin/pip3 install tensorflow==2.8.3 tensorflow_addons==0.16.1 tensorflow_probability==0.16.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2`.
+  `VENV_DIR/bin/pip3 install tensorflow==2.8.3 tensorflow_addons==0.16.1 tensorflow_probability==0.16.0 numpy==1.23.3 gym==0.26.1 pygame==2.1.2 mujoco==2.2.2 ufal.pybox2d==2.3.10.2 imageio`.
   (or `VENV_DIR/Scripts/pip3` on Windows).
 
 - _**Windows** installation_
