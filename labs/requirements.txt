@@ -7,3 +7,4 @@ gym==0.26.1
 pygame==2.1.2
 mujoco==2.2.2
 ufal.pybox2d==2.3.10.2
+imageio==2.22.4
