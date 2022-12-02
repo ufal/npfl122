@@ -121,7 +121,7 @@ class Network:
         torch.save(self._actor.state_dict(), path)
 
     def load_actor(self, path: str, env: wrappers.EvaluationEnv):
-        self._actor.load_state_dict(torch.load(path))
+        self._actor.load_state_dict(torch.load(path, map_location=self._device))
 
     @wrappers.typed_np_function(np.float32, np.float32, np.float32)
     def train(self, states: np.ndarray, actions: np.ndarray, returns: np.ndarray) -> None:
