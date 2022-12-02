@@ -61,16 +61,17 @@ class Network:
                 #   with the `mus` and `sds`.
                 # - We then bijectively modify the distribution so that the actions are
                 #   in the given range. Luckily, `torch.distributions.transforms` offers
-                #   classes that can transform a distribution.
-                #   - first run
-                #       torch.distributions.transforms.TanhTransform()
-                #     to squash the actions to [-1, 1] range,
-                #   - then run
-                #       torch.distributions.transforms.AffineTransform(loc, scale)
+                #   a class `torch.distributions.TransformedDistribution` than can transform
+                #   a distribution by a given transformation. We need to use
+                #   - `torch.distributions.transforms.TanhTransform()`
+                #     to squash the actions to [-1, 1] range, and then
+                #   - `torch.distributions.transforms.AffineTransform(loc, scale)`
                 #     to scale the action ranges to [low, high].
                 #   - To compose these transformations, use
-                #       torch.distributions.transforms.ComposeTransform([t1, t2], cache_size=1)
+                #     `torch.distributions.transforms.ComposeTransform([t1, t2], cache_size=1)`
                 #     with `cache_size=1` parameter for numerical stability.
+                #   Note that the `ComposeTransform` can be created already in the constructor
+                #   for better performance.
                 # - Sample the actions by a `rsample()` call (`sample()` is not differentiable).
                 # - Then, compute the log-probabilities of the sampled actions by using `log_prob()`
                 #   call. An action is actually a vector, so to be precise, compute for every batch
