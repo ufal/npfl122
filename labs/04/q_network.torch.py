@@ -99,9 +99,8 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
     # Construct the network
     network = Network(env, args)
 
-    # Replay memory; maxlen parameter can be passed to deque for a size limit,
-    # which we however do not need in this simple task.
-    replay_buffer = collections.deque()
+    # Replay memory; the `max_length` parameter can be passed to limit its size.
+    replay_buffer = wrappers.ReplayBuffer()
     Transition = collections.namedtuple("Transition", ["state", "action", "reward", "done", "next_state"])
 
     epsilon = args.epsilon
@@ -121,10 +120,11 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
             # Append state, action, reward, done and next_state to replay_buffer
             replay_buffer.append(Transition(state, action, reward, done, next_state))
 
-            # TODO: If the replay_buffer is large enough, perform a training batch
-            # from `args.batch_size` uniformly randomly chosen transitions.
+            # TODO: If the `replay_buffer` is large enough, perform a training update using
+            # a batch of `args.batch_size` uniformly randomly sampled `Transition`s:
+            #   batch = replay_buffer.sample(args.batch_size, np.random)
             #
-            # After you choose `states` and suitable targets, you can train the network as
+            # After you compute suitable targets, you can train the network by
             #   network.train(states, ...)
 
             state = next_state

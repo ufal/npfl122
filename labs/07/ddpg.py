@@ -101,9 +101,8 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
     # Construct the network
     network = Network(env, args)
 
-    # Replay memory; maxlen parameter can be passed to deque for a size limit,
-    # which we however do not need in this simple task.
-    replay_buffer = collections.deque()
+    # Replay memory; the `max_length` parameter can be passed to limit its size.
+    replay_buffer = wrappers.ReplayBuffer()
     Transition = collections.namedtuple("Transition", ["state", "action", "reward", "done", "next_state"])
 
     def evaluate_episode(start_evaluation: bool = False, logging: bool = True) -> float:
@@ -134,10 +133,10 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
                 replay_buffer.append(Transition(state, action, reward, done, next_state))
                 state = next_state
 
-                if len(replay_buffer) < args.batch_size:
+                if len(replay_buffer) < 4 * args.batch_size:
                     continue
-                batch = np.random.choice(len(replay_buffer), size=args.batch_size, replace=False)
-                states, actions, rewards, dones, next_states = map(np.array, zip(*[replay_buffer[i] for i in batch]))
+                batch = replay_buffer.sample(args.batch_size, np.random)
+                states, actions, rewards, dones, next_states = map(np.array, zip(*batch))
                 # TODO: Perform the training
 
         # Periodic evaluation

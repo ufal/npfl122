@@ -201,7 +201,7 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
     venv = gym.vector.make(args.env, args.envs, asynchronous=True)
 
     # Replay memory of a specified maximum size.
-    replay_buffer = collections.deque(maxlen=args.replay_buffer_size)
+    replay_buffer = wrappers.ReplayBuffer(max_length=args.replay_buffer_size)
     Transition = collections.namedtuple("Transition", ["state", "action", "reward", "done", "next_state"])
 
     state, training = venv.reset(seed=args.seed)[0], True
@@ -218,12 +218,9 @@ def main(env: wrappers.EvaluationEnv, args: argparse.Namespace) -> None:
 
             # Training
             if len(replay_buffer) >= 4 * args.batch_size:
-                # Note that until now we used `np.random.choice` with `replace=False` to generate
-                # batch indices. However, this call is extremely slow for large buffers, because
-                # it generates a whole permutation. With `np.random.randint`, indices may repeat,
-                # but once the buffer is large, it happend with little probability.
-                batch = np.random.randint(len(replay_buffer), size=args.batch_size)
-                states, actions, rewards, dones, next_states = map(np.array, zip(*[replay_buffer[i] for i in batch]))
+                # Randomly uniformly sample transitions from the replay buffer.
+                batch = replay_buffer.sample(args.batch_size, np.random)
+                states, actions, rewards, dones, next_states = map(np.array, zip(*batch))
                 # TODO: Perform the training
 
         # Periodic evaluation
