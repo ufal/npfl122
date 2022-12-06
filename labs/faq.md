@@ -122,10 +122,11 @@
 
 - _How to install TensorFlow dependencies on [AIC](https://aic.ufal.mff.cuni.cz)?_
 
-  To install CUDA, cuDNN and Python 3.9 on AIC, you should add the following to
-  your `.profile`:
+  To enable CUDA 11.2 and cuDNN 8.1 on AIC, you can either use `modules` as described in
+  the section “CUDA modules” at https://aic.ufal.mff.cuni.cz/index.php/Submitting_GPU_Jobs,
+  or you can add the following to your `.profile`:
   ```
-  export PATH="/lnet/aic/data/python/3.9.9/bin:$PATH"
+  export PATH="/lnet/aic/opt/cuda/cuda-11.2/bin:$PATH"
   export LD_LIBRARY_PATH="/lnet/aic/opt/cuda/cuda-11.2/lib64:/lnet/aic/opt/cuda/cuda-11.2/cudnn/8.1.1/lib64:/lnet/aic/opt/cuda/cuda-11.2/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
   ```
 
@@ -137,15 +138,15 @@
 
   TL;DR: To run an interactive GPU job with 1 CPU, 1 GPU, and 16GB RAM, run:
   ```
-  qrsh -q gpu.q -l gpu=1,mem_free=16G,h_data=16G -pty yes bash -l
+  srun -p gpu -c1 --gpus=1 --mem=16G --pty bash
   ```
 
-  To run a script requiring a GPU in a non-interactive way, use
+  To run a shell script requiring a GPU in a non-interactive way, use
   ```
-  qsub -q gpu.q -l gpu=1,mem_free=16G,h_data=16G -cwd -b y SCRIPT_PATH
+  sbatch -p gpu -c1 --gpus=1 --mem=16G SCRIPT_PATH
   ```
 
-  If you want to run a CPU-only computation, remove the `-q gpu.q` and `gpu=1,`
+  If you want to run a CPU-only computation, remove the `-p gpu` and `--gpus=1`
   from the above commands.
 
 ### TOCEntry: ReCodEx
