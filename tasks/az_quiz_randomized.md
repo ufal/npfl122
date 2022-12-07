@@ -15,5 +15,5 @@ by the `AZQuiz.all_moves` method, which returns a list of `(probability,
 az_quiz_instance)` next states (in our environment, there are always two
 possible next states).
 
-**Note that you need to really handle the stochasticity in your solution to
-enter the competition.**
+**To enter the competition, you need to actually handle the randomness
+in your solution.**
