@@ -17,12 +17,13 @@ move. The illustration of the interface is in the
 [az_quiz_player_random.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_random.py)
 module, which implements a random agent.
 
-**To be updated**
 Your solution in ReCodEx is automatically evaluated against a very simple heuristic
 [az_quiz_player_simple_heuristic.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_simple_heuristic.py),
 playing 56 games as a starting player and 56 games as a non-starting player. The
 time limit for the games is 10 minutes and you should see the win rate directly in
-ReCodEx. If you achieve at least 80%, you will pass the assignment.
+ReCodEx. If you achieve at least 90%, you will pass the assignment.
+A better heuristic [az_quiz_player_fork_heuristic.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_simple_heuristic.py)
+is also available for your evaluations.
 
 The final competition evaluation will be performed after the deadline by
 a round-robin tournament. In this tournament, we also consider games
@@ -37,3 +38,6 @@ and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tre
 
 The starting template is available in the [az_quiz_agent.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_agent.py)
 module.
+
+**To get regular points, you must implement an AlphaZero-style algorithm.
+However, any algorithm can be used in the competition.**
