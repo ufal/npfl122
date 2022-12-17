@@ -2,7 +2,7 @@
 #### Date: Oct 25
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides/?04
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides.pdf/npfl122-04.pdf,PDF Slides
-#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2122/npfl122-04.mp4, Lecture
+#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2122/npfl122-2122-04.mp4, Lecture
 #### Questions: #lecture_4_questions
 #### Lecture assignment: q_learning_tiles
 #### Lecture assignment: q_network

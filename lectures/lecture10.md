@@ -2,7 +2,7 @@
 #### Date: Dec 06
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides/?10
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides.pdf/npfl122-10.pdf,PDF Slides
-#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2122/npfl122-10.mp4, Lecture
+#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2122/npfl122-2122-10.mp4, Lecture
 #### Questions: #lecture_10_questions
 #### Lecture assignment: az_quiz
 #### Lecture assignment: az_quiz_randomized
