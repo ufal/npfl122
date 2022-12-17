@@ -1,7 +1,7 @@
 ### Lecture: 2. Markov Decision Process, Optimal Solutions, Monte Carlo Methods
 #### Date: Oct 12
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides/?02
-#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-02.pdf,PDF Slides
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2021/slides.pdf/npfl122-2021-02.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2021/npfl122-2021-02.mp4,Lecture
 #### Questions: #lecture_2_questions
 #### Lecture assignment: policy_iteration
