@@ -1,7 +1,7 @@
 ### Lecture: 6. Policy Gradient Methods
 #### Date: Nov 08
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides/?06
-#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides.pdf/npfl122-06.pdf,PDF Slides
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2122/slides.pdf/npfl122-2122-06.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2122/npfl122-2122-06.mp4, Lecture
 #### Questions: #lecture_6_questions
 #### Lecture assignment: reinforce
