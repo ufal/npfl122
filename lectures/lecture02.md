@@ -2,8 +2,8 @@
 #### Date: Oct 10
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides/?02
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-02.pdf, PDF Slides
-#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-02.mp4, Lecture
-#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-02.practicals.mp4, Practicals
+#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-02.mp4, Lecture
+#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-02.practicals.mp4, Practicals
 #### Questions: #lecture_2_questions
 #### Lecture assignment: policy_iteration
 #### Lecture assignment: policy_iteration_exact
