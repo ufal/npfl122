@@ -1,7 +1,7 @@
 ### Lecture: 6. Rainbow
 #### Date: Nov 18
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides/?06
-#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-06.pdf,PDF Slides
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-1920-06.pdf,PDF Slides
 #### Video: https://is.mff.cuni.cz/prednasky/prednaska/NPFL122/5
 #### Lecture assignment: car_racing
 

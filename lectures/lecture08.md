@@ -1,7 +1,7 @@
 ### Lecture: 8. Continuous Actions
 #### Date: Dec 02
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides/?08
-#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-08.pdf,PDF Slides
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-1920-08.pdf,PDF Slides
 #### Video: https://is.mff.cuni.cz/prednasky/prednaska/NPFL122/7
 #### Lecture assignment: paac
 #### Lecture assignment: paac_continuous

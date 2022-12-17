@@ -1,7 +1,7 @@
 ### Lecture: 4. Self-Study: N-step Temporal Difference Methods
 #### Date: Nov 04
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides/?04
-#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-04.pdf,PDF Slides
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-1920-04.pdf,PDF Slides
 
 This is a **self-study** lecture.
 

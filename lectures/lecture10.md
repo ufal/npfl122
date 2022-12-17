@@ -1,7 +1,7 @@
 ### Lecture: 10. V-trace, PopArt Normalization, Partially Observable MDPs
 #### Date: Dec 16
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides/?10
-#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-10.pdf,PDF Slides
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-1920-10.pdf,PDF Slides
 #### Video: https://is.mff.cuni.cz/prednasky/prednaska/NPFL122/9
 #### Lecture assignment: vtrace
 #### Lecture assignment: memory_game

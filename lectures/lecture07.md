@@ -1,7 +1,7 @@
 ### Lecture: 7. Gradient Based Methods
 #### Date: Nov 25
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides/?07
-#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-07.pdf,PDF Slides
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/1920/slides.pdf/npfl122-1920-07.pdf,PDF Slides
 #### Video: https://is.mff.cuni.cz/prednasky/prednaska/NPFL122/6
 #### Lecture assignment: reinforce
 #### Lecture assignment: reinforce_baseline
