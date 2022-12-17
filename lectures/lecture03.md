@@ -1,7 +1,7 @@
 ### Lecture: 3. Temporal Difference Methods, Off-Policy Methods
 #### Date: Oct 17
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides/?03
-#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-03.pdf, PDF Slides
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-2223-03.pdf, PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-03.mp4, Lecture
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-03.tree-backup.mp4, TreeBackup
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-03.practicals.mp4, Practicals

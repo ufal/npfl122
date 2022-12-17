@@ -1,7 +1,7 @@
 ### Lecture: 4. Function Approximation, Deep Q Network
 #### Date: Oct 24
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides/?04
-#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-04.pdf,PDF Slides
+#### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-2223-04.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-04.mp4, Lecture
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-04.practicals.mp4, Practicals
 #### Questions: #lecture_4_questions
