@@ -3,7 +3,7 @@
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides/?09
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-2223-09.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-09.mp4, Lecture
-#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-09.agent57.mp4, Agent57
+#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-09.agent57.mp4, Agent57
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-09.practicals.mp4, Practicals
 #### Questions: #lecture_9_questions
 #### Lecture assignment: trace_algorithms
