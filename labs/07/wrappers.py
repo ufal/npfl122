@@ -232,10 +232,13 @@ class ReplayBuffer:
         assert -len(self._data) <= index < len(self._data)
         return self._data[(self._offset + index) % len(self._data)]
 
-    def sample(self, size, generator):
-        # The same element can be sampled multiple times. However, making sure the samples
+    def sample(self, size, generator, replace=True):
+        # By default, the same element can be sampled multiple times. Making sure the samples
         # are unique is costly, and we do not mind the duplicites much during training.
-        return [self._data[index] for index in generator.randint(len(self._data), size=size)]
+        if replace:
+            return [self._data[index] for index in generator.randint(len(self._data), size=size)]
+        else:
+            return [self._data[index] for index in generator.choice(len(self._data), size=size, replace=False)]
 
 
 def typed_np_function(*types):
