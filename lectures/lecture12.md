@@ -2,6 +2,7 @@
 #### Date: Dec 19
 #### Slides: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides/?12
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-2223-12.pdf,PDF Slides
+#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-12.mp4, Lecture
 #### Questions: #lecture_12_questions
 
 - Straight-Through estimator  [[Yoshua Bengio, Nicholas Léonard, Aaron Courville: Estimating or Propagating Gradients Through Stochastic Neurons for Conditional Computation](https://arxiv.org/abs/1308.3432)]
