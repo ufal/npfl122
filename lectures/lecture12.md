@@ -4,6 +4,8 @@
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-2223-12.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-12.mp4, Lecture
 #### Questions: #lecture_12_questions
+#### Lecture assignment: memory_game
+#### Lecture assignment: memory_game_rl
 
 - Straight-Through estimator  [[Yoshua Bengio, Nicholas Léonard, Aaron Courville: Estimating or Propagating Gradients Through Stochastic Neurons for Conditional Computation](https://arxiv.org/abs/1308.3432)]
 - Gumbel softmax [[Eric Jang, Shixiang Gu, Ben Poole: Categorical Reparameterization with Gumbel-Softmax](https://arxiv.org/abs/1611.01144), [Chris J. Maddison, Andriy Mnih, Yee Whye Teh: The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables](https://arxiv.org/abs/1611.00712)]
