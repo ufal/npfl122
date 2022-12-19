@@ -10,7 +10,7 @@ player recieves a reward of -1. An episode ends when all cards are removed.
 Note that it is valid to try to flip an already removed card.
 
 Let there be $N$ cards in the environment, $N$ being even. There are $N+1$
-actions – actions $1..N$ flip the corresponding card, and the action $0$
+actions – the first $N$ flip the corresponding card, and the last action
 flips the unused card with the lowest index (or the card $N$ if all have
 been used already). The observations consist of a pair of discrete values
 _(card, symbol)_, where the _card_ is the index of the card flipped, and
