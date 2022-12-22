@@ -127,8 +127,7 @@ class AZQuiz:
 
         if self._screen is None:
             pygame.init()
-            pygame.display.init()
-            self._screen = pygame.display.set_mode(image.shape[:2])
+            self._screen = pygame.display.get_surface() or pygame.display.set_mode(image.shape[:2])
             self._screen_surface = pygame.Surface(image.shape[:2])
 
         pygame.pixelcopy.array_to_surface(self._screen_surface, image)
@@ -183,11 +182,6 @@ class AZQuiz:
             except ValueError:
                 pass
         return action
-
-    def __del__(self):
-        if self._screen is not None:
-            import pygame
-            pygame.display.quit()
 
     _INITIAL_QUESTION_PROB = 0.8
     _ADDITIONAL_QUESTION_PROB = 0.7
