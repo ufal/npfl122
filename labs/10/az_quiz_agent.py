@@ -76,7 +76,7 @@ class Agent:
         raise NotImplementedError()
 
     def board(self, game: AZQuiz) -> np.ndarray:
-        # TODO: Generate the boards from the current AZQuiz game.
+        # TODO: Generate the boards from the current `AZQuiz` game.
         #
         # The `game.board` returns a board representation, but you also need to
         # somehow indicate who is the current player. You can either
