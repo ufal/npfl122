@@ -298,6 +298,12 @@ class Player:
 # Main #
 ########
 def main(args: argparse.Namespace) -> Player:
+    # Set random seeds and number of threads
+    if args.seed is not None:
+        tf.keras.utils.set_random_seed(args.seed)
+    tf.config.threading.set_inter_op_parallelism_threads(args.threads)
+    tf.config.threading.set_intra_op_parallelism_threads(args.threads)
+
     if args.recodex:
         # Load the trained agent
         agent = Agent.load(args.model_path)
