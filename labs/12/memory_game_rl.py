@@ -73,7 +73,6 @@ class Network:
         # with shape `[self.args.memory_cells, self.args.memory_cell_size]`.
         raise NotImplementedError()
 
-    @wrappers.typed_np_function(np.float32, np.int32, np.float32)
     @tf.function
     def _train(self, states, actions, returns):
         # TODO: Train the network given a batch of sequences of `states`
