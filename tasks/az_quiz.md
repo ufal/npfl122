@@ -37,7 +37,9 @@ interactive players available,
 and [az_quiz_player_interactive_keyboard.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_player_interactive_keyboard.py).
 
 The starting template is available in the [az_quiz_agent.py](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_agent.py)
-module.
+module. Furthermore, the [az_quiz_cpp](https://github.com/ufal/npfl122/tree/master/labs/10/az_quiz_cpp) directory
+contains a skeleton of C++ MCTS and self-play implementation. Utilizing the C++ implementation is not required,
+but it offers a large speedup (up to 10 times on a multi-core CPU and up to 50-100 times on a GPU)
 
 **To get regular points, you must implement an AlphaZero-style algorithm.
 However, any algorithm can be used in the competition.**
