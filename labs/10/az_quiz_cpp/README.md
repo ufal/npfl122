@@ -90,6 +90,8 @@ The provided implementation uses C++-17 and contains:
     threads created by the `simulated_games_start` call). Once the first game
     finishes, it is returned as a list of triples _(game representation, policy,
     value function)_.
+- `az_quiz_mcts.h`, where you should implement the MCTS;
+- `az_quiz_sim_game.h`, where you should implement the self-play simulation.
 
 The implementation contains all Python ↔ C++ conversions and thread synchronization.
 You need to implement:
