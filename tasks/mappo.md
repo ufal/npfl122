@@ -2,7 +2,7 @@
 #### Date: Deadline: Feb 12, 23:59
 #### Points: 4 points
 
-** The template and the environment will be available soon. **
+**The template and the environment will be available soon.**
 
 Implement MAPPO in a multi-agent settings. Notably, solve a multi-agent
 extension of `SingleCollect` with 2 agents, the `MultiCollect2` environment

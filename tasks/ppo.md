@@ -2,7 +2,7 @@
 #### Date: Deadline: Feb 12, 23:59
 #### Points: 3 points
 
-** The template and the environment will be available soon. **
+**The template and the environment will be available soon.**
 
 Implement the PPO algorithm in a single-agent settings. Notably, solve
 the `SingleCollect` environment implemented by the
