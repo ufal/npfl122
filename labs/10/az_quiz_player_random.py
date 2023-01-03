@@ -15,10 +15,13 @@ parser.add_argument("--threads", default=1, type=int, help="Maximum number of th
 
 
 class Player:
+    def __init__(self, seed: int = None):
+        self._random = np.random.RandomState(seed)
+
     def play(self, az_quiz):
         action = None
         while action is None or not az_quiz.valid(action):
-            action = np.random.randint(az_quiz.actions)
+            action = self._random.randint(az_quiz.actions)
 
         return action
 

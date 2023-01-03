@@ -22,6 +22,7 @@ CORNER_STONES = [16, 19]
 LINE_3 = [11, 12, 13]
 CURVE_3 = [11, 12, 18]
 BOTTOM_LINE = [16, 17, 18, 19]
+RANDOM = np.random.RandomState()
 
 def intersect(test1, test2):
     return list(set(test1).intersection(set(test2)))
@@ -79,7 +80,7 @@ def rotate_situation(situation, r=0):
 def all_variants(func):
     def inner(my, enemy, allowed):
         rotations = INVERSE_ROTATION.copy()
-        np.random.shuffle(rotations)
+        RANDOM.shuffle(rotations)
         possible_moves = []
         for rotation in rotations:
             rotated_my = rotate_list(my, rotation)
@@ -92,7 +93,7 @@ def all_variants(func):
                 possible_moves.append(action)
         if len(possible_moves)>0:
             m = intersect(possible_moves, allowed)
-            m = np.random.choice(m)
+            m = RANDOM.choice(m)
         else:
             m=-1
         return m
@@ -102,7 +103,7 @@ def all_variants(func):
 def choose_random(arr, allowed):
     if len(intersect(arr,allowed))==0:
         return -1
-    return np.random.choice(intersect(arr,allowed))
+    return RANDOM.choice(intersect(arr,allowed))
 
 def vidlicky(enemy, allowed, pole):
     if len(intersect(enemy, pole))>=1:
@@ -317,6 +318,9 @@ def apply_rules(rules, my, enemy, allowed):
     return action
 
 class Player:
+    def __init__(self, seed: int = None):
+        RANDOM.seed(seed)
+
     def play(self, az):
         board = az.board
         situation = np.array([board[y, x] for y in range(7) for x in range(y + 1)])

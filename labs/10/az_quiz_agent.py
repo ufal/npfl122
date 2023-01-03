@@ -264,7 +264,7 @@ def train(args: argparse.Namespace) -> Agent:
             # For speed, the implementation does not use MCTS during evaluation,
             # but you can of course change it so that it does.
             score = az_quiz_evaluator.evaluate(
-                [Player(agent, argparse.Namespace(num_simulations=0)), az_quiz_player_simple_heuristic.Player()],
+                [Player(agent, argparse.Namespace(num_simulations=0)), az_quiz_player_simple_heuristic.Player(args.seed)],
                 games=56, randomized=False, first_chosen=False, render=False, verbose=False)
             print("Evaluation after iteration {}: {:.1f}%".format(iteration, 100 * score), flush=True)
 
@@ -321,6 +321,6 @@ if __name__ == "__main__":
 
     # Run an evaluation versus the simple heuristic with the same parameters as in ReCodEx.
     az_quiz_evaluator.evaluate(
-        [player, az_quiz_player_simple_heuristic.Player()],
+        [player, az_quiz_player_simple_heuristic.Player(args.seed)],
         games=56, randomized=False, first_chosen=False, render=False, verbose=True,
     )

@@ -18,6 +18,9 @@ class Player:
     CENTER = 12
     ANCHORS = [4, 16, 19]
 
+    def __init__(self, seed: int = None):
+        self._random = np.random.RandomState(seed)
+
     def play(self, az_quiz):
         if az_quiz.valid(self.CENTER):
             return self.CENTER
@@ -27,9 +30,9 @@ class Player:
         action = None
         while action is None or not az_quiz.valid(action):
             if any_anchor:
-                action = np.random.choice(self.ANCHORS)
+                action = self._random.choice(self.ANCHORS)
             else:
-                action = np.random.randint(az_quiz.actions)
+                action = self._random.randint(az_quiz.actions)
 
         return action
 
