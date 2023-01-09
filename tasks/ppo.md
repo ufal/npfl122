@@ -2,11 +2,9 @@
 #### Date: Deadline: Feb 12, 23:59
 #### Points: 3 points
 
-**The template and the environment will be available soon.**
-
 Implement the PPO algorithm in a single-agent settings. Notably, solve
 the `SingleCollect` environment implemented by the
-`multi_collect_environment.py`
+[multi_collect_environment.py](https://github.com/ufal/npfl122/tree/master/labs/13/multi_collect_environment.py)
 module. To familiarize with it, you can [watch a trained agent](https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/videos/single_collect.mp4)
 and you can run the module directly, controlling the agent with the arrow keys.
 In the environment, your goal is to reach a known place, obtaining rewards
@@ -15,7 +13,7 @@ for some period of time, it gets a large reward and the place is moved randomly.
 The environment runs for 250 steps and it is considered solved if you obtain
 a return of at least 500.
 
-The `ppo.py`
+The [ppo.py](https://github.com/ufal/npfl122/tree/master/labs/13/ppo.py)
 template contains a skeleton of the PPO algorithm implementation.
 Regarding the unspecified hyperparameters, I would consider the following ranges:
 - `batch_size` between 64 and 512
