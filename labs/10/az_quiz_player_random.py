@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+from typing import Optional
 
 import numpy as np
 
@@ -15,13 +16,16 @@ parser.add_argument("--threads", default=1, type=int, help="Maximum number of th
 
 
 class Player:
+    def __init__(self, seed: Optional[int] = None):
+        self._generator = np.random.RandomState(seed)
+
     def play(self, az_quiz):
         action = None
         while action is None or not az_quiz.valid(action):
-            action = np.random.randint(az_quiz.actions)
+            action = self._generator.randint(az_quiz.actions)
 
         return action
 
 
 def main(args):
-    return Player()
+    return Player(seed=args.seed)

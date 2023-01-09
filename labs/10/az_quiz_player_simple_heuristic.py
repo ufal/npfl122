@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+from typing import Optional
 
 import numpy as np
 
@@ -18,6 +19,9 @@ class Player:
     CENTER = 12
     ANCHORS = [4, 16, 19]
 
+    def __init__(self, seed: Optional[int] = None):
+        self._generator = np.random.RandomState(seed)
+
     def play(self, az_quiz):
         if az_quiz.valid(self.CENTER):
             return self.CENTER
@@ -27,12 +31,12 @@ class Player:
         action = None
         while action is None or not az_quiz.valid(action):
             if any_anchor:
-                action = np.random.choice(self.ANCHORS)
+                action = self._generator.choice(self.ANCHORS)
             else:
-                action = np.random.randint(az_quiz.actions)
+                action = self._generator.randint(az_quiz.actions)
 
         return action
 
 
 def main(args):
-    return Player()
+    return Player(seed=args.seed)

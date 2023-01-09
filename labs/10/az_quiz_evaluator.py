@@ -17,12 +17,14 @@ def load_player(args: argparse.Namespace, player: str):
 
     def loader():
         module = importlib.import_module(player)
-        args = module.parser.parse_args(player_args)
-        args.recodex = True
+        module_args = module.parser.parse_args(player_args)
+        module_args.recodex = True
+        if hasattr(module_args, "seed") and module_args.seed is None and args.seed is not None:
+            module_args.seed = args.seed
         try:
             cwd = os.getcwd()
             os.chdir(os.path.dirname(module.__file__))
-            return module.main(args)
+            return module.main(module_args)
         finally:
             os.chdir(cwd)
 
@@ -86,7 +88,7 @@ if __name__ == "__main__":
     parser.add_argument("--multiprocessing", default=False, action="store_true", help="Load players in sep. processes")
     parser.add_argument("--randomized", default=False, action="store_true", help="Can answering produce random result")
     parser.add_argument("--render", default=False, action="store_true", help="Should the games be rendered")
-    parser.add_argument("--seed", default=42, type=int, help="Random seed")
+    parser.add_argument("--seed", default=None, type=int, help="Random seed")
     args = parser.parse_args()
 
     np.random.seed(args.seed)
