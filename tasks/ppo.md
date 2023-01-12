@@ -21,7 +21,7 @@ Regarding the unspecified hyperparameters, I would consider the following ranges
 - `epochs` between 1 and 10
 - `gamma` between 0.97 and 1.0
 - `trace_lambda` is usually 0.95
-- `workers` between 16 and 128
+- `envs` between 16 and 128
 - `worker_steps` between tens and hundreds
 
 My implementation trains in approximately three minutes of CPU time.
