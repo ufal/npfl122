@@ -76,7 +76,7 @@ class Network(tf.keras.Model):
 
             # TODO: Sum the following three losses
             # - the PPO loss, where `self.args.clip_epsilon` is used to clip the probability ratio
-            # - the MSE error between the predicted value function and target regurns
+            # - the MSE error between the predicted value function and target returns
             # - the entropy regularization with coefficient `self.args.entropy_regularization`.
             #   You can compute it for example using `tf.losses.CategoricalCrossentropy()`
             #   by realizing that entropy can be computed using cross-entropy.
