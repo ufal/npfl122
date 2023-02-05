@@ -2,8 +2,8 @@
 from __future__ import annotations
 import argparse
 import collections
-import math
 import os
+from typing import Optional
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")  # Report only TF errors by default
 
 import numpy as np
@@ -90,7 +90,7 @@ class Agent:
 # MCTS #
 ########
 class MCTNode:
-    def __init__(self, prior: float):
+    def __init__(self, prior: Optional[float]):
         self.prior = prior  # Prior probability from the agent.
         self.game = None    # If the node is evaluated, the corresponding game instance.
         self.children = {}  # If the node is evaluated, mapping of valid actions to the child `MCTNode`s.
@@ -130,7 +130,7 @@ class MCTNode:
 
     def select_child(self) -> tuple[int, MCTNode]:
         # Select a child according to the PUCT formula.
-        def ucb_score(child):
+        def ucb_score(child: MCTNode):
             # TODO: For a given child, compute the UCB score as
             #   Q(s, a) + C(s) * P(s, a) * (sqrt(N(s)) / (N(s, a) + 1)),
             # where:
