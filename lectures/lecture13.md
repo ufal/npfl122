@@ -4,7 +4,6 @@
 #### Reading: https://ufal.mff.cuni.cz/~straka/courses/npfl122/2223/slides.pdf/npfl122-2223-13.pdf,PDF Slides
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-13.mp4, Lecture
 #### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-13.ppo.mp4, PPO
-#### Video: https://lectures.ms.mff.cuni.cz/video/rec/npfl122/2223/npfl122-2223-13.practicals.mp4, Practicals
 #### Lecture assignment: ppo
 #### Lecture assignment: mappo
 
