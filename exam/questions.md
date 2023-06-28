@@ -316,8 +316,9 @@
   (a) a Gumbel-softmax estimator, and (b) a straight-through Gumbel-softmax
   estimator. [5]
 
-- Write down an algorithm implementing a straight-through estimator using
-  automatic differentiation (i.e., in TensorFlow or Pytorch). [5]
+- Write down an algorithm implementing a straight-through estimator of
+  a discrete categorical latent variable using automatic differentiation
+  (i.e., in TensorFlow or Pytorch). [5]
 
 - Describe the six components of the DreamerV2 recurrent state-space model
   (RSSM). [5]
